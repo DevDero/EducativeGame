@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e796051f6e964e34bb60b3b75a250bf3, type: 3}
+  m_Name: Phone_1.1
+  m_EditorClassIdentifier: 
+  question: 112 acil, acil durumunuz nedir?
+  answer:
+  - answer: "Kek Nas\u0131l Kabart\u0131l\u0131r?"
+    nextQA: {fileID: 11400000, guid: 49b1de0dc3f4d3740823747dc7b68926, type: 2}
+    AnswerCallBack:
+      m_PersistentCalls:
+        m_Calls: []
+  - answer: "Bir Rehine Durumu Bildirmek \u0130stiyorum!"
+    nextQA: {fileID: 11400000, guid: edd44f18c5eb81345afcaf17c7074d0d, type: 2}
+    AnswerCallBack:
+      m_PersistentCalls:
+        m_Calls: []
+  - answer: "Ambulansa ihtiyac\u0131m var!"
+    nextQA: {fileID: 11400000, guid: 3b502c2fe805bee4a8ebb28f4306d1e9, type: 2}
+    AnswerCallBack:
+      m_PersistentCalls:
+        m_Calls: []

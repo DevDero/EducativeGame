@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e796051f6e964e34bb60b3b75a250bf3, type: 3}
+  m_Name: Phone_2.1
+  m_EditorClassIdentifier: 
+  question: Acil Durumunuz nedir?
+  answer:
+  - answer: "Di\u015F \xC7\xFCr\xFC\u011F\xFCm var."
+    nextQA: {fileID: 11400000, guid: 93deb4934a1921d4a8ba5934241dd394, type: 2}
+    AnswerCallBack:
+      m_PersistentCalls:
+        m_Calls: []
+  - answer: "Hasta bilin\xE7siz yerde yat\u0131yor, Temel ya\u015Fam deste\u011Fi
+      sa\u011Flayaca\u011F\u0131m."
+    nextQA: {fileID: 11400000, guid: 92bccb71ecc418a4e8952c1cbd33deaa, type: 2}
+    AnswerCallBack:
+      m_PersistentCalls:
+        m_Calls: []
+  - answer: "\xD6lm\xFC\u015F biri var."
+    nextQA: {fileID: 11400000, guid: 3110fe48e69279c4482640b3518c9d3f, type: 2}
+    AnswerCallBack:
+      m_PersistentCalls:
+        m_Calls: []
