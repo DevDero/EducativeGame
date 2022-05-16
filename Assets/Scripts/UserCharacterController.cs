@@ -37,7 +37,8 @@ public class UserCharacterController : MonoBehaviour
             case "Crouch":
                 poses[2].SetActive(true);
                 break;
-            case "CPR":poses[3].SetActive(true);
+            case "CPR":
+                poses[3].SetActive(true);
                 break;
         }
     }

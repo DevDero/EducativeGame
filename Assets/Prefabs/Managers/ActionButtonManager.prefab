@@ -1127,6 +1127,7 @@ MonoBehaviour:
   - {fileID: 8992409873254483282}
   - {fileID: 8992409872302920552}
   actionButtonVisible: 0
+  BreathControl: {fileID: 0}
 --- !u!1 &8992409872611949290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,7 +2842,6 @@ GameObject:
   - component: {fileID: 8992409873843886742}
   - component: {fileID: 8992409873843886737}
   - component: {fileID: 8992409873843886736}
-  - component: {fileID: 8992409873843886743}
   - component: {fileID: 8992409873843886740}
   - component: {fileID: 8992409873843886741}
   m_Layer: 5
@@ -2955,20 +2955,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8992409873843886743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8992409873843886738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd76475532520247aff6afb4deb2479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  slider: {fileID: 0}
 --- !u!114 &8992409873843886740
 MonoBehaviour:
   m_ObjectHideFlags: 0
