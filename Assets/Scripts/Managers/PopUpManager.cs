@@ -5,17 +5,26 @@ using UnityEngine;
 public class PopUpManager : MonoBehaviour
 {
     public static PopUpManager Instance;
-    [SerializeField] public static GameObject go;
+    [SerializeField] public static GameObject restart, ambulance, popquiz, warning, tips;
 
     private void Awake()
     {
         Instance = this;
-        go = gameObject.transform.GetChild(0).gameObject;
-    
+        restart = gameObject.transform.GetChild(0).gameObject;
+        popquiz = gameObject.transform.GetChild(1).gameObject;
+        warning = gameObject.transform.GetChild(2).gameObject;
+        popquiz = gameObject.transform.GetChild(3).gameObject;
+        ambulance = gameObject.transform.GetChild(4).gameObject;
+
+
     }
     public static void OpenPopUp()
     {
-        go.SetActive(true);
+        restart.SetActive(true);
+    }
+    public static void StartCountDown()
+    {
+        ambulance.SetActive(true);
     }
 }
 
