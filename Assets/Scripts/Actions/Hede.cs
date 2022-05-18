@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
-public class ActionButtonMenu : MonoBehaviour
+public class Hede:MonoBehaviour
 {
     public UserAction[] actionButtons;
 
@@ -17,9 +14,12 @@ public class ActionButtonMenu : MonoBehaviour
         actionButtons = new UserAction[gameObject.transform.childCount];
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
+            Debug.Log("hede");
+
             GameObject actionButton = transform.GetChild(i).gameObject;
             if (actionButton.TryGetComponent<UserAction>(out UserAction action))
             {
+                Debug.Log("hede");
                 actionButtons[i] = action;
             }
             else
@@ -28,6 +28,4 @@ public class ActionButtonMenu : MonoBehaviour
             }
         }
     }
-
-
 }

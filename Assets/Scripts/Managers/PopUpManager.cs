@@ -7,7 +7,7 @@ public class PopUpManager : MonoBehaviour
     public static PopUpManager Instance;
     [SerializeField] public static GameObject restart, ambulance, popquiz, warning, tips;
 
-    private void Awake()
+    private void OnEnable()
     {
         Instance = this;
         restart = gameObject.transform.GetChild(0).gameObject;
@@ -16,8 +16,8 @@ public class PopUpManager : MonoBehaviour
         popquiz = gameObject.transform.GetChild(3).gameObject;
         ambulance = gameObject.transform.GetChild(4).gameObject;
 
-
     }
+   
     public static void OpenPopUp()
     {
         restart.SetActive(true);

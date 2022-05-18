@@ -7,18 +7,10 @@ using UnityEngine.UI;
 
 public class Phone : MonoBehaviour
 {
-
-    private void OnEnable()
-    {
-        CheckButtonNecessary();
-    }
     public GameObject phoneButton;
     public int correctNumber = 112;
     [SerializeField]TextMeshProUGUI inputfield;
     [SerializeField]Animator animator;
-    bool has911Called;
-
-
 
     public void WriteFromNumPad(int i)
     {
@@ -28,6 +20,7 @@ public class Phone : MonoBehaviour
     {
         string beforeErase = inputfield.text;
 
+        if(beforeErase.Length>1)
         inputfield.text = beforeErase.Remove(beforeErase.Length - 1);
     }
     public void ClosePhone()
@@ -51,12 +44,5 @@ public class Phone : MonoBehaviour
     public void OpenConversation()
     {
         ConversationManager.Instance.StartConversation();
-    }
-    public void CheckButtonNecessary()
-    {
-        if(has911Called)
-        {
-            phoneButton.SetActive(false);
-        }
     }
 }

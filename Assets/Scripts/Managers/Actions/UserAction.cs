@@ -2,13 +2,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UserAction
+public class UserAction : MonoBehaviour
 {
     private Image image;
     protected bool isActionValidated;
     protected int repetition;
     
     protected virtual int RepetitionGoal { get; set; }
+
+    private void OnEnable()
+    {
+        CheckButtonStatus();
+    }
 
     public void IncrementRepetition()
     {
@@ -35,11 +40,12 @@ public class UserAction
     }
     public virtual void CheckGoal()
     {
-
-        Debug.Log(RepetitionGoal + "rep");
-        Debug.Log(repetition + "rep");
         if (RepetitionGoal != repetition)
             Debug.Log("A goal not meet"); 
+    }
+    public virtual void CheckButtonStatus()
+    {
+
     }
 }
 
