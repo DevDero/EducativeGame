@@ -10,6 +10,10 @@ public class ProgressManager : MonoBehaviour
     {
         Instance = this;
     }
+    private void EndLevel()
+    {
+
+    }
     public void ShowActionList()
     {
 

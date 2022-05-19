@@ -33,10 +33,12 @@ public class VideoSceneManager : MonoBehaviour
     }
     public void StartStopVideo()
     {
-        if (videoPlayer.isPlaying)
-            videoPlayer.Pause();
-        else
         videoPlayer.Play();
+
+        //if (videoPlayer.isPlaying)
+        //    videoPlayer.Pause();
+        //else
+        //videoPlayer.Play();
     }
     public void Forward()
     {

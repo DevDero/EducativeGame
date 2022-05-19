@@ -15,9 +15,7 @@ public class CPR : MonoBehaviour
         if (automatedCPR) AutoCompression();
 
         action.sliderValue = slider.value;
-        action.GetCompressionSens();
         action.StartCompressionCheck();
-
     }
 
     public void Movement()
@@ -57,7 +55,6 @@ public class CPR : MonoBehaviour
                 i++;
             }
         }
-
     }
     public void AutoCompression()
     {

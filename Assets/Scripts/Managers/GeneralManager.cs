@@ -14,6 +14,7 @@ public class GeneralManager : MonoBehaviour
     {
          Instance = this;
     }
+
     public void Teleport()
     {
         SceneManager.UnloadSceneAsync("MapScene", UnloadSceneOptions.None);
