@@ -7,20 +7,27 @@ public class CPR : MonoBehaviour
 {
     [SerializeField] Animation anim;
     [SerializeField] Slider slider;
-
+    [SerializeField] CPRAction action;
     private bool automatedCPR { get; set; }
 
     private void OnEnable()
     {
         if (automatedCPR) AutoCompression();
+
+        action.sliderValue = slider.value;
+        action.GetCompressionSens();
+        action.StartCompressionCheck();
+
     }
 
     public void Movement()
     {
-
         anim["CPR+"].time = slider.value;
         anim["CPR+"].speed = 0;
         anim.Play("CPR+");
+
+        action.sliderValue = slider.value;
+        action.GetCompressionSens();
     }
     public IEnumerator AutomatedCompression()
     {

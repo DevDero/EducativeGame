@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 66979540}
   - component: {fileID: 66979539}
   - component: {fileID: 66979544}
+  - component: {fileID: 66979546}
   - component: {fileID: 66979542}
   - component: {fileID: 66979545}
   m_Layer: 0
@@ -273,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   supportBreathAnimation: {fileID: 66979542}
   charater: {fileID: 1685469571}
+  analyse: {fileID: 66979546}
 --- !u!114 &66979545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +297,18 @@ MonoBehaviour:
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!114 &66979546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66979538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912c1bfbf9ed3124191b801465ff8e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &79817825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,7 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf34215e8bbbef42ad94e0f8043129e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animation: {fileID: 901138056}
+  anim: {fileID: 0}
 --- !u!111 &901138056
 Animation:
   m_ObjectHideFlags: 0
@@ -3561,6 +3575,7 @@ GameObject:
   - component: {fileID: 1333367162}
   - component: {fileID: 1333367160}
   - component: {fileID: 1333367164}
+  - component: {fileID: 1333367165}
   m_Layer: 0
   m_Name: CPR
   m_TagString: Untagged
@@ -3615,6 +3630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1333367160}
   slider: {fileID: 945396169}
+  action: {fileID: 1333367165}
 --- !u!212 &1333367163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3696,6 +3712,18 @@ MonoBehaviour:
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!114 &1333367165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333367158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0f272c44df88543b8634cb75abbfe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1390404008
 GameObject:
   m_ObjectHideFlags: 0
@@ -6319,6 +6347,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1685469571}
+    - target: {fileID: 8992409873118771347, guid: c5286418e5224a04fb419748555c1aab, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8992409873118771347, guid: c5286418e5224a04fb419748555c1aab, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

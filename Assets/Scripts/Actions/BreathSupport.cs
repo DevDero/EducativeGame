@@ -7,7 +7,7 @@ public class BreathSupport : MonoBehaviour
 {
     [SerializeField]Animation supportBreathAnimation;
     [SerializeField] UserCharacterController charater;
-    public BreathSupportAction analyse= new BreathSupportAction();
+    public BreathSupportAction analyse;
 
     IEnumerator SupportBreath()
     {

@@ -5,15 +5,15 @@ using UnityEngine.Events;
 
 public class BreathControl : MonoBehaviour 
 {
-    [SerializeField] Animation animation;
+    [SerializeField] Animation anim;
     [SerializeField] UnityAction action;
 
 
     IEnumerator BreathControlRoutine()
     {
-        animation.Play();
+        anim.Play();
         ActionButtonManager.Instance.HideActionMenu();
-        while (animation.isPlaying)
+        while (anim.isPlaying)
         {
             yield return null;
         }
