@@ -22,17 +22,3 @@ public class ProgressManager : MonoBehaviour
     }
 }
 
-public class AnalyseEvent
-{
-
-
-}
-public class RewatchVideo : AnalyseEvent
-{
-    
-}
-public class PopQuiz : AnalyseEvent
-{
-
-}
-

@@ -27,7 +27,7 @@ public class PopUpManager : MonoBehaviour
     }
     public void OpenQuiz()
     {
-
+        
     }
     public static void OpenEndLevel()
     {
