@@ -321,7 +321,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1557984028}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VideoSceneManager, Assembly-CSharp
         m_MethodName: StartStopVideo
         m_Mode: 1
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1557984028}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VideoSceneManager, Assembly-CSharp
         m_MethodName: Forward
         m_Mode: 1
@@ -671,6 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 904699042}
   - component: {fileID: 904699043}
+  - component: {fileID: 904699044}
   m_Layer: 5
   m_Name: Video Player
   m_TagString: Untagged
@@ -723,16 +724,30 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 0.7
-  m_Url: https://reaksiyonyazilim.com/1.mp4
+  m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &904699044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904699041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dc880d7c82319498286f6f9f23deaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://reaksiyonyazilim.com/1.mp4
+  vidplayer: {fileID: 904699043}
 --- !u!1001 &979872574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1047,7 +1062,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1557984028}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VideoSceneManager, Assembly-CSharp
         m_MethodName: Backward
         m_Mode: 1
@@ -1141,7 +1156,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1557984029}
-  - component: {fileID: 1557984028}
   m_Layer: 0
   m_Name: VideoManager
   m_TagString: Untagged
@@ -1149,23 +1163,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1557984028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557984027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6dc880d7c82319498286f6f9f23deaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 904699043}
-  videocontainer: {fileID: 11400000, guid: 9f62301f9a178a34ca692f89a035127b, type: 2}
-  forwardButton: {fileID: 686704775}
-  backwardButton: {fileID: 1183768932}
-  playstop: {fileID: 625049097}
 --- !u!4 &1557984029
 Transform:
   m_ObjectHideFlags: 0

@@ -48,11 +48,14 @@ public class GeneralManager : MonoBehaviour
     }
     public void ObligatedBreathControl()
     {
-
         ActionButtonManager.Instance.DelayedObligatedBreathControl();
     }
     public void DisableConversationButtona()
     {
         ConversationManager.Instance.DisableButtons();
+    }
+    public void PopEndLevel()
+    {
+        PopUpManager.OpenEndLevel();
     }
 }
