@@ -36,7 +36,7 @@ public class GeneralManager : MonoBehaviour
     }
     public void OpenDialogueBox()
     {
-        PopUpManager.OpenPopUp();
+        //PopUpManager.OpenPopUp();         //TODO ?mplement new managersys
     }
     public void StopConversation()
     {
@@ -53,9 +53,5 @@ public class GeneralManager : MonoBehaviour
     public void DisableConversationButtona()
     {
         ConversationManager.Instance.DisableButtons();
-    }
-    public void PopEndLevel()
-    {
-        PopUpManager.OpenEndLevel();
     }
 }
