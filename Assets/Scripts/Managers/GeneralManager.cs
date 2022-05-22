@@ -14,6 +14,7 @@ public class GeneralManager : MonoBehaviour
     {
          Instance = this;
     }
+
     public void Teleport()
     {
         SceneManager.UnloadSceneAsync("MapScene", UnloadSceneOptions.None);
@@ -47,11 +48,14 @@ public class GeneralManager : MonoBehaviour
     }
     public void ObligatedBreathControl()
     {
-
         ActionButtonManager.Instance.DelayedObligatedBreathControl();
     }
     public void DisableConversationButtona()
     {
         ConversationManager.Instance.DisableButtons();
+    }
+    public void PopEndLevel()
+    {
+        PopUpManager.OpenEndLevel();
     }
 }

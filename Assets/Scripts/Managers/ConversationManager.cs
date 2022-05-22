@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class ConversationManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI[] answers;
+    [SerializeField] Button[] buttons;
     [SerializeField] TextMeshProUGUI question;
     [SerializeField] ConversationSO conversation;
-    [SerializeField] Button[] buttons;
     [SerializeField] GameObject conversationElement;
 
 

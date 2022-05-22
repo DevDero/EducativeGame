@@ -5,9 +5,11 @@ using UnityEngine.UI;
 public class UserAction : MonoBehaviour
 {
     private Image image;
+    protected GameObject label;
     protected bool isActionValidated;
     protected int repetition;
-    
+    protected RangeInt percantage=new RangeInt(1,100);
+
     protected virtual int RepetitionGoal { get; set; }
 
     private void OnEnable()
@@ -15,7 +17,7 @@ public class UserAction : MonoBehaviour
         CheckButtonStatus();
     }
 
-    public void IncrementRepetition()
+    public virtual void AddAction()
     {
         if(ActionList.UserActionList.Count==0)
         {
@@ -38,6 +40,11 @@ public class UserAction : MonoBehaviour
             }
         }
     }
+    public virtual void CreateLabel(Transform content)
+    {
+        GameObject.Instantiate<GameObject>(label, content);
+
+    }
     public virtual void CheckGoal()
     {
         if (RepetitionGoal != repetition)
@@ -47,5 +54,9 @@ public class UserAction : MonoBehaviour
     {
 
     }
-}
+    public virtual void PopWarning()
+    {
 
+    }
+
+}
