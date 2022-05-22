@@ -39,7 +39,7 @@ public class PopQuiz : PopUps
         foreach (var item in answerButtons)
         {
             var text = item.answerTMP.text;
-            item.onClick.AddListener(()=>CheckAnswer(text));
+            item.onClick.AddListener(() => CheckAnswer(text));
             item.onClick.AddListener(() => AnimateQuiz(text,item));
             item.onClick.AddListener(DisableAllButtons);
         }
@@ -49,15 +49,9 @@ public class PopQuiz : PopUps
     {
         foreach (QuizTemplate template in quizTemplates)
         {
-            Debug.Log(quizName);
-            Debug.Log(template);
-            Debug.Log(quizName == template.ToString());
             if (quizName == template.ToString())
             {
                 _template = template;
-
-                Debug.Log(_template);
-
             }
         }
         if (_template == null)

@@ -1,17 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
 public interface IBasicPanel
 {
+    public Action OnActivation { get; set; }
 
-    public GameObject PanelItem { get;}
+    protected GameObject PanelItem { get;}
 
-    public void ActivatePanel(GameObject PanelElement)
+    public void ActivatePanel()
     {
-        PanelElement.SetActive(true);
+        PanelItem.SetActive(true);
     }
-    public void DisablePanel(GameObject PanelElement)
+    public void ActivatePanelWitchAction()
     {
-        PanelElement.SetActive(false);
-    }
+        if(OnActivation!=null)
+            OnActivation.Invoke();
 
+        PanelItem.SetActive(true);
+    }
+    public void DisablePanel()
+    {
+        PanelItem.SetActive(false);
+    }
 
 }

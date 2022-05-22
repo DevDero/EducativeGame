@@ -1,6 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PopUps : MonoBehaviour, IBasicPanel
 {
-    public GameObject PanelItem { get => transform.GetChild(0).gameObject; }
+
+    public IBasicPanel panel { get { return GetComponent<IBasicPanel>(); } }
+
+    public virtual Action OnActivation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    GameObject IBasicPanel.PanelItem => transform.GetChild(0).gameObject;
+
 }

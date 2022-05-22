@@ -54,4 +54,8 @@ public class GeneralManager : MonoBehaviour
     {
         ConversationManager.Instance.DisableButtons();
     }
+    public void SendAmbulance()
+    {
+        PopUpManager.Ambulance.panel.ActivatePanelWitchAction();
+    }
 }

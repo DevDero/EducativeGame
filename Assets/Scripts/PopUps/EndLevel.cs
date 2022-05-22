@@ -13,8 +13,4 @@ public class EndLevel : PopUps
     {
 
     }
-    public void AMCIK()
-    {
-
-    }
 }

@@ -5,27 +5,38 @@ using System.Globalization;
 using TMPro;
 using UnityEngine;
 
-public class Ambulance : MonoBehaviour
+public class Ambulance : PopUps
 {
     [SerializeField]Animation anim;
     [SerializeField] TextMeshProUGUI timeTxt;
-    TimeSpan time = new TimeSpan(0, 3, 0), deltaTime = new TimeSpan(200000);
 
-    public void ShowTimer()
+    const long _1Sec = 10000000;
+
+    TimeSpan time = new TimeSpan(0, 3, 0), deltaTime = new TimeSpan(_1Sec);
+
+    public override Action OnActivation { get => StartCountDown; }
+
+
+    private void ShowTimer()
     {
         timeTxt.text = time.ToString(@"mm\:ss");
     }
-    public void CountDown()
+    private void StartCountDown()
     {
-        if (time.Ticks > 200000)
-            time = time.Subtract(deltaTime);
-        else
-            PopUpManager.Endlevel.AMCIK();
+        StartCoroutine(CountDown());
     }
 
-    private void FixedUpdate()
-    {
-        CountDown();
-        ShowTimer();
+    private IEnumerator CountDown()
+    {        
+        while(time.Ticks > _1Sec)
+        {
+            time = time.Subtract(deltaTime);
+            ShowTimer();
+            Debug.Log(time);
+
+            yield return new WaitForSeconds(1);
+        }
+            //PopUpManager.Endlevel.;
     }
+     
 }

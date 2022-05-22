@@ -4923,7 +4923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc7714495b5a17428b778f44ee15445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phoneButton: {fileID: 0}
   correctNumber: 112
   inputfield: {fileID: 2043787516}
   animator: {fileID: 1746344851}

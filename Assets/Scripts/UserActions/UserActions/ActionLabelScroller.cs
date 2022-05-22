@@ -4,18 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 
-[CustomEditor(typeof(ActionLabelScroller))]
-public class ActionButtonScroller : Editor
-{
-    //    //public override void OnInspectorGUI()
-    //    //{
-    //    //    base.OnInspectorGUI();
-    //    //    ActionLabelScroller scroller = (ActionLabelScroller)target;
-    //    //    scroller.labels = EditorGUILayout.ObjectField(scroller.labels, typeof(GameObject), true);
-    //    //}
-}
-
-
+//[CustomEditor(typeof(ActionLabelScroller))]
+//public class ActionButtonScroller : Editor
+//{
+//    //    //public override void OnInspectorGUI()
+//    //    //{
+//    //    //    base.OnInspectorGUI();
+//    //    //    ActionLabelScroller scroller = (ActionLabelScroller)target;
+//    //    //    scroller.labels = EditorGUILayout.ObjectField(scroller.labels, typeof(GameObject), true);
+//    //    //}
+//}
 
 public class ActionLabelScroller : ScrollRect
 {

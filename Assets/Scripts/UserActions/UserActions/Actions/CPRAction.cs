@@ -114,6 +114,7 @@ public class CPRAction : UserAction
     }
     public void PulseStyleTip()
     {
+        Debug.Log(PopUpManager.Tip);
         PopUpManager.Tip.ShowTip("Kollar kitli,kuvvetli, basıyı hareketi tamamlayarak gerçekleştir!",6);
     }
     public void PulseAmountTip()

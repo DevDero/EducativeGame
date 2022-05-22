@@ -43,9 +43,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 2655898766218160789, guid: 77880d4812d27464fbac9d983721a730, type: 3}
-          m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
-          m_MethodName: StartCountDown
+        - m_Target: {fileID: 7616335457716463735, guid: 624c3b317fe1c3248a8c8f5c1b7b2dad, type: 3}
+          m_TargetAssemblyTypeName: GeneralManager, Assembly-CSharp
+          m_MethodName: SendAmbulance
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

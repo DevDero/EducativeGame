@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class Phone : MonoBehaviour
 {
-    public GameObject phoneButton;
     public int correctNumber = 112;
     [SerializeField]TextMeshProUGUI inputfield;
     [SerializeField]Animator animator;
@@ -26,7 +25,6 @@ public class Phone : MonoBehaviour
     public void ClosePhone()
     {
         animator.SetBool("IsPhoneOpen", false);
-
     }
     public void OpenPhone()
     {

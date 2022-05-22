@@ -78,7 +78,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: FlashEffect
+    path: TipPanel/BG/FlashEffect
     classID: 224
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -172,7 +172,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: FlashEffect
+    path: TipPanel/BG/FlashEffect
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []
