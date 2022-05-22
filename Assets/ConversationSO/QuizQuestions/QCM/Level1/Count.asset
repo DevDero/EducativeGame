@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 685d4da438b998d48a3e1b8b70efde50, type: 3}
   m_Name: Count
-  m_EditorClassIdentifier: Assembly-CSharp::QuizTemplate
+  m_EditorClassIdentifier: 
   _Answers:
   - 30
   - 10
-  - 40
   - 20
+  - 40
   _CorrectAnswer: 30
   _Question: "G\xF6\u011F\xFCs bas\u0131s\u0131 ard\u0131\u015F\u0131k olarak ka\xE7
     kez ger\xE7ekle\u015Fir?"

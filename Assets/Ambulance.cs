@@ -17,9 +17,10 @@ public class Ambulance : MonoBehaviour
     }
     public void CountDown()
     {
-        if (time.Ticks> 200000) 
-        time = time.Subtract(deltaTime);
-    
+        if (time.Ticks > 200000)
+            time = time.Subtract(deltaTime);
+        else
+            PopUpManager.OpenEndLevel();
     }
 
     private void FixedUpdate()

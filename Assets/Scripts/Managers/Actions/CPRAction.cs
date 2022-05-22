@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum CompressSens { up, down };
-
 public class CPRAction : UserAction
 {
     public float sliderValue { get; set; }
@@ -14,7 +12,6 @@ public class CPRAction : UserAction
 
     private delegate void EmptyHandler();
     private event EmptyHandler EmptyEvent;
-
     float lastValue;
 
     private float posStart = 0.2f, posFin = 0.4f; 
@@ -113,7 +110,7 @@ public class CPRAction : UserAction
             if (!item.isCompletePulse) failedPulse++;
         }
         if (failedPulse > 3) PulseStyleTip();
-        //if (halfCompressesList.Count < 30) PulseAmountTip();
+        if (halfCompressesList.Count < 25 || halfCompressesList.Count > 35) PopUpManager.Instance.OpenQuiz("Count");
     }
     public void PulseStyleTip()
     {
@@ -123,9 +120,10 @@ public class CPRAction : UserAction
     {
         PopUpManager.Instance.OpenTip("Doğru miktarda bası uyguladığından emin ol!");
     }
-    public void OpenQuiz()
+    public override void CreateLabel(Transform content)
     {
-        PopUpManager.Instance.OpenQuiz();
+        base.CreateLabel(content);
+        GameObject.Instantiate<GameObject>(label, content);
     }
 }
 public class HalfCompress
@@ -133,5 +131,6 @@ public class HalfCompress
     public float rpm;
     public CompressSens sens;
     public bool isCompletePulse { get; set; }
-    
 }
+
+public enum CompressSens { up, down };

@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 685d4da438b998d48a3e1b8b70efde50, type: 3}
   m_Name: BreathSupport
-  m_EditorClassIdentifier: Assembly-CSharp::QuizTemplate
+  m_EditorClassIdentifier: 
   _Answers:
   - 2
   - 4
-  - 1
+  - 5
   - 6
-  _CorrectAnswer: 2
-  _Question: "Ka\xE7 adet nefes deste\u011Fi verilir?"
+  _CorrectAnswer: "Ka\xE7 adet nefes deste\u011Fi verilir?"
+  _Question: 2
