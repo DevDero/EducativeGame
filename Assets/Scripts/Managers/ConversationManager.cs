@@ -33,28 +33,24 @@ public class ConversationManager : MonoBehaviour
     public void SetTexts()
     {
         ClearText();
-
+        var answerArray = conversation.answer;
         question.text = conversation.question;
-        for (int i = 0; i < conversation.answer.Length; i++)
+        for (int i = 0; i < answerArray.Length; i++)
         {
-            answers[i].text = conversation.answer[i].answer;
+            answers[i].text = answerArray[i].answer;
 
-            if (conversation.answer[i].AnswerCallBack.GetPersistentEventCount() > 0)
+            if (answerArray[i].AnswerCallBack.GetPersistentEventCount() > 0)
             {
-                acti += conversation.answer[i].AnswerCallBack.Invoke;
+                acti += answerArray[i].AnswerCallBack.Invoke;
                 buttons[i].onClick.AddListener(acti);
-
             }
         }
 
     }
-    //public void FlushButtonEvents()
-    //{
-    //    foreach (var button in buttons)
-    //    {
-    //        button.onClick.RemoveAllListeners();
-    //    }
-    //}
+    public void CheckButtons()
+    {
+        
+    }
     public void DisableButtons()
     {
         foreach (var button in buttons)

@@ -5,43 +5,25 @@ using UnityEngine.UI;
 using UnityEngine;
 public class PopQuiz : PopUps
 {
+    [SerializeField] private AnswerButton[] answerButtons = new AnswerButton[4];
     [SerializeField] QuizTemplate[] quizTemplates;
     [SerializeField]TextMeshProUGUI question;
-    [SerializeField] private AnswerButton[] answerButtons=new AnswerButton[4];
     [SerializeField] private Button continueButton;
+    [SerializeField] private QuizAction quizAction;
+
     private QuizTemplate _template;
     private Animation anim;
+
+
     
-    public void LaunchPopQuiz(string quizName)
-    {
-        Time.timeScale = 0;
-
-        transform.GetChild(0).gameObject.SetActive(true);
-        ChargeTemplates(quizName+" (QuizTemplate)");
-        if (_template == null)
-        {
-            Debug.LogError("Big Problem m8, empty quiz arrived");
-            transform.GetChild(0).gameObject.SetActive(false);
-        }
-        else
-            SetQuiz();
-
-        SetButtonEvents();
-
-    }
-    public void ClosePopQuiz()
-    {
-        transform.GetChild(0).gameObject.SetActive(false);
-    }
-
+    #region Private Methods
     private void SetButtonEvents()
     {
         foreach (var item in answerButtons)
         {
             var text = item.answerTMP.text;
-            item.onClick.AddListener(() => CheckAnswer(text));
             item.onClick.AddListener(() => AnimateQuiz(text,item));
-            item.onClick.AddListener(DisableAllButtons);
+            item.onClick.AddListener(OnAnswerSelected);
         }
     }
 
@@ -68,13 +50,30 @@ public class PopQuiz : PopUps
         }
     }
 
-    private bool CheckAnswer(string selectedAnswer)
+    private void OnAnswerSelected()
     {
-        DisableAllButtons();
         ShowContinueButton();
-        if (selectedAnswer == _template._CorrectAnswer) return true;
-        else return false;
+        DisableAllButtons();
+        ShowCorrectButton();
+
     }
+
+    private void AnimateQuiz(string selectedAnswer, Button button)
+    {
+        if (selectedAnswer == _template._CorrectAnswer)
+        {
+            button.image.color = Color.green;
+            quizAction.result = true;
+            quizAction.AddAction(1,100);
+        }
+        else
+        {
+            button.image.color = Color.red;
+            quizAction.result = false;
+            quizAction.AddAction(1,0);
+        }
+    }
+
     private void ShowContinueButton()
     {
         continueButton.gameObject.SetActive(true);
@@ -82,13 +81,13 @@ public class PopQuiz : PopUps
 
     private void DisableAllButtons()
     {
-        ShowCorrectButton();
 
         foreach (AnswerButton button in answerButtons)
         {
             button.interactable = false;
         }
     }
+
     private void ShowCorrectButton()
     {
         foreach (var item in answerButtons)
@@ -97,26 +96,52 @@ public class PopQuiz : PopUps
                 item.image.color = Color.green;
         }
     }
-    private void AnimateQuiz(string selectedAnswer,Button button)
-    {
-        if (selectedAnswer == _template._CorrectAnswer)
-            button.image.color = Color.green;
-        else
-            button.image.color = Color.red;
-    }
-    public void ResetQuiz()
+
+    private void ResetQuiz()
     {
         continueButton.gameObject.SetActive(false);
         ResetButtons();
         Time.timeScale = 1;
     }
+
     private void ResetButtons()
     {
-
         foreach (var item in answerButtons)
         {
+            item.onClick.RemoveAllListeners();
             item.interactable = true;
             item.image.color = new Color(255, 234, 220);
         }
     }
+    #endregion
+    
+    #region Public Methods
+    
+    public void LaunchPopQuiz(string quizName)
+    {
+        Time.timeScale = 0;
+
+        panel.ActivatePanel();
+        ChargeTemplates(quizName + " (QuizTemplate)");
+        if (_template == null)
+        {
+            Debug.LogError("Big Problem m8, empty quiz arrived");
+            transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            SetQuiz();
+            SetButtonEvents();
+        }
+
+    }
+
+    public void TerminatePopQuiz()
+    {
+        panel.DisablePanel();
+        ResetQuiz();
+    }
+    
+    #endregion
+
 }

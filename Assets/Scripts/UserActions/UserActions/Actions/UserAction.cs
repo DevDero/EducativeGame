@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class UserAction : MonoBehaviour
 {
-    private Image image;
-    protected GameObject label;
-    protected bool isActionValidated;
-    protected int repetition;
-    protected RangeInt percantage=new RangeInt(1,100);
+    public GameObject _LabelPrefab;
+
+    protected int _Repetition;
+    protected int _Score;
 
     protected virtual int RepetitionGoal { get; set; }
 
@@ -16,38 +16,28 @@ public class UserAction : MonoBehaviour
     {
         CheckButtonStatus();
     }
-
     public virtual void AddAction()
-    {
-        if(ActionList.UserActionList.Count==0)
-        {
-            CheckGoal();
-            ActionList.UserActionList.Add(this);
-        }
-        else
-        {
-            var analyser = ActionList.UserActionList.Last();
-          
-            if (analyser.GetType() == this.GetType())
-            {
-                analyser.repetition++;
-                analyser.CheckGoal();
-            }
-            else
-            {
-                CheckGoal();
-                ActionList.UserActionList.Add(this);
-            }
-        }
+    { 
     }
+    public virtual void AddAction(int repetition,int ScorePercentage)
+    {
+
+        _Repetition = repetition;
+        _Score = ScorePercentage;
+        ActionList.UserActionList.Add(this);
+    }
+
     public virtual void CreateLabel(Transform content)
     {
-        GameObject.Instantiate<GameObject>(label, content);
-
+        Debug.Log(_LabelPrefab);
+        var currentLabel = GameObject.Instantiate<GameObject>(_LabelPrefab, content).GetComponent<ActionLabel>();
+        Debug.Log(currentLabel);
+        currentLabel.FillLabel(_Repetition.ToString(), _Score.ToString());
     }
+    
     public virtual void CheckGoal()
     {
-        if (RepetitionGoal != repetition)
+        if (RepetitionGoal != _Repetition)
             Debug.Log("A goal not meet"); 
     }
     public virtual void CheckButtonStatus()

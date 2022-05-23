@@ -19,12 +19,9 @@ public class ActionLabelScroller : ScrollRect
 {
     public ActionLabel[] labels;
 
-    public void InstantiateLabels()
+    protected override void Awake()
     {
-        foreach (var action in ActionList.UserActionList)
-        {
-
-        }
+        CalculateHeight( 300+30+30 ,ActionList.UserActionList.Capacity); //spacing height and offset
     }
 
     public float CalculateHeight(float itemSizePX,int itemAmount)

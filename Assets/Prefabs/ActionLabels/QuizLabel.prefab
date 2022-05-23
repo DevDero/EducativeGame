@@ -1000,8 +1000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0e0f519383a60479d1e4d7d040c94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Repetition: {fileID: 0}
-  ActionScore: {fileID: 0}
+  Repetition: {fileID: 6480578505537752258}
+  ActionScore: {fileID: 9135355606034222772}
+  _time: {fileID: 2304997643463006767}
 --- !u!1 &8187003558422788557
 GameObject:
   m_ObjectHideFlags: 0

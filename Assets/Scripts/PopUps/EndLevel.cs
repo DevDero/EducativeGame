@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,17 @@ using UnityEngine;
 public class EndLevel : PopUps
 {
     [SerializeField] GameObject content;
+    public override Action OnActivation { get => CalculatePts; }
+
     private void Awake()
     {
-        ActionList.UserActionList[0].CreateLabel(content.transform);
     }
     private void CalculatePts()
     {
 
+        foreach (var item in ActionList.UserActionList)
+        {
+            item.CreateLabel(content.transform);
+        }
     }
 }
