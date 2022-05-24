@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PopUps : MonoBehaviour, IBasicPanel
 {
+    public bool isPanelActive { get { return transform.GetChild(0).gameObject.activeSelf; } }
 
     public IBasicPanel panel { get { return GetComponent<IBasicPanel>(); } }
 

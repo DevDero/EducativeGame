@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum AddingMod { Increment }
 
 public class UserAction : MonoBehaviour
 {
@@ -16,15 +17,41 @@ public class UserAction : MonoBehaviour
     {
         CheckButtonStatus();
     }
+
     public virtual void AddAction()
     { 
     }
+
     public virtual void AddAction(int repetition,int ScorePercentage)
     {
-
         _Repetition = repetition;
         _Score = ScorePercentage;
         ActionList.UserActionList.Add(this);
+    }
+
+    public void AddAction(int repetition, int ScorePercentage, AddingMod mod=AddingMod.Increment)
+    {
+        if (ActionList.UserActionList.Count == 0)
+        {
+            CheckGoal();
+            ActionList.UserActionList.Add(this);
+        }
+        else
+        {
+            var userAction = ActionList.UserActionList.Last();
+
+            if (userAction.GetType() == this.GetType())
+            {
+                userAction._Repetition++;
+                userAction.CheckGoal();
+            }
+            else
+            {
+                CheckGoal();
+                ActionList.UserActionList.Add(this);
+            }
+        }
+
     }
 
     public virtual void CreateLabel(Transform content)
@@ -44,6 +71,4 @@ public class UserAction : MonoBehaviour
     {
 
     }
- 
-
 }

@@ -1,6 +1,6 @@
 ﻿public class PhoneAction : UserAction
 {
-    private bool has112Called { get { return PopUpManager.Ambulance.gameObject.activeSelf; } }
+    private bool has112Called { get { return PopUpManager.AmbulanceItem.isPanelActive;} }
 
     public override void CheckButtonStatus()
     {

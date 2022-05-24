@@ -35,7 +35,7 @@ public class Ambulance : PopUps
 
             yield return new WaitForSeconds(1);
         }
-        PopUpManager.Endlevel.panel.ActivatePanelWitchAction();
+        PopUpManager.EndlevelPanel.panel.ActivatePanelWitchAction();
     }
      
 }

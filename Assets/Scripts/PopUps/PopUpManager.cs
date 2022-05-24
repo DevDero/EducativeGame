@@ -7,27 +7,27 @@ public class PopUpManager : MonoBehaviour
 {
     private static PopUpManager Instance;
     [SerializeField]
-    private static EndLevel endlevel;
+    private static EndLevel endlevelPanel;
     [SerializeField]
-    private static PopUps restart;
+    private static Restart restartPanel;
     [SerializeField]
-    private static Ambulance ambulance;
+    private static Ambulance ambulanceItem;
     [SerializeField]
-    private static PopUps warning;
+    private static PopUps warningPanel;
     [SerializeField]
-    private static TipPanel tip;
+    private static TipPanel tipPanel;
     [SerializeField]
-    private static PopQuiz popQuiz;
+    private static PopQuiz popQuizPanel;
 
-    public static EndLevel Endlevel { get { return  FindPopUp<EndLevel>(); } }
+    public static EndLevel EndlevelPanel { get { return  FindPopUp<EndLevel>(); } }
 
-    public static Ambulance Ambulance { get { return FindPopUp<Ambulance>(); } }
+    public static Ambulance AmbulanceItem { get { return FindPopUp<Ambulance>(); } }
 
-    public static TipPanel Tip { get { return FindPopUp<TipPanel>(); } }
+    public static TipPanel TipPanel { get { return FindPopUp<TipPanel>(); } }
 
-    public static PopQuiz PopQuiz { get { return FindPopUp<PopQuiz>(); } }
+    public static PopQuiz PopQuizPanel { get { return FindPopUp<PopQuiz>(); } }
 
-    //public static PopUps Restart { get { return FindPopUp<PopUps>(); } }
+    public static Restart RestartPanel { get => restartPanel; set => restartPanel = value; }
 
     /// <summary>
     /// 
@@ -42,8 +42,4 @@ public class PopUpManager : MonoBehaviour
     {
         Instance = this;
     }
-
-}
-public class hede
-{
 }

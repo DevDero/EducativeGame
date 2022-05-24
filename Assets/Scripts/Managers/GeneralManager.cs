@@ -36,7 +36,8 @@ public class GeneralManager : MonoBehaviour
     }
     public void OpenDialogueBox()
     {
-        //PopUpManager.OpenPopUp();         //TODO ?mplement new managersys
+
+        PopUpManager.RestartPanel.panel.ActivatePanelWitchAction();
     }
     public void StopConversation()
     {
@@ -56,6 +57,6 @@ public class GeneralManager : MonoBehaviour
     }
     public void SendAmbulance()
     {
-        PopUpManager.Ambulance.panel.ActivatePanelWitchAction();
+        PopUpManager.AmbulanceItem.panel.ActivatePanelWitchAction();
     }
 }
