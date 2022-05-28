@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-public class TipPanel : MonoBehaviour
+public class TipPanel : PopUps
 {
     public TextMeshProUGUI _TipTextField;
 

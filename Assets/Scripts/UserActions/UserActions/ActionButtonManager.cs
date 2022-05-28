@@ -10,7 +10,6 @@ public class ActionButtonManager : MonoBehaviour
     public bool actionButtonVisible;
     public static ActionButtonManager Instance;
 
-    public Button BreathControl;
     private void Awake()
     {
         Instance = this;
@@ -44,7 +43,7 @@ public class ActionButtonManager : MonoBehaviour
     {
         GeneralManager.Instance.StopConversation();
         ShowActionMenu();
-        BreathControl.onClick.Invoke();
+
     }
     public void DelayedObligatedBreathControl()
     {

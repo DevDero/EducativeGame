@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ActionButtonMenu : MonoBehaviour
 {
-    public UserAction[] actionButtons;
+    public UserActionButton[] actionButtons;
 
     private void Reset()
     {
@@ -13,13 +13,13 @@ public class ActionButtonMenu : MonoBehaviour
     }
     public void GetActionButtons()
     {
-        actionButtons = new UserAction[gameObject.transform.childCount];
+        actionButtons = new UserActionButton[gameObject.transform.childCount];
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
             GameObject actionButton = transform.GetChild(i).gameObject;
-            if (actionButton.TryGetComponent<UserAction>(out UserAction action))
+            if (actionButton.TryGetComponent<UserActionButton>(out UserActionButton button))
             {
-                actionButtons[i] = action;
+                actionButtons[i] = button;
             }
             else
             {

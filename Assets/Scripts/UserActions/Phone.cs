@@ -8,18 +8,21 @@ using UnityEngine.UI;
 public class Phone : MonoBehaviour
 {
     public int correctNumber = 112;
-    [SerializeField]TextMeshProUGUI inputfield;
-    [SerializeField]Animator animator;
+    [SerializeField] TextMeshProUGUI inputfield;
+    [SerializeField] Animator animator;
+    [SerializeField] GameObject wrongNumberPrefab;
+    [SerializeField] PhoneAction phoneAction;
 
     public void WriteFromNumPad(int i)
     {
+        if (inputfield.text.Length < 12) 
         inputfield.text = inputfield.text + i;
     }
     public void Erase()
     {
         string beforeErase = inputfield.text;
 
-        if(beforeErase.Length>1)
+        if(beforeErase.Length>0)
         inputfield.text = beforeErase.Remove(beforeErase.Length - 1);
     }
     public void ClosePhone()
@@ -32,15 +35,25 @@ public class Phone : MonoBehaviour
     }
     public void CallNumber()
     {
-        if( Int32.Parse(inputfield.text) == correctNumber)
+        if (Int64.Parse(inputfield.text) == correctNumber)
         {
+            phoneAction.AddAction();
             OpenConversation();
             ClosePhone();
         }
-
+        else
+            StartCoroutine(WorngNumberRoutine(3));
     }
     public void OpenConversation()
     {
         ConversationManager.Instance.StartConversation();
+    }
+    IEnumerator WorngNumberRoutine(float duration)
+    {
+        wrongNumberPrefab.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        wrongNumberPrefab.SetActive(false);
+
+        inputfield.text = "";
     }
 }

@@ -7,7 +7,7 @@ public class PopQuiz : PopUps
 {
     [SerializeField] private AnswerButton[] answerButtons = new AnswerButton[4];
     [SerializeField] QuizTemplate[] quizTemplates;
-    [SerializeField]TextMeshProUGUI question;
+    [SerializeField] TextMeshProUGUI question;
     [SerializeField] private Button continueButton;
     [SerializeField] private QuizAction quizAction;
 

@@ -35,7 +35,19 @@ MonoBehaviour:
     nextQA: {fileID: 11400000, guid: 49b1de0dc3f4d3740823747dc7b68926, type: 2}
     AnswerCallBack:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - answer: "Ambulansa ihtiyac\u0131m var!"
     nextQA: {fileID: 11400000, guid: 3b502c2fe805bee4a8ebb28f4306d1e9, type: 2}
     AnswerCallBack:

@@ -6,16 +6,14 @@ using UnityEngine;
 public class EndLevel : PopUps
 {
     [SerializeField] GameObject content;
-    public override Action OnActivation { get => CalculatePts; }
+    public override Action OnActivation { get => SetLabelList; }
 
-    private void Awake()
+    private void SetLabelList()
     {
-    }
-    private void CalculatePts()
-    {
-
         foreach (var item in ActionList.UserActionList)
         {
+            Debug.Log("büdü"+ ActionList.UserActionList.Count);
+
             item.CreateLabel(content.transform);
         }
     }

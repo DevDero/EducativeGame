@@ -90,11 +90,12 @@ public class CPRAction : UserAction
     }
     #endregion
 
-    public override void AddAction(int repetition, int ScorePercentage)
+
+    public override void AddAction()
     {
         onCompression = null;
         TransferCompressionData();
-        base.AddAction(repetition, ScorePercentage);
+        base.AddAction();
         CheckGoal();
     }
 

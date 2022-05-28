@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Ambulance : PopUps
 {
-    [SerializeField]Animation anim;
+    [SerializeField] Animation anim;
     [SerializeField] TextMeshProUGUI timeTxt;
 
     const long _1Sec = 10000000;
@@ -21,13 +21,14 @@ public class Ambulance : PopUps
     {
         timeTxt.text = time.ToString(@"mm\:ss");
     }
+
     private void StartCountDown()
     {
         StartCoroutine(CountDown());
     }
 
     private IEnumerator CountDown()
-    {        
+    {
         while(time.Ticks > _1Sec)
         {
             time = time.Subtract(deltaTime);

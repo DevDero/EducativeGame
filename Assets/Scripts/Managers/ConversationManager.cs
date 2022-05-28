@@ -7,14 +7,15 @@ using UnityEngine.UI;
 
 public class ConversationManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI[] answers;
-    [SerializeField] Button[] buttons;
-    [SerializeField] TextMeshProUGUI question;
-    [SerializeField] ConversationSO conversation;
+    [SerializeField] TextMeshProUGUI[] answersTMP;
+    [SerializeField] Button[] answerButtons;
+    [SerializeField] TextMeshProUGUI questionTMP;
+    [SerializeField] ConversationSO conversationSO;
+
     [SerializeField] GameObject conversationElement;
 
 
-    UnityAction acti;
+    UnityAction onButtonClick;
     public static ConversationManager Instance;
     private void Awake()
     {
@@ -33,27 +34,36 @@ public class ConversationManager : MonoBehaviour
     public void SetTexts()
     {
         ClearText();
-        var answerArray = conversation.answer;
-        question.text = conversation.question;
+
+        Answer[] answerArray = conversationSO.answer;
+        questionTMP.text = conversationSO.question;
+
         for (int i = 0; i < answerArray.Length; i++)
         {
-            answers[i].text = answerArray[i].answer;
-
+            answersTMP[i].text = answerArray[i].answer;
+            
             if (answerArray[i].AnswerCallBack.GetPersistentEventCount() > 0)
             {
-                acti += answerArray[i].AnswerCallBack.Invoke;
-                buttons[i].onClick.AddListener(acti);
-            }
+                onButtonClick += answerArray[i].AnswerCallBack.Invoke;
+                answerButtons[i].onClick.AddListener(onButtonClick);
+            }   
         }
-
+        for (int i = 0; i < 4; i++)
+        {
+            answerButtons[i].interactable = isButtonInteractable(i);
+        }
     }
-    public void CheckButtons()
+    
+    public bool isButtonInteractable(int index)
     {
+        if (answersTMP[index].text == "") return false;
+        else return true;
         
     }
+
     public void DisableButtons()
     {
-        foreach (var button in buttons)
+        foreach (var button in answerButtons)
         {
              button.interactable = false;
         }
@@ -69,15 +79,15 @@ public class ConversationManager : MonoBehaviour
 
     public void ClearText()
     {
-        foreach (var item in answers)
+        foreach (var item in answersTMP)
         {
             item.text = "";
         }
     }
     public void ChangeText(int nextIndex)
     {
-        if(conversation.answer[nextIndex].nextQA)
-        conversation = conversation.answer[nextIndex].nextQA;
+        if (conversationSO.answer[nextIndex].nextQA)
+            conversationSO = conversationSO.answer[nextIndex].nextQA;
 
         SetTexts();
     }

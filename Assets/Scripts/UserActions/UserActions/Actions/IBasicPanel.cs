@@ -20,7 +20,9 @@ public interface IBasicPanel
     }
     public void DisablePanel()
     {
-        OnActivation = null;
+        //if(OnActivation!=null) 
+        //    OnActivation = null;
+
         PanelItem.SetActive(false);
     }
 

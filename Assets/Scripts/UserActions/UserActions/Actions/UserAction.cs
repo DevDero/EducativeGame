@@ -10,6 +10,7 @@ public class UserAction : MonoBehaviour
 
     protected int _Repetition;
     protected int _Score;
+    private float _duration;
 
     protected virtual int RepetitionGoal { get; set; }
 
@@ -19,9 +20,10 @@ public class UserAction : MonoBehaviour
     }
 
     public virtual void AddAction()
-    { 
+    {
+        ActionList.UserActionList.Add(this);
     }
-
+ 
     public virtual void AddAction(int repetition,int ScorePercentage)
     {
         _Repetition = repetition;
@@ -56,9 +58,7 @@ public class UserAction : MonoBehaviour
 
     public virtual void CreateLabel(Transform content)
     {
-        Debug.Log(_LabelPrefab);
         var currentLabel = GameObject.Instantiate<GameObject>(_LabelPrefab, content).GetComponent<ActionLabel>();
-        Debug.Log(currentLabel);
         currentLabel.FillLabel(_Repetition.ToString(), _Score.ToString());
     }
     
@@ -69,6 +69,17 @@ public class UserAction : MonoBehaviour
     }
     public virtual void CheckButtonStatus()
     {
+    }
+    public virtual void CheckButtonStatus(UserActionButton button)
+    {
+    }
 
+    public void TickDuration()
+    {
+        _duration += Time.fixedDeltaTime;
+    }
+    private void FixedUpdate()
+    {
+        TickDuration();
     }
 }

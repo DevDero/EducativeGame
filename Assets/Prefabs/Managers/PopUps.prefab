@@ -3440,7 +3440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2101f15172a414145a02b0c0e30a6084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LabelPrefab: {fileID: 0}
+  _LabelPrefab: {fileID: 6095313859851373047, guid: f99eee98f9419784bbfa76110b4f8d12, type: 3}
 --- !u!1 &2803195481665541359
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,7 +3984,7 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1486378, y: 0.42566746}
-  m_AnchorMax: {x: 0.85073096, y: 0.6223602}
+  m_AnchorMax: {x: 0.84428495, y: 0.607071}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4120,7 +4120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.71244246}
   m_AnchorMax: {x: 0.5, y: 0.71244246}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 43}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3623854834240178594
@@ -4171,6 +4171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3623854834284863696}
   - component: {fileID: 3623854834284863698}
+  - component: {fileID: 6178459624249469416}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -4207,6 +4208,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3623854834284863703}
   m_CullTransparentMesh: 1
+--- !u!114 &6178459624249469416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623854834284863703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7884a39d0e8f6b949b99c55ac79ec4ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ResetTextField: {fileID: 3623854834087480009}
 --- !u!1 &3623854834364966067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,7 +4375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.30550358}
   m_AnchorMax: {x: 0.5, y: 0.30550358}
-  m_AnchoredPosition: {x: 0, y: 43.033203}
+  m_AnchoredPosition: {x: 0, y: 20}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3623854835146534219
@@ -5911,7 +5925,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  labels: []
 --- !u!1001 &3623854835848794275
 PrefabInstance:
   m_ObjectHideFlags: 0

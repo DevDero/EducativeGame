@@ -34,10 +34,14 @@ public class GeneralManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadSceneAsync("level1", LoadSceneMode.Single);
     }
-    public void OpenDialogueBox()
+    public void OpenRestartPopUp()
     {
-
-        PopUpManager.RestartPanel.panel.ActivatePanelWitchAction();
+        PopUpManager.RestartPanel.panel.ActivatePanel();
+    }
+    public void OpenRestartPopUp(string text)
+    {
+        PopUpManager.RestartPanel.panel.ActivatePanel();
+        PopUpManager.RestartPanel.SetText(text);
     }
     public void StopConversation()
     {

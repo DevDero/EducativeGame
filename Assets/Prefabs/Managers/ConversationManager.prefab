@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3780526566624113003}
   - component: {fileID: 1911257040}
   m_Layer: 5
-  m_Name: Text (TMP)1
+  m_Name: Answer_1 TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 4811089603439182411}
   - component: {fileID: 1509530430}
   m_Layer: 5
-  m_Name: Text (TMP)4
+  m_Name: Answer_4 TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 762624670335621284}
   - component: {fileID: 1980918953}
   m_Layer: 5
-  m_Name: Text (TMP)3
+  m_Name: Answer_3 TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,18 +1052,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aeff8cca98fa954db266b86e11d3b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answers:
+  answersTMP:
   - {fileID: 3780526566624113003}
   - {fileID: 1482542212420807394}
   - {fileID: 762624670335621284}
   - {fileID: 4811089603439182411}
-  question: {fileID: 1523014156099547745}
-  conversation: {fileID: 11400000, guid: f3e0ef2f07387664d9b562fbbb85ecb9, type: 2}
-  buttons:
+  answerButtons:
   - {fileID: 1911257040}
   - {fileID: 893414696}
   - {fileID: 1980918953}
   - {fileID: 1509530430}
+  questionTMP: {fileID: 1523014156099547745}
+  conversationSO: {fileID: 11400000, guid: 299984d17f6a0a84281bfe1330f26e94, type: 2}
   conversationElement: {fileID: 5904570042823790091}
 --- !u!1 &3919389695990750876
 GameObject:
@@ -1175,7 +1175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8201036294809187277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1213,7 +1213,7 @@ GameObject:
   - component: {fileID: 1482542212420807394}
   - component: {fileID: 893414696}
   m_Layer: 5
-  m_Name: Text (TMP)2
+  m_Name: Answer_2 TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

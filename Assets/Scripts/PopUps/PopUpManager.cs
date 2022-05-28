@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PopUpManager : MonoBehaviour 
 {
     private static PopUpManager Instance;
@@ -27,16 +26,18 @@ public class PopUpManager : MonoBehaviour
 
     public static PopQuiz PopQuizPanel { get { return FindPopUp<PopQuiz>(); } }
 
-    public static Restart RestartPanel { get => restartPanel; set => restartPanel = value; }
+    public static Restart RestartPanel { get { return FindPopUp<Restart>(); } }
+
+    public static bool PopUpManagerInitialized { get { if (Instance) return true; else return false; } }
 
     /// <summary>
     /// 
     /// </summary>
     /// <param name="Type">Deliver Following PopUp in children</param>
     /// <returns></returns>
-    private static TPopUp FindPopUp<TPopUp>()
+    private static TPopUp FindPopUp<TPopUp>() where TPopUp : PopUps
     {
-        return Instance.transform.GetComponentInChildren<TPopUp>();
+            return Instance.transform.GetComponentInChildren<TPopUp>();
     }
     private void Awake()
     {
