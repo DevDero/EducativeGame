@@ -12,7 +12,7 @@ public class Ambulance : PopUps
 
     const long _1Sec = 10000000;
 
-    TimeSpan time = new TimeSpan(0, 0, 20), deltaTime = new TimeSpan(_1Sec);
+    TimeSpan time = new TimeSpan(0, 0, 5), deltaTime = new TimeSpan(_1Sec);
 
     public override Action OnActivation { get => StartCountDown; }
 
@@ -29,11 +29,16 @@ public class Ambulance : PopUps
 
     private IEnumerator CountDown()
     {
-        while(time.Ticks > _1Sec)
+        while (time.Ticks > _1Sec )
         {
+            while(GeneralManager.Instance.hasPaused)        //pause
+            {
+
+                yield return null;
+            }
+
             time = time.Subtract(deltaTime);
             ShowTimer();
-
             yield return new WaitForSeconds(1);
         }
         PopUpManager.EndlevelPanel.panel.ActivatePanelWitchAction();

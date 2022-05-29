@@ -10,6 +10,8 @@ public class CPRAction : UserAction
 
     public float sliderValue { get; set; }
 
+    private bool automated=false;
+    public bool Automated { get => automated;}
 
     private CompressSens sens;
 
@@ -106,9 +108,7 @@ public class CPRAction : UserAction
             if (!item.isCompletePulse) failedPulse++;
         }
         _Repetition = halfCompressesList.Count;
-
         halfCompressesList.Clear();
-
     }
 
     public override void CheckGoal()

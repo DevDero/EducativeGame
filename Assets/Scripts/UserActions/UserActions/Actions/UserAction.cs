@@ -1,38 +1,49 @@
 ﻿using System.Linq;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public enum AddingMod { Increment }
-
+public enum ActionStatus { Inactive ,Started ,Finished ,Paused ,Interrupted}
 public class UserAction : MonoBehaviour
 {
     public GameObject _LabelPrefab;
-
+    
     protected int _Repetition;
     protected int _Score;
-    private float _duration;
+    protected float _Duration;
 
-    protected virtual int RepetitionGoal { get; set; }
+    public int Repetition { get => _Repetition; }
+    public float Duration { get => _Duration; }
+    public int Score { get => _Score; }
 
+    private ActionStatus actionStatus;
+    public ActionStatus ActionStatus { get => actionStatus; set => actionStatus = value; }
+
+    #region Unity Methods
     private void OnEnable()
     {
         CheckButtonStatus();
     }
+    private void FixedUpdate()
+    {
+        if(actionStatus == ActionStatus.Started)
+        Timer();
+    }
+    #endregion
 
+    #region List Methods
     public virtual void AddAction()
     {
-        ActionList.UserActionList.Add(this);
-    }
- 
-    public virtual void AddAction(int repetition,int ScorePercentage)
-    {
-        _Repetition = repetition;
-        _Score = ScorePercentage;
+        actionStatus = ActionStatus.Finished;
+        
         ActionList.UserActionList.Add(this);
     }
 
-    public void AddAction(int repetition, int ScorePercentage, AddingMod mod=AddingMod.Increment)
+    public virtual void AddAction(AddingMod mod=AddingMod.Increment)
     {
+        actionStatus = ActionStatus.Finished;
+
         if (ActionList.UserActionList.Count == 0)
         {
             CheckGoal();
@@ -53,33 +64,29 @@ public class UserAction : MonoBehaviour
                 ActionList.UserActionList.Add(this);
             }
         }
-
     }
+    #endregion
 
-    public virtual void CreateLabel(Transform content)
+    #region CommonMethods
+    public virtual void WriteLabels(Transform content,UserAction action)
     {
-        var currentLabel = GameObject.Instantiate<GameObject>(_LabelPrefab, content).GetComponent<ActionLabel>();
-        currentLabel.FillLabel(_Repetition.ToString(), _Score.ToString());
+        ActionLabel label = GameObject.Instantiate<GameObject>(_LabelPrefab, content)
+            .GetComponent<ActionLabel>();
+
+        label.Action = action;                                                                  
+        label.FillLabel();
     }
-    
     public virtual void CheckGoal()
-    {
-        if (RepetitionGoal != _Repetition)
-            Debug.Log("A goal not meet"); 
-    }
+    {}
     public virtual void CheckButtonStatus()
     {
     }
     public virtual void CheckButtonStatus(UserActionButton button)
     {
     }
-
-    public void TickDuration()
+    private void Timer()
     {
-        _duration += Time.fixedDeltaTime;
+        _Duration += Time.fixedDeltaTime;
     }
-    private void FixedUpdate()
-    {
-        TickDuration();
-    }
+    #endregion
 }

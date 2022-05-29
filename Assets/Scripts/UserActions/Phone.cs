@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Phone : MonoBehaviour
 {
     public int correctNumber = 112;
+
     [SerializeField] TextMeshProUGUI inputfield;
     [SerializeField] Animator animator;
     [SerializeField] GameObject wrongNumberPrefab;
@@ -37,7 +38,6 @@ public class Phone : MonoBehaviour
     {
         if (Int64.Parse(inputfield.text) == correctNumber)
         {
-            phoneAction.AddAction();
             OpenConversation();
             ClosePhone();
         }

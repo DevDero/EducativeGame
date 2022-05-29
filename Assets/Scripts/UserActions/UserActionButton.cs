@@ -8,6 +8,18 @@ public class UserActionButton : Button
 {
     [SerializeField] public UserAction action;
 
+    protected override void Start()
+    {
+        onClick.AddListener(StartActionStatus);
+    }
+    protected override void OnDisable()
+    {
+        onClick.RemoveListener(StartActionStatus);
+    }
+    public void StartActionStatus()
+    {
+        action.ActionStatus = ActionStatus.Started;
+    }
     protected override void OnEnable()
     {
         if (action != null)

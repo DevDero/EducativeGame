@@ -3,15 +3,24 @@ using UnityEngine.UI;
 
 public class CprLabel : ActionLabel
 {
-    [SerializeField] Image automatedOn, automatedOf;
+    [SerializeField] private Image automatedOn, automatedOf;
 
-    public void FillLabel(string repetition, string score,bool isAutomated)
+    private CPRAction CPRaction;
+    public override UserAction Action { get { return CPRaction; } set{ CPRaction = (CPRAction)value;}}
+
+
+    public override void FillLabel()
     {
-        base.FillLabel(repetition, score);
-
-        automatedOn.enabled = isAutomated;
-        automatedOf.enabled = !isAutomated;
-
+        ToggleAutomation(CPRaction.Automated);
+        Repetition.text = CPRaction.Repetition.ToString();
+        ActionScore.text = CPRaction.Score.ToString();
     }
+
+    private void ToggleAutomation(bool isCPRAutomated)
+    {
+        automatedOn.enabled = isCPRAutomated;
+        automatedOf.enabled = !isCPRAutomated;
+    }
+   
 
 }

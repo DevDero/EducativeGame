@@ -8,9 +8,16 @@ public class PhoneAction : UserAction
     {
         if (has112Called) button.gameObject.SetActive(false);   
     }
-    public override void CreateLabel(Transform content)
+    private void CheckConversation()
     {
-        base.CreateLabel(content);
+        if (ActionStatus == ActionStatus.Started && has112Called) 
+        {
+            AddAction();
+        }
     }
 
+    private void Update()
+    {
+        CheckConversation();
+    }
 }

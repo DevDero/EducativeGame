@@ -1,24 +1,12 @@
 ﻿using TMPro;
 using UnityEngine;
-public class ActionLabel : MonoBehaviour
+public abstract class ActionLabel : MonoBehaviour 
 {
-    [SerializeField] TextMeshProUGUI Repetition, ActionScore;
+    public abstract UserAction Action { get ; set ; }
 
-    public virtual void FillLabel(string repetition, string score)
-    {
-        Repetition.text = repetition;
-        ActionScore.text = score;
-    }
+    [SerializeField] protected TextMeshProUGUI Repetition;
+    [SerializeField] protected TextMeshProUGUI ActionScore;
 
-}
-public class PhoneLabel : ActionLabel
-{
-    [SerializeField] float _time;
 
-    public void FillLabel(string repetition, string score, float time)
-    {
-        base.FillLabel(repetition, score);
-        _time = time;
-    }
-
+    public abstract void FillLabel();
 }

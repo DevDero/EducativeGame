@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GeneralManager : MonoBehaviour
 {
-    public static GeneralManager Instance;
-    private int currentLevel;
 
-    public int CurrentLevel { get => currentLevel;}
+    public bool hasPaused { get; set; } = false;
+
+    public static GeneralManager Instance;
+    //private int currentLevel;
+
+    //public int CurrentLevel { get => currentLevel;}
 
     private void Awake()
     {

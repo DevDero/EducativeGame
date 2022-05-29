@@ -14,7 +14,6 @@ public class PopQuiz : PopUps
     private QuizTemplate _template;
     private Animation anim;
 
-
     
     #region Private Methods
     private void SetButtonEvents()
@@ -48,6 +47,7 @@ public class PopQuiz : PopUps
         {
             answerButtons[i].answerTMP.text = _template._Answers[i];
         }
+        quizAction.ActionStatus = ActionStatus.Started;
     }
 
     private void OnAnswerSelected()
@@ -64,14 +64,13 @@ public class PopQuiz : PopUps
         {
             button.image.color = Color.green;
             quizAction.result = true;
-            quizAction.AddAction(1,100);
         }
         else
         {
             button.image.color = Color.red;
             quizAction.result = false;
-            quizAction.AddAction(1,0);
         }
+        quizAction.AddAction();
     }
 
     private void ShowContinueButton()
@@ -101,7 +100,7 @@ public class PopQuiz : PopUps
     {
         continueButton.gameObject.SetActive(false);
         ResetButtons();
-        Time.timeScale = 1;
+        GeneralManager.Instance.hasPaused = false;
     }
 
     private void ResetButtons()
@@ -119,7 +118,8 @@ public class PopQuiz : PopUps
     
     public void LaunchPopQuiz(string quizName)
     {
-        Time.timeScale = 0;
+
+        GeneralManager.Instance.hasPaused = true;
 
         panel.ActivatePanel();
         ChargeTemplates(quizName + " (QuizTemplate)");
