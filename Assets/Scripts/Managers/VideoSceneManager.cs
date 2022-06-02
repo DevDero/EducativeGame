@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using System.Runtime.InteropServices;
 
 public class VideoSceneManager : MonoBehaviour
 {
@@ -18,9 +19,9 @@ public class VideoSceneManager : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void HTMLButtonCreate(string videoPlayerName);
 #else
-    //#pragma warning disable IDE0060 
+    #pragma warning disable IDE0060 
     private void HTMLButtonCreate(string videoPlayerName) { }
-    //#pragma warning restore IDE0060 
+    #pragma warning restore IDE0060 
 #endif
     private int videosCurrentPart;
 
@@ -31,12 +32,19 @@ public class VideoSceneManager : MonoBehaviour
     private void Update()
     {
         GetCurrentPart();
-        if (videoSessionPermission) { videoControllers.SetActive(true); }
-        else mockPlay.SetActive(true);
+    }
+    public void InitVideo()
+    {
+        videoSessionPermission = true;
+
+        videoControllers.SetActive(true);    
+        mockPlay.SetActive(false);
+        videoPlayer.url = videoUrls[0];
+        videoPlayer.Play();
     }
     private void Start()
     {
-        HTMLButtonCreate("VideoPlayer");
+        HTMLButtonCreate("Video Player");
         videoPlayer.loopPointReached += GoToMain;
     }
 
@@ -47,21 +55,20 @@ public class VideoSceneManager : MonoBehaviour
 
     public void StartStopVideo()
     {
-        videoPlayer.Play();
-        Debug.Log(videoPlayer.url);
-
-        //if (videoPlayer.isPlaying)
-        //    videoPlayer.Pause();
-        //else
-        //videoPlayer.Play();
+        if (videoPlayer.isPlaying)
+            videoPlayer.Pause();
+        else
+            videoPlayer.Play();
     }
 
     public void Forward()
     {
-        if (videosCurrentPart < videocontainer.videoSequences[0].skipPartition.Length)
-        {
-            videoPlayer.time = videocontainer.videoSequences[0].skipPartition[videosCurrentPart].endPartition;
-        }
+        videoPlayer.url = videoUrls[1];
+        videoPlayer.Play();
+        //if (videosCurrentPart < videocontainer.videoSequences[0].skipPartition.Length)
+        //{
+        //    videoPlayer.time = videocontainer.videoSequences[0].skipPartition[videosCurrentPart].endPartition;
+        //}
     }
     public void Backward()
     {

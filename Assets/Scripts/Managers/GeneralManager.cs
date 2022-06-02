@@ -37,6 +37,11 @@ public class GeneralManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadSceneAsync("level1", LoadSceneMode.Single);
     }
+    public void RestartVideoLevel()
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadSceneAsync("VideoScene", LoadSceneMode.Single);
+    }
     public void OpenRestartPopUp()
     {
         PopUpManager.RestartPanel.panel.ActivatePanel();
