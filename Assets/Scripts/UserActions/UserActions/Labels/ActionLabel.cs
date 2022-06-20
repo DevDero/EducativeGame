@@ -5,7 +5,7 @@ public abstract class ActionLabel : MonoBehaviour
     public abstract UserAction Action { get ; set ; }
 
     [SerializeField] protected TextMeshProUGUI Repetition;
-    [SerializeField] protected TextMeshProUGUI ActionScore;
+    [SerializeField] protected StarScoreElement ActionScore;
 
 
     public abstract void FillLabel();

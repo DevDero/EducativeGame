@@ -2,11 +2,17 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public enum AddingMod { Increment }
 public enum ActionStatus { Inactive ,Started ,Finished ,Paused ,Interrupted}
 public class UserAction : MonoBehaviour
 {
+    /// <summary>
+    /// This field represent actions created for typeReflection in constraints 
+    /// </summary>
+    readonly bool isMockAction = false;
+
     public GameObject _LabelPrefab;
     
     protected int _Repetition;
@@ -16,9 +22,11 @@ public class UserAction : MonoBehaviour
     public int Repetition { get => _Repetition; }
     public float Duration { get => _Duration; }
     public int Score { get => _Score; }
-
     private ActionStatus actionStatus;
     public ActionStatus ActionStatus { get => actionStatus; set => actionStatus = value; }
+
+    public virtual ActionConstraint[] Constraints { get => constraints; set => constraints = value; }
+    private ActionConstraint[] constraints;
 
     #region Unity Methods
     private void OnEnable()
@@ -77,7 +85,9 @@ public class UserAction : MonoBehaviour
         label.FillLabel();
     }
     public virtual void CheckGoal()
-    {}
+    {
+
+    }
     public virtual void CheckButtonStatus()
     {
     }

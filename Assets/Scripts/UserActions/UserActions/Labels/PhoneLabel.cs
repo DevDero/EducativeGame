@@ -10,7 +10,7 @@ public class PhoneLabel : ActionLabel
 
     public override void FillLabel()
     {
-        ActionScore.text = Action.Score.ToString();
+        ActionScore.value = Action.Score;
         _Time.text = ((int)Action.Duration).ToString();
     }
 }

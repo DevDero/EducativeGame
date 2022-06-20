@@ -41,9 +41,9 @@ public class ActionButtonManager : MonoBehaviour
     }
     private void ObligatedBreathControl()
     {
+
         GeneralManager.Instance.StopConversation();
         ShowActionMenu();
-
     }
     public void DelayedObligatedBreathControl()
     {
