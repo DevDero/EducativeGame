@@ -6,10 +6,15 @@ using UnityEngine.UI;
 public class ActionButtonMenu : MonoBehaviour
 {
     public UserActionButton[] actionButtons;
-
+    public GridLayoutGroup gridLayout;
     private void Reset()
     {
         GetActionButtons();
+    }
+
+    public void Resizemenu()
+    {
+        //gridLayout.cellSize() * actionButtons.Length;
     }
     public void GetActionButtons()
     {

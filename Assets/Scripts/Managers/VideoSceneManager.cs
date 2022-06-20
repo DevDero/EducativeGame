@@ -63,12 +63,10 @@ public class VideoSceneManager : MonoBehaviour
 
     public void Forward()
     {
-        videoPlayer.url = videoUrls[1];
-        videoPlayer.Play();
-        //if (videosCurrentPart < videocontainer.videoSequences[0].skipPartition.Length)
-        //{
-        //    videoPlayer.time = videocontainer.videoSequences[0].skipPartition[videosCurrentPart].endPartition;
-        //}
+        if (videosCurrentPart < videocontainer.videoSequences[0].skipPartition.Length)
+        {
+            videoPlayer.time = videocontainer.videoSequences[0].skipPartition[videosCurrentPart].endPartition;
+        }
     }
     public void Backward()
     {
@@ -90,9 +88,4 @@ public class VideoSceneManager : MonoBehaviour
         }
 
     }
-    private void LoadVideo()
-    {
-    }
-
-
 }
