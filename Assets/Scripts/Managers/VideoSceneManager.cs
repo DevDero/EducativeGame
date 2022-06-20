@@ -13,7 +13,6 @@ public class VideoSceneManager : MonoBehaviour
     [SerializeField] Button forwardButton, backwardButton, playstop;
     [SerializeField] string[] videoUrls;
     [SerializeField] GameObject mockPlay, videoControllers;
-    private bool videoSessionPermission;
     
 #if UNITY_WEBGL && !UNITY_EDITOR
     [DllImport("__Internal")]
@@ -35,7 +34,6 @@ public class VideoSceneManager : MonoBehaviour
     }
     public void InitVideo()
     {
-        videoSessionPermission = true;
 
         videoControllers.SetActive(true);    
         mockPlay.SetActive(false);

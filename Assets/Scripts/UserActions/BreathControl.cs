@@ -7,7 +7,11 @@ public class BreathControl : MonoBehaviour
 {
     [SerializeField] Animation anim;
     [SerializeField] UnityAction action;
-
+    private UserAction breathAction;
+    public void Start()
+    {
+        breathAction = GetComponent<UserAction>();
+    }
     IEnumerator BreathControlRoutine()
     {
         anim.Play();
@@ -21,6 +25,7 @@ public class BreathControl : MonoBehaviour
     }
     public void StartBreathControlRoutine()
     {
+        breathAction.AddAction();
         StartCoroutine(BreathControlRoutine());
     }
 

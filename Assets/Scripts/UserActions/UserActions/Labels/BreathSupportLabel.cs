@@ -8,7 +8,7 @@ public class BreathSupportLabel : ActionLabel
 
     public override void FillLabel()
     {
-        ActionScore.text = breathSupportAction.Score.ToString();
+        ActionScore.value = breathSupportAction.Score;
         Repetition.text = breathSupportAction.Repetition.ToString();
     }
 }

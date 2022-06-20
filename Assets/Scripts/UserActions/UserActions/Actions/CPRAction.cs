@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
 
 public class CPRAction : UserAction
 {
@@ -23,6 +20,7 @@ public class CPRAction : UserAction
     private float posStart = 0.2f, posFin = 0.4f;
 
     public List<HalfCompress> halfCompressesList = new List<HalfCompress>();
+
 
     #endregion
 
@@ -95,6 +93,7 @@ public class CPRAction : UserAction
 
     public override void AddAction()
     {
+
         onCompression = null;
         TransferCompressionData();
         base.AddAction();
@@ -113,9 +112,14 @@ public class CPRAction : UserAction
 
     public override void CheckGoal()
     {
-   
+  
+
         if ( halfCompressesList.Count < 25 || halfCompressesList.Count > 35) PopUpManager.PopQuizPanel.LaunchPopQuiz("Count");
         if (failedPulse > 3) PopUpManager.TipPanel.ShowTip("Kollar kitli,kuvvetli, basıyı hareketi tamamlayarak gerçekleştir!",6);
+
+        OrderBoundConstraint<QuizAction> constraint = new OrderBoundConstraint<QuizAction>
+            (ActionConstraint.OrderType.before, this);
+        constraint.CheckConstrint();
 
     }
 }

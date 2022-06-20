@@ -7,6 +7,8 @@ public class GeneralManager : MonoBehaviour
 {
 
     public bool hasPaused { get; set; } = false;
+    private float levelTime;
+    public float LevelTime { get => levelTime; set => levelTime = value; }
 
     public static GeneralManager Instance;
     //private int currentLevel;
@@ -16,6 +18,11 @@ public class GeneralManager : MonoBehaviour
     private void Awake()
     {
          Instance = this;
+    }
+    private void FixedUpdate()
+    {
+        if(hasPaused)
+        LevelTime += Time.fixedDeltaTime;
     }
 
     public void Teleport()
@@ -36,6 +43,7 @@ public class GeneralManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadSceneAsync("level1", LoadSceneMode.Single);
+        ActionList.UserActionList.Clear();
     }
     public void RestartVideoLevel()
     {

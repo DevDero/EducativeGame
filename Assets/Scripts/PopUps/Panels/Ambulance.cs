@@ -12,7 +12,7 @@ public class Ambulance : PopUps
 
     const long _1Sec = 10000000;
 
-    TimeSpan time = new TimeSpan(0, 0, 5), deltaTime = new TimeSpan(_1Sec);
+    TimeSpan time = new TimeSpan(0, 0, 3), deltaTime = new TimeSpan(_1Sec);
 
     public override Action OnActivation { get => StartCountDown; }
 
