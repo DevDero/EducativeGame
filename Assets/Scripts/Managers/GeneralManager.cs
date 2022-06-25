@@ -17,6 +17,7 @@ public class GeneralManager : MonoBehaviour
 
     private void Awake()
     {
+
          Instance = this;
     }
     private void FixedUpdate()

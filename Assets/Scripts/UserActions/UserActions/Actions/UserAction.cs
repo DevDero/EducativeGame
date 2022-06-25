@@ -14,19 +14,17 @@ public class UserAction : MonoBehaviour
     readonly bool isMockAction = false;
 
     public GameObject _LabelPrefab;
-    
-    protected int _Repetition;
-    protected int _Score;
+
+    protected int _Repetition, _Score;
     protected float _Duration;
+    private ActionStatus actionStatus;
+    private ActionConstraint[] constraints;
 
     public int Repetition { get => _Repetition; }
     public float Duration { get => _Duration; }
     public int Score { get => _Score; }
-    private ActionStatus actionStatus;
     public ActionStatus ActionStatus { get => actionStatus; set => actionStatus = value; }
-
     public virtual ActionConstraint[] Constraints { get => constraints; set => constraints = value; }
-    private ActionConstraint[] constraints;
 
     #region Unity Methods
     private void OnEnable()

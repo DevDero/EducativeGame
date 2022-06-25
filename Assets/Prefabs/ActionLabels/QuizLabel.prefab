@@ -730,8 +730,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0e0f519383a60479d1e4d7d040c94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   Repetition: {fileID: 0}
-  ActionScore: {fileID: 0}
+  ActionScore: {fileID: 2849419936852505398}
   _Time: {fileID: 9135355606034222772}
 --- !u!1 &8187003558422788557
 GameObject:
@@ -1273,6 +1279,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d6405411dd5e947a2ac8c88fb290b6, type: 3}
+--- !u!114 &2849419936852505398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 462432685272358734, guid: 18d6405411dd5e947a2ac8c88fb290b6, type: 3}
+  m_PrefabInstance: {fileID: 2441452676826934392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed182f6203720149be67c57d4198196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6609193999104659419 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8816177435678925731, guid: 18d6405411dd5e947a2ac8c88fb290b6, type: 3}

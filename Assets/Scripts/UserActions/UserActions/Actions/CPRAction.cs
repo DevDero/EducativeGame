@@ -7,7 +7,7 @@ public class CPRAction : UserAction
 
     public float sliderValue { get; set; }
 
-    private bool automated=false;
+    private bool automated = false;
     public bool Automated { get => automated;}
 
     private CompressSens sens;
@@ -24,7 +24,7 @@ public class CPRAction : UserAction
 
     #endregion
 
-    #region ActionSpesificMethods
+    #region ActionSpesific Methods
     public void StartCompressionCheck()
     {
         StartCoroutine(CompressCheck());
@@ -66,7 +66,7 @@ public class CPRAction : UserAction
 
     }
 
-    public void ValidateCompress(HalfCompress compress)
+    private void ValidateCompress(HalfCompress compress)
     {
         halfCompressesList.Add(compress);
     }
@@ -90,7 +90,6 @@ public class CPRAction : UserAction
     }
     #endregion
 
-
     public override void AddAction()
     {
 
@@ -106,20 +105,23 @@ public class CPRAction : UserAction
         {
             if (!item.isCompletePulse) failedPulse++;
         }
-        _Repetition = halfCompressesList.Count;
+        _Repetition = halfCompressesList.Count/2;
         halfCompressesList.Clear();
     }
 
     public override void CheckGoal()
     {
-  
+        string massage = "Kollar kitli,kuvvet ile, basıyı hareketi tamamlanıncaya dek gerçekleştir!";
+        QuantitativeConstraint constraint2 = new QuantitativeConstraint(1, 3, failedPulse); //Greater than 3
+        constraint2.CheckConstraint(() => PopUpManager.TipPanel.ShowTip(massage, 6)); 
 
-        if ( halfCompressesList.Count < 25 || halfCompressesList.Count > 35) PopUpManager.PopQuizPanel.LaunchPopQuiz("Count");
-        if (failedPulse > 3) PopUpManager.TipPanel.ShowTip("Kollar kitli,kuvvetli, basıyı hareketi tamamlayarak gerçekleştir!",6);
+        QuantitativeConstraint constraint1 = new QuantitativeConstraint(25, 35, halfCompressesList.Count);
+        constraint1.CheckConstraint(() => PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"));
+
 
         OrderBoundConstraint<QuizAction> constraint = new OrderBoundConstraint<QuizAction>
             (ActionConstraint.OrderType.before, this);
-        constraint.CheckConstrint();
+        constraint.CheckConstraint();
 
     }
 }

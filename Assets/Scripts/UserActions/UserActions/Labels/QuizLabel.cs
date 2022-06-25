@@ -8,6 +8,11 @@ public class QuizLabel : ActionLabel
     private QuizAction quizAction;
     public override UserAction Action { get { return quizAction; } set { quizAction = (QuizAction)value; } }
 
+    public override float CalculateScore()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void FillLabel()
     {
         ActionScore.value = Action.Score;

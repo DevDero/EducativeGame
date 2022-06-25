@@ -8,6 +8,11 @@ public class BreathControlLabel : ActionLabel
     private BreathControlAction breathControl;
     public override UserAction Action { get { return breathControl; } set { breathControl = (BreathControlAction)value; } }
 
+    public override float CalculateScore()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void FillLabel()
     {
         ActionScore.value=breathControl.Score;

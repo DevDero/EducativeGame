@@ -367,9 +367,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stars:
-  - {fileID: 3801568722471223825}
-  - {fileID: 5526958142307352855}
-  - {fileID: 3279192331907965673}
+  - {fileID: 380625379361773716}
+  - {fileID: 4209445823626578068}
+  - {fileID: 6926192566073570773}
+  value: 0
 --- !u!1 &7485275943912537943
 GameObject:
   m_ObjectHideFlags: 0

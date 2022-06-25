@@ -8,6 +8,11 @@ public class PhoneLabel : ActionLabel
     private PhoneAction phoneAction;
     public override UserAction Action { get { return phoneAction; } set { phoneAction = (PhoneAction)value; } }
 
+    public override float CalculateScore()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void FillLabel()
     {
         ActionScore.value = Action.Score;

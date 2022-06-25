@@ -36,7 +36,6 @@ public class StarScoreElement : MonoBehaviour
     }
     private void OnEnable()
     {
-        Debug.Log("hede");
         StartCoroutine(AnimateStars(value));
     }
     

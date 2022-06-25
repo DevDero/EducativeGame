@@ -8,11 +8,17 @@ public class CprLabel : ActionLabel
     private CPRAction CPRaction;
     public override UserAction Action { get { return CPRaction; } set{ CPRaction = (CPRAction)value;}}
 
+ 
+    public override float CalculateScore()
+    {
+        return curve.Evaluate(CPRaction.Repetition);
+    }
+
     public override void FillLabel()
     {
         ToggleAutomation(CPRaction.Automated);
         Repetition.text = CPRaction.Repetition.ToString();
-        ActionScore.value = CPRaction.Score;
+        ActionScore.value = CalculateScore();
     }
 
     private void ToggleAutomation(bool isCPRAutomated)
