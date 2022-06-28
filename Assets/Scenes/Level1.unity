@@ -543,6 +543,11 @@ Transform:
   m_Father: {fileID: 725741951}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &172055448 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 6251231766094125155, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+  m_PrefabInstance: {fileID: 3623854835260555572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &192778963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,18 +2561,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 66979546}
-        m_TargetAssemblyTypeName: UserAction, Assembly-CSharp
-        m_MethodName: AddAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   action: {fileID: 66979546}
 --- !u!1 &1140555858
 GameObject:
@@ -3816,6 +3809,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5068211405829786522, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799656740598401729, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+      propertyPath: animation
+      value: 
+      objectReference: {fileID: 172055448}
     - target: {fileID: 7076863348109321231, guid: 77880d4812d27464fbac9d983721a730, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

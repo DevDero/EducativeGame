@@ -31,8 +31,6 @@ public class StarScoreElement : MonoBehaviour
             i++;
 
         }
-
-
     }
     private void OnEnable()
     {

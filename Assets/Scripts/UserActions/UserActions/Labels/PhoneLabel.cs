@@ -10,12 +10,12 @@ public class PhoneLabel : ActionLabel
 
     public override float CalculateScore()
     {
-        throw new System.NotImplementedException();
+        return 1;
     }
 
     public override void FillLabel()
     {
-        ActionScore.value = Action.Score;
+        ActionScore.value = CalculateScore();
         _Time.text = ((int)Action.Duration).ToString();
     }
 }

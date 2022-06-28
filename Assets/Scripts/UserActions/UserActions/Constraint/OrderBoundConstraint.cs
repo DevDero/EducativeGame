@@ -23,7 +23,7 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
     /// </summary>
     /// <param name="ac"></param>
     /// <returns></returns>
-    public bool CompareActionType(UserAction ac)
+    private bool CompareActionType(UserAction ac)
     {
         if (ac.GetType() == TypeOfInterest)
         {
@@ -36,14 +36,66 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
     /// </summary>
     /// <param name="ac"></param>
     /// <returns></returns>
-    public bool FindAction(UserAction ac)
+    private bool FindAction(UserAction ac)
     {
-        if (Equals(targetAction))
+        if (ReferenceEquals(targetAction,ac))
             return true;
         else
             return false;
     }
-    public override void CheckConstraint()
+
+    public override void CheckConstraint(ResponseToConstraint response)
+    {
+        throw new NotImplementedException();
+    }
+    public override bool CheckConstraint(out UserAction actionOfInterest)
+    {
+        typeOfInterest = typeof(ActionType);
+
+        var actionList = ActionList.UserActionList;
+
+        if (orderType == OrderType.before)
+        {
+
+
+            if (actionList.Count > 0)
+            {
+                if (actionList.FindIndex(FindAction) < actionList.FindLastIndex(CompareActionType))
+                {
+
+                    int a = actionList.FindIndex(FindAction);
+                    int b = actionList.FindLastIndex(CompareActionType);
+
+                    actionOfInterest = null;
+                    return false;
+                }
+                else
+                {
+                    actionOfInterest = actionList[actionList.FindLastIndex(CompareActionType)];
+                    return true;
+
+                }
+            }
+            else
+            {
+                actionOfInterest = null;
+                return false;
+            }
+
+        }
+        else
+        {
+            actionOfInterest = null;
+            return false;
+        }
+        //else if (orderType == OrderType.after)
+        //{
+        //    if (actionList.Count >
+        //        ActionList.UserActionList.FindLastIndex(0, 1, x => x.Equals(typeOfInterest))) 
+        //}
+    }
+
+    public override bool CheckConstraint()
     {
         typeOfInterest = typeof(ActionType);
 
@@ -54,15 +106,30 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
 
             if (actionList.Count > 0)
             {
-                if (actionList.FindIndex(0, actionList.Count, FindAction) < actionList.FindLastIndex(CompareActionType)) ;
+                if (actionList.FindIndex(0, actionList.Count, FindAction) < actionList.FindLastIndex(CompareActionType))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+
+                }
+            }
+            else
+            {
+                return false;
             }
 
         }
-
-        else if (orderType == OrderType.after)
+        else
         {
-            if (actionList.Count >
-                ActionList.UserActionList.FindLastIndex(0, 1, x => x.Equals(typeOfInterest)));
+            return false;
         }
+        //else if (orderType == OrderType.after)
+        //{
+        //    if (actionList.Count >
+        //        ActionList.UserActionList.FindLastIndex(0, 1, x => x.Equals(typeOfInterest))) 
+        //}    }
     }
-}
+    }

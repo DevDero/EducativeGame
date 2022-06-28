@@ -2,14 +2,17 @@
 {
     private int durationBeforeAction;
 
+    public int DurationBeforeAction { get => durationBeforeAction; set => durationBeforeAction = value; }
+
     public override void AddAction()
     {
-        _Duration = durationBeforeAction;
+        GetDurationBeforeAction();
+        _Duration = DurationBeforeAction;
         base.AddAction();
     }
 
     private void GetDurationBeforeAction()
     {
-        durationBeforeAction = (int)GeneralManager.Instance.LevelTime;
+        DurationBeforeAction = (int)GeneralManager.Instance.LevelTime;
     }
 }

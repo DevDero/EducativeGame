@@ -7,12 +7,22 @@ public class BreathSupportLabel : ActionLabel
 
     public override float CalculateScore()
     {
-        throw new System.NotImplementedException();
+        int localPoints = 0;
+        breathSupportAction.CheckGoal();
+        //if (cPRAction.Repetition > 25 && cPRAction.Repetition < 35) 
+        //{
+        //    localPoints++;
+        //}
+        //if (breathSupportAction.Repetition == 2) 
+        //{
+        //    localPoints += 2;
+        //}
+        return localPoints;
     }
 
     public override void FillLabel()
     {
-        ActionScore.value = breathSupportAction.Score;
+        ActionScore.value = CalculateScore();
         Repetition.text = breathSupportAction.Repetition.ToString();
     }
 }

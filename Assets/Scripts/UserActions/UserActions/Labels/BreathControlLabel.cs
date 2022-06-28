@@ -10,12 +10,12 @@ public class BreathControlLabel : ActionLabel
 
     public override float CalculateScore()
     {
-        throw new System.NotImplementedException();
+       return curve.Evaluate(breathControl.DurationBeforeAction);
     }
 
     public override void FillLabel()
     {
-        ActionScore.value=breathControl.Score;
-        _Time.text = ((int)Action.Duration).ToString();
+        ActionScore.value = CalculateScore();
+        _Time.text = ((int)breathControl.DurationBeforeAction).ToString();
     }
 }

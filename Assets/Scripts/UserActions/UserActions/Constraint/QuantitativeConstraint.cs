@@ -44,4 +44,14 @@
         else if (_value < _upperBound)
             response = null;
     }
+
+    public override bool CheckConstraint()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override bool CheckConstraint(out UserAction actionOfInterest)
+    {
+        throw new System.NotImplementedException();
+    }
 }

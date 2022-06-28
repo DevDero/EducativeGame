@@ -10,12 +10,17 @@ public class QuizLabel : ActionLabel
 
     public override float CalculateScore()
     {
-        throw new System.NotImplementedException();
+        if (quizAction.result)
+        {
+            return curve.Evaluate(Action.Duration);
+        }
+        else
+            return 0;
     }
 
     public override void FillLabel()
     {
-        ActionScore.value = Action.Score;
+        ActionScore.value = CalculateScore();
         _Time.text = ((int)Action.Duration).ToString();
     }
 }

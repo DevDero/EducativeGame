@@ -21,6 +21,7 @@ public class CPRAction : UserAction
 
     public List<HalfCompress> halfCompressesList = new List<HalfCompress>();
 
+    string massage = "Kollar kitli, kuvvet ile, basıyı hareketi tamamlanıncaya dek gerçekleştir!";
 
     #endregion
 
@@ -88,16 +89,6 @@ public class CPRAction : UserAction
             lastValue = sliderValue;
         }
     }
-    #endregion
-
-    public override void AddAction()
-    {
-
-        onCompression = null;
-        TransferCompressionData();
-        base.AddAction();
-        CheckGoal();
-    }
 
     public void TransferCompressionData()                                   //TODO failedpulse can be mirrored here
     {
@@ -105,23 +96,31 @@ public class CPRAction : UserAction
         {
             if (!item.isCompletePulse) failedPulse++;
         }
-        _Repetition = halfCompressesList.Count/2;
+        _Repetition = halfCompressesList.Count / 2;
         halfCompressesList.Clear();
+    }
+    #endregion
+
+    public override void AddAction()
+    {
+        onCompression = null;
+        TransferCompressionData();
+        base.AddAction();
+        CheckGoal();
     }
 
     public override void CheckGoal()
     {
-        string massage = "Kollar kitli,kuvvet ile, basıyı hareketi tamamlanıncaya dek gerçekleştir!";
-        QuantitativeConstraint constraint2 = new QuantitativeConstraint(1, 3, failedPulse); //Greater than 3
-        constraint2.CheckConstraint(() => PopUpManager.TipPanel.ShowTip(massage, 6)); 
-
-        QuantitativeConstraint constraint1 = new QuantitativeConstraint(25, 35, halfCompressesList.Count);
-        constraint1.CheckConstraint(() => PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"));
+        OrderBoundConstraint<QuizAction> QuizShowConstraint = new OrderBoundConstraint<QuizAction>(ActionConstraint.OrderType.before, this);
+        QuantitativeConstraint FailCPRConstraint = new QuantitativeConstraint(3, failedPulse, QuantitativeConstraint.ConstraintSign.higherThan);
+        QuantitativeConstraint CountCPRConstraint = new QuantitativeConstraint(35, 25, Repetition);
 
 
-        OrderBoundConstraint<QuizAction> constraint = new OrderBoundConstraint<QuizAction>
-            (ActionConstraint.OrderType.before, this);
-        constraint.CheckConstraint();
+        if (QuizShowConstraint.CheckConstraint())
+        {
+            CountCPRConstraint.CheckConstraint(() => PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"));
+        }
+        FailCPRConstraint.CheckConstraint(() => PopUpManager.TipPanel.ShowTip(massage, 6));
 
     }
 }

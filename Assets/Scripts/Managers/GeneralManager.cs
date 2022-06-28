@@ -22,7 +22,7 @@ public class GeneralManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(hasPaused)
+        if(!hasPaused)
         LevelTime += Time.fixedDeltaTime;
     }
 

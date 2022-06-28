@@ -60,7 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9700ddf1b29ead241896822a9f259768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animation: {fileID: 4726010536572376739}
   _TipTextField: {fileID: 1681812577116189920}
+  tipPanel: {fileID: 4799326992873950433}
 --- !u!111 &4726010536572376739
 Animation:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class BreathSupport : MonoBehaviour
     }
     public void BreathSupportRoutine()
     {
-        analyse.AddAction();
+        analyse.AddAction(AddingMod.Increment);
         StartCoroutine(SupportBreath());
     }
 }

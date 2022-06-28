@@ -1,6 +1,15 @@
 ﻿public class BreathSupportAction : UserAction
 {
-    //protected override int RepetitionGoal { get => base.RepetitionGoal = 1;  }
+    public override void AddAction(AddingMod mod = AddingMod.Increment)
+    {
+        base.AddAction(mod);
+    }
+    public override void CheckGoal()
+    {
+        OrderBoundConstraint<CPRAction> CPRConstraint = new OrderBoundConstraint<CPRAction>(ActionConstraint.OrderType.before, this);
+        UserAction cPRAction;
 
+        CPRConstraint.CheckConstraint(out cPRAction);
+    }
 }
 

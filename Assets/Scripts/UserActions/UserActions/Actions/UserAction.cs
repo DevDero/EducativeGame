@@ -15,14 +15,13 @@ public class UserAction : MonoBehaviour
 
     public GameObject _LabelPrefab;
 
-    protected int _Repetition, _Score;
+    protected int _Repetition;
     protected float _Duration;
     private ActionStatus actionStatus;
-    private ActionConstraint[] constraints;
+    internal ActionConstraint[] constraints;
 
     public int Repetition { get => _Repetition; }
     public float Duration { get => _Duration; }
-    public int Score { get => _Score; }
     public ActionStatus ActionStatus { get => actionStatus; set => actionStatus = value; }
     public virtual ActionConstraint[] Constraints { get => constraints; set => constraints = value; }
 
@@ -52,7 +51,7 @@ public class UserAction : MonoBehaviour
 
         if (ActionList.UserActionList.Count == 0)
         {
-            CheckGoal();
+            this._Repetition++;
             ActionList.UserActionList.Add(this);
         }
         else
@@ -62,11 +61,9 @@ public class UserAction : MonoBehaviour
             if (userAction.GetType() == this.GetType())
             {
                 userAction._Repetition++;
-                userAction.CheckGoal();
             }
             else
             {
-                CheckGoal();
                 ActionList.UserActionList.Add(this);
             }
         }
