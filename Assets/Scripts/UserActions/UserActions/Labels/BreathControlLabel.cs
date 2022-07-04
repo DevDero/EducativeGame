@@ -12,9 +12,9 @@ public class BreathControlLabel : ActionLabel
     {
        return curve.Evaluate(breathControl.DurationBeforeAction);
     }
-
     public override void FillLabel()
     {
+        score =
         ActionScore.value = CalculateScore();
         _Time.text = ((int)breathControl.DurationBeforeAction).ToString();
     }

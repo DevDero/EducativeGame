@@ -19,11 +19,14 @@ public class UserAction : MonoBehaviour
     protected float _Duration;
     private ActionStatus actionStatus;
     internal ActionConstraint[] constraints;
+    private int order;
 
     public int Repetition { get => _Repetition; }
     public float Duration { get => _Duration; }
     public ActionStatus ActionStatus { get => actionStatus; set => actionStatus = value; }
     public virtual ActionConstraint[] Constraints { get => constraints; set => constraints = value; }
+
+    public int Order { get => order;}
 
     #region Unity Methods
     private void OnEnable()
@@ -41,13 +44,14 @@ public class UserAction : MonoBehaviour
     public virtual void AddAction()
     {
         actionStatus = ActionStatus.Finished;
-        
+        this.order = ActionList.UserActionList.Count;
         ActionList.UserActionList.Add(this);
     }
 
     public virtual void AddAction(AddingMod mod=AddingMod.Increment)
     {
         actionStatus = ActionStatus.Finished;
+        this.order = ActionList.UserActionList.Count;
 
         if (ActionList.UserActionList.Count == 0)
         {

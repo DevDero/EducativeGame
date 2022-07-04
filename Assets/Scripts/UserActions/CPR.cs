@@ -7,15 +7,21 @@ public class CPR : MonoBehaviour
 {
     [SerializeField] Animation anim;
     [SerializeField] Slider slider;
+    [SerializeField] Slider autoSlider;
     [SerializeField] CPRAction action;
-    private bool automatedCPR { get; set; }
+    [SerializeField] GameObject automaticWarning;
+
+    private Coroutine autoCompressionRoutine;
 
     private void OnEnable()
     {
-        if (automatedCPR) AutoCompression();
-
-        action.sliderValue = slider.value;
-        action.StartCompressionCheck();
+        if (action.Automated)
+        {
+            AutoCompression();
+            autoSlider.onValueChanged.AddListener(delegate { StopAutoCompression(); } );
+            action.sliderValue = slider.value;
+            action.StartCompressionCheck();
+        }
     }
 
     public void Movement()
@@ -58,6 +64,12 @@ public class CPR : MonoBehaviour
     }
     public void AutoCompression()
     {
-        StartCoroutine(AutomatedCompression());
+        automaticWarning.SetActive(true);
+       autoCompressionRoutine = StartCoroutine(AutomatedCompression());
+    }
+    public void StopAutoCompression()
+    {
+        automaticWarning.SetActive(false);
+        if (autoCompressionRoutine != null) StopCoroutine(autoCompressionRoutine);
     }
 }

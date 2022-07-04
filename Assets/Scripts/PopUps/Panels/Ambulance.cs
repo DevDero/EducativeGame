@@ -9,10 +9,11 @@ public class Ambulance : PopUps
 {
     [SerializeField] Animation anim;
     [SerializeField] TextMeshProUGUI timeTxt;
-
+    [SerializeField] PatientState Stretcher;
+    [SerializeField] ActionButtonManager actionButtonManager;   
     const long _1Sec = 10000000;
 
-    TimeSpan time = new TimeSpan(0, 0, 5), deltaTime = new TimeSpan(_1Sec);
+    TimeSpan time = new TimeSpan(0, 2, 0), deltaTime = new TimeSpan(_1Sec);
 
     public override Action OnActivation { get => StartCountDown; }
 
@@ -41,6 +42,11 @@ public class Ambulance : PopUps
             ShowTimer();
             yield return new WaitForSeconds(1);
         }
+        Stretcher.Activate();
+        actionButtonManager.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(3);
+
         PopUpManager.EndlevelPanel.panel.ActivatePanelWitchAction();
     }
      

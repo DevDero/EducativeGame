@@ -10,7 +10,6 @@ public class UserActionButton : Button
 
     protected override void Start()
     {
-        onClick.AddListener(StartActionStatus);
     }
     protected override void OnDisable()
     {
@@ -25,6 +24,7 @@ public class UserActionButton : Button
         if (action != null)
         {
             action.CheckButtonStatus(this);
+            onClick.AddListener(StartActionStatus);
         }
     }
 }

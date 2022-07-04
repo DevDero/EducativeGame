@@ -9,20 +9,20 @@ public class BreathSupportLabel : ActionLabel
     {
         int localPoints = 0;
         breathSupportAction.CheckGoal();
-        //if (cPRAction.Repetition > 25 && cPRAction.Repetition < 35) 
-        //{
-        //    localPoints++;
-        //}
-        //if (breathSupportAction.Repetition == 2) 
-        //{
-        //    localPoints += 2;
-        //}
+ 
+        if (breathSupportAction.Repetition == 2)
+        {
+            localPoints += 2;
+        }
+        if (breathSupportAction.hasCPRValidated) localPoints++;
+
         return localPoints;
     }
 
     public override void FillLabel()
     {
-        ActionScore.value = CalculateScore();
+        score =
+            ActionScore.value = CalculateScore();
         Repetition.text = breathSupportAction.Repetition.ToString();
     }
 }

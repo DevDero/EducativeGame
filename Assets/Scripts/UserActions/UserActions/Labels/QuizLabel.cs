@@ -20,6 +20,7 @@ public class QuizLabel : ActionLabel
 
     public override void FillLabel()
     {
+        score =
         ActionScore.value = CalculateScore();
         _Time.text = ((int)Action.Duration).ToString();
     }

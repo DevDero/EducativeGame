@@ -105,22 +105,26 @@ public class CPRAction : UserAction
     {
         onCompression = null;
         TransferCompressionData();
-        base.AddAction();
         CheckGoal();
+        base.AddAction();
     }
 
     public override void CheckGoal()
     {
-        OrderBoundConstraint<QuizAction> QuizShowConstraint = new OrderBoundConstraint<QuizAction>(ActionConstraint.OrderType.before, this);
-        QuantitativeConstraint FailCPRConstraint = new QuantitativeConstraint(3, failedPulse, QuantitativeConstraint.ConstraintSign.higherThan);
-        QuantitativeConstraint CountCPRConstraint = new QuantitativeConstraint(35, 25, Repetition);
+        OrderBoundConstraint<QuizAction> ShowQuizConstraint = new OrderBoundConstraint<QuizAction>(ActionConstraint.OrderType.before, this);
+
+        QuantitativeConstraint CPRFailConstraint = new QuantitativeConstraint(3, failedPulse, QuantitativeConstraint.ConstraintSign.higherThan);
+        QuantitativeConstraint CPRCountConstraint = new QuantitativeConstraint(35, 25, Repetition);
 
 
-        if (QuizShowConstraint.CheckConstraint())
+        if (ShowQuizConstraint.CheckConstraint())
         {
-            CountCPRConstraint.CheckConstraint(() => PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"));
+            CPRCountConstraint.CheckConstraint(delegate { PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"); automated = true; });
         }
-        FailCPRConstraint.CheckConstraint(() => PopUpManager.TipPanel.ShowTip(massage, 6));
+
+        CPRCountConstraint.CheckConstraint(() => automated = true);
+
+        CPRFailConstraint.CheckConstraint(() => PopUpManager.TipPanel.ShowTip(massage, 6));
 
     }
 }

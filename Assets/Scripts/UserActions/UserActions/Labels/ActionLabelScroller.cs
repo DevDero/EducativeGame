@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
+
 public class ActionLabelScroller : ScrollRect
 {
     protected override void OnEnable()
@@ -22,13 +24,27 @@ public class ActionLabelScroller : ScrollRect
     }
 
     public void SetLabelList()
-    {
-        Debug.Log("Label listed " + ActionList.UserActionList.Count + " items");
-        
+    {        
         foreach (UserAction item in ActionList.UserActionList)
         {
             item.WriteLabels(content, item);
         }
+
+        GameObject go = GameObject.Find("Canvas/PopUps/EndLevel/EndLevelElement/TotalScore/_TotalScore");
+
+        go.GetComponent<TextMeshProUGUI>().text = CalculateScore();
+    }
+    public string CalculateScore()
+    {
+        float totalScore = 0;
+
+        foreach (var label in content.GetComponentsInChildren<ActionLabel>())
+        {
+            totalScore += label.score;
+        }
+        totalScore =
+        (int)totalScore;
+        return totalScore.ToString();
     }
 }
 

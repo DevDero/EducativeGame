@@ -10,11 +10,16 @@ public class PhoneLabel : ActionLabel
 
     public override float CalculateScore()
     {
-        return 1;
+        float midScore = 0;
+        if (phoneAction.HasBreathChecked) midScore++;
+        if (!phoneAction.UnnecessaryCPR) midScore++;
+        midScore += curve.Evaluate(phoneAction.Duration);
+        return midScore;
     }
 
     public override void FillLabel()
     {
+        score=
         ActionScore.value = CalculateScore();
         _Time.text = ((int)Action.Duration).ToString();
     }

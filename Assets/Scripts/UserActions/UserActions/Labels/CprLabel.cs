@@ -18,7 +18,8 @@ public class CprLabel : ActionLabel
     {
         ToggleAutomation(CPRaction.Automated);
         Repetition.text = CPRaction.Repetition.ToString();
-        ActionScore.value = CalculateScore();
+        score =
+            ActionScore.value = CalculateScore();
     }
 
     private void ToggleAutomation(bool isCPRAutomated)

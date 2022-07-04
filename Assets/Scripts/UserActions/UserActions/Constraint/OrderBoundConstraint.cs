@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 /// <summary>
 /// 
 /// </summary>
@@ -32,7 +33,7 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
         else return false;
     }
     /// <summary>
-    /// Compare and return true if input action equals 
+    /// Compare and return true if input action Reference Equals  to exact on list
     /// </summary>
     /// <param name="ac"></param>
     /// <returns></returns>
@@ -53,46 +54,40 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
         typeOfInterest = typeof(ActionType);
 
         var actionList = ActionList.UserActionList;
+        actionOfInterest = null;
 
-        if (orderType == OrderType.before)
+
+        if (actionList.Count > 0)
         {
+            List<UserAction> interestList = actionList.FindAll(CompareActionType);
+
+            int targetIndex = targetAction.Order;
 
 
-            if (actionList.Count > 0)
+            if (interestList.Count > 0)
             {
-                if (actionList.FindIndex(FindAction) < actionList.FindLastIndex(CompareActionType))
+                foreach (var interest in interestList)
                 {
-
-                    int a = actionList.FindIndex(FindAction);
-                    int b = actionList.FindLastIndex(CompareActionType);
-
-                    actionOfInterest = null;
-                    return false;
-                }
-                else
-                {
-                    actionOfInterest = actionList[actionList.FindLastIndex(CompareActionType)];
-                    return true;
-
+                    
+                    if (interest.Order < targetIndex)
+                    {
+                        if (actionOfInterest != null) 
+                        {
+                            if (actionOfInterest.Order > interest.Order)
+                                actionOfInterest = interest;
+                        }
+                        else
+                        actionOfInterest = interest;
+                    }
                 }
             }
-            else
-            {
-                actionOfInterest = null;
-                return false;
-            }
+        }
 
-        }
-        else
-        {
-            actionOfInterest = null;
-            return false;
-        }
-        //else if (orderType == OrderType.after)
-        //{
-        //    if (actionList.Count >
-        //        ActionList.UserActionList.FindLastIndex(0, 1, x => x.Equals(typeOfInterest))) 
-        //}
+
+        if (actionOfInterest != null) return true;
+        else return false;
+
+
     }
 
     public override bool CheckConstraint()
@@ -100,36 +95,37 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
         typeOfInterest = typeof(ActionType);
 
         var actionList = ActionList.UserActionList;
+        UserAction actionOfInterest = null;
 
-        if (orderType == OrderType.before)
+
+        if (actionList.Count > 0)
         {
+            List<UserAction> interestList = actionList.FindAll(CompareActionType);
 
-            if (actionList.Count > 0)
+            int targetIndex = targetAction.Order;
+
+
+            if (interestList.Count > 0)
             {
-                if (actionList.FindIndex(0, actionList.Count, FindAction) < actionList.FindLastIndex(CompareActionType))
+                foreach (var interest in interestList)
                 {
-                    return false;
-                }
-                else
-                {
-                    return true;
 
+                    if (interest.Order < targetIndex)
+                    {
+                        if (actionOfInterest != null)
+                        {
+                            if (actionOfInterest.Order > interest.Order)
+                                actionOfInterest = interest;
+                        }
+                        else
+                            actionOfInterest = interest;
+                    }
                 }
             }
-            else
-            {
-                return false;
-            }
+        }
 
-        }
-        else
-        {
-            return false;
-        }
-        //else if (orderType == OrderType.after)
-        //{
-        //    if (actionList.Count >
-        //        ActionList.UserActionList.FindLastIndex(0, 1, x => x.Equals(typeOfInterest))) 
-        //}    }
+
+        if (actionOfInterest != null) return true;
+        else return false;
     }
     }

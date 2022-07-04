@@ -2,7 +2,4 @@
 {
     public bool result { get; set; }
 
-    
-
-
 }
