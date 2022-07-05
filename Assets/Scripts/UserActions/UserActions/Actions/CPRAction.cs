@@ -28,6 +28,7 @@ public class CPRAction : UserAction
     #region ActionSpesific Methods
     public void StartCompressionCheck()
     {
+        ActionStatus = ActionStatus.Started;
         StartCoroutine(CompressCheck());
     }
 
@@ -117,9 +118,9 @@ public class CPRAction : UserAction
         QuantitativeConstraint CPRCountConstraint = new QuantitativeConstraint(35, 25, Repetition);
 
 
-        if (ShowQuizConstraint.CheckConstraint())
+        if (!ShowQuizConstraint.CheckConstraint())
         {
-            CPRCountConstraint.CheckConstraint(delegate { PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"); automated = true; });
+            CPRCountConstraint.CheckConstraint(delegate { PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"); });
         }
 
         CPRCountConstraint.CheckConstraint(() => automated = true);

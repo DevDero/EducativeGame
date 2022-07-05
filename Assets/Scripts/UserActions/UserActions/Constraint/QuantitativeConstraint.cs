@@ -1,6 +1,6 @@
 ﻿public class QuantitativeConstraint : ActionConstraint
 {
-    public enum ConstraintSign { higherThan, lowerThan}
+    public enum ConstraintSign { between, higherThan, lowerThan}
     public ConstraintSign sign;
     private int _upperBound, _lowerBound;
     readonly int _value;
@@ -12,6 +12,7 @@
     /// <param name="value"></param>
     public QuantitativeConstraint(int upperBound, int lowerBound,int value)
     {
+        sign = ConstraintSign.between;
         _value = value;
         _upperBound = upperBound;
         _lowerBound = lowerBound;
@@ -37,12 +38,30 @@
     }
     public override void CheckConstraint(ResponseToConstraint response)
     {
-        if (_value < _lowerBound)
-            response.Invoke();
-        else if (_value > _upperBound)
-            response.Invoke();
-        else if (_value < _upperBound)
-            response = null;
+        if (sign == ConstraintSign.between)
+        {
+            if (_value < _lowerBound)
+                response.Invoke();
+            else if (_value > _upperBound)
+                response.Invoke();
+            else if (_value < _upperBound)
+                response = null;
+        }
+        else if (sign == ConstraintSign.lowerThan)
+        {
+            if (_value > _upperBound)
+                response.Invoke();
+            else
+                response = null;
+        }
+        else if (sign == ConstraintSign.higherThan)
+        {
+            if (_value < _lowerBound)
+                response.Invoke();
+            else
+                response = null;
+        }
+
     }
 
     public override bool CheckConstraint()

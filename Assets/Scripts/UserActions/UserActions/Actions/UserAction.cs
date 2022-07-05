@@ -11,7 +11,6 @@ public class UserAction : MonoBehaviour
     /// <summary>
     /// This field represent actions created for typeReflection in constraints 
     /// </summary>
-    readonly bool isMockAction = false;
 
     public GameObject _LabelPrefab;
 

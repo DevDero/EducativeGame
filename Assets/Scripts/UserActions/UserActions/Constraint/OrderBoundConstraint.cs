@@ -45,9 +45,14 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
             return false;
     }
 
+    
+    public void CustomInternalFunc()
+    {
+
+    }
+
     public override void CheckConstraint(ResponseToConstraint response)
     {
-        throw new NotImplementedException();
     }
     public override bool CheckConstraint(out UserAction actionOfInterest)
     {
@@ -110,11 +115,11 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
                 foreach (var interest in interestList)
                 {
 
-                    if (interest.Order < targetIndex)
+                    if (interest.Order > targetIndex)
                     {
                         if (actionOfInterest != null)
                         {
-                            if (actionOfInterest.Order > interest.Order)
+                            if (actionOfInterest.Order < interest.Order)
                                 actionOfInterest = interest;
                         }
                         else
@@ -128,4 +133,4 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
         if (actionOfInterest != null) return true;
         else return false;
     }
-    }
+}

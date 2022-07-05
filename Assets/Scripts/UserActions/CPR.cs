@@ -18,10 +18,10 @@ public class CPR : MonoBehaviour
         if (action.Automated)
         {
             AutoCompression();
-            autoSlider.onValueChanged.AddListener(delegate { StopAutoCompression(); } );
-            action.sliderValue = slider.value;
-            action.StartCompressionCheck();
+            autoSlider.onValueChanged.AddListener(delegate { StopAutoCompression(); } ); 
         }
+        action.sliderValue = slider.value;
+        action.StartCompressionCheck();
     }
 
     public void Movement()
