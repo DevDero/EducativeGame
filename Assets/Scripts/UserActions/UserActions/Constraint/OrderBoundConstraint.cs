@@ -115,16 +115,38 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
                 foreach (var interest in interestList)
                 {
 
-                    if (interest.Order > targetIndex)
+                    switch (orderType)
                     {
-                        if (actionOfInterest != null)
-                        {
-                            if (actionOfInterest.Order < interest.Order)
-                                actionOfInterest = interest;
-                        }
-                        else
-                            actionOfInterest = interest;
+                        case OrderType.before:
+                            if (interest.Order > targetIndex)
+                            {
+                                if (actionOfInterest != null)
+                                {
+                                    if (actionOfInterest.Order < interest.Order)
+                                        actionOfInterest = interest;
+                                }
+                                else
+                                    actionOfInterest = interest;
+                            }
+                            break;
+                        case OrderType.after:
+                            if (interest.Order < targetIndex)
+                            {
+                                if (actionOfInterest != null)
+                                {
+                                    if (actionOfInterest.Order > interest.Order)
+                                        actionOfInterest = interest;
+                                }
+                                else
+                                    actionOfInterest = interest;
+                            }
+                            break;
+                        case OrderType.ever:
+                            actionOfInterest = null;        // MAY RETURN AN ARRAY IF NEEDED
+                            return true;
                     }
+
+                  
                 }
             }
         }

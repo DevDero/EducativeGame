@@ -29,10 +29,10 @@
         switch (constraintSign)
         {
             case ConstraintSign.higherThan:
-                _lowerBound = Bound;
+                _upperBound = Bound;
                 break;
             case ConstraintSign.lowerThan:
-                _upperBound = Bound;
+                _lowerBound = Bound;
                 break;
         }
     }

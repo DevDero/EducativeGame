@@ -3,7 +3,7 @@
 public abstract class ActionConstraint
 {
     string suggestionText;
-    public enum OrderType { before, after };
+    public enum OrderType { before, after, ever };
 
     public delegate void ResponseToConstraint();
 

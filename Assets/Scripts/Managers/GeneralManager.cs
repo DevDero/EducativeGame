@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GeneralManager : MonoBehaviour
 {
 
+    [SerializeField] GameObject CrossPanel;
+    private string currentScene;
     public bool hasPaused { get; set; } = false;
     private float levelTime;
     public float LevelTime { get => levelTime; set => levelTime = value; }
@@ -17,8 +19,9 @@ public class GeneralManager : MonoBehaviour
 
     private void Awake()
     {
-
-         Instance = this;
+        var cPanel = GameObject.Instantiate<GameObject>(CrossPanel);
+        Object.Destroy(cPanel, 2);
+        Instance = this;
     }
     private void FixedUpdate()
     {

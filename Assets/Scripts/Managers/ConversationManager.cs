@@ -24,7 +24,6 @@ public class ConversationManager : MonoBehaviour
     public void StartConversation()
     {
         SetTexts();
-        conversationElement.SetActive(true);
     }
     public void StopConversation()
     {

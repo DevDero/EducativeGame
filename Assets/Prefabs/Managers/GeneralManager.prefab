@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd65cb42804a03546aebf90b3d4068df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CrossPanel: {fileID: 2009408980694127006, guid: 33983d7f072d7e648a758843cc47b18d, type: 3}

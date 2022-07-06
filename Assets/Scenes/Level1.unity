@@ -1440,6 +1440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GeneralManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7616335457716463735, guid: 624c3b317fe1c3248a8c8f5c1b7b2dad, type: 3}
+      propertyPath: CrossPanel
+      value: 
+      objectReference: {fileID: 2009408980694127006, guid: 33983d7f072d7e648a758843cc47b18d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 624c3b317fe1c3248a8c8f5c1b7b2dad, type: 3}
 --- !u!1 &563173592
@@ -3655,9 +3659,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068211405829786522, guid: 77880d4812d27464fbac9d983721a730, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1300
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6182419571920192033, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251231766094125155, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+      propertyPath: m_WrapMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251231766094125155, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251231766094125155, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 9bbf7d174cc40224fa79dddcbddf4d50, type: 2}
+    - target: {fileID: 6251231766094125155, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+      propertyPath: m_Animations.Array.data[2]
+      value: 
+      objectReference: {fileID: 7400000, guid: 9bbf7d174cc40224fa79dddcbddf4d50, type: 2}
     - target: {fileID: 6799656740598401729, guid: 77880d4812d27464fbac9d983721a730, type: 3}
       propertyPath: animation
       value: 

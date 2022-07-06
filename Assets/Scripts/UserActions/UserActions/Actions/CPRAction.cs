@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine;
 public class CPRAction : UserAction
 {
     #region ActionSpesific Fields
@@ -9,6 +9,7 @@ public class CPRAction : UserAction
 
     private bool automated = false;
     public bool Automated { get => automated;}
+    public int FailedPulse { get => failedPulse;}
 
     private CompressSens sens;
 
@@ -45,10 +46,12 @@ public class CPRAction : UserAction
                 if (sliderValue < posStart)
                 {
                     compress.isCompletePulse = true;
+                    Debug.Log("complete");
                 }
                 else
                 {
                     compress.isCompletePulse = false;
+                    Debug.Log("uncomplete");
                 }
             }
             if (sens == CompressSens.down)
@@ -57,10 +60,14 @@ public class CPRAction : UserAction
                 if (sliderValue > posFin)
                 {
                     compress.isCompletePulse = true;
+                    Debug.Log("complete");
+
                 }
                 else
                 {
                     compress.isCompletePulse = false;
+                    Debug.Log("uncomplete");
+
                 }
             }
             yield return null;
@@ -77,14 +84,16 @@ public class CPRAction : UserAction
     {
         if (lastValue == 0) lastValue = sliderValue;
 
-        if (sliderValue > lastValue)        //SET UP
+        if (sliderValue > lastValue)        //SET DOWN
         {
+            Debug.Log("GOİNG DOWN");
             if (sens == CompressSens.up) if (onCompression != null) onCompression.Invoke();
             sens = CompressSens.down;
             lastValue = sliderValue;
         }
         if (sliderValue < lastValue)   //SET UP
         {
+            Debug.Log("GOİNG UP");
             if (sens == CompressSens.down) if (onCompression != null) onCompression.Invoke();
             sens = CompressSens.up;
             lastValue = sliderValue;
@@ -93,6 +102,7 @@ public class CPRAction : UserAction
 
     public void TransferCompressionData()                                   //TODO failedpulse can be mirrored here
     {
+        failedPulse = 0;
         foreach (var item in halfCompressesList)
         {
             if (!item.isCompletePulse) failedPulse++;
@@ -112,9 +122,9 @@ public class CPRAction : UserAction
 
     public override void CheckGoal()
     {
-        OrderBoundConstraint<QuizAction> ShowQuizConstraint = new OrderBoundConstraint<QuizAction>(ActionConstraint.OrderType.before, this);
+        OrderBoundConstraint<QuizAction> ShowQuizConstraint = new OrderBoundConstraint<QuizAction>(ActionConstraint.OrderType.ever, this);
 
-        QuantitativeConstraint CPRFailConstraint = new QuantitativeConstraint(3, failedPulse, QuantitativeConstraint.ConstraintSign.higherThan);
+        QuantitativeConstraint CPRFailConstraint = new QuantitativeConstraint(3, FailedPulse, QuantitativeConstraint.ConstraintSign.higherThan);
         QuantitativeConstraint CPRCountConstraint = new QuantitativeConstraint(35, 25, Repetition);
 
 

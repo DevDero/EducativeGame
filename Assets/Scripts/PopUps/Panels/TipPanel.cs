@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TipPanel : PopUps
 {
-    [SerializeField] Animation animation;
+    [SerializeField] public Animation animation;
     public TextMeshProUGUI _TipTextField;
     public GameObject tipPanel;
     public void ShowTip(string text,float duration)
@@ -14,6 +14,9 @@ public class TipPanel : PopUps
     }
     private IEnumerator DisableObject(float duration)
     {
+        while (GeneralManager.Instance.hasPaused) 
+            yield return null;
+
         tipPanel.SetActive(true);
         animation.Play();
 

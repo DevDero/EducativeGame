@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e796051f6e964e34bb60b3b75a250bf3, type: 3}
+  m_Name: Conversation 01
+  m_EditorClassIdentifier: 
+  question: "E\u011Fitimden \xF6nce bir video izliyeceksin, Dikkat ile dinle ve uygulama
+    s\u0131ras\u0131nda detayl\u0131ca uygula! Y\xFCksek bir puan alman buna ba\u011Fl\u0131."
+  answer:
+  - answer: "Ben Haz\u0131r\u0131m, hadi ba\u015Flayal\u0131m!"
+    nextQA: {fileID: 11400000, guid: cff18073b0f65bf4daa0341c5e8b2421, type: 2}
+    AnswerCallBack:
+      m_PersistentCalls:
+        m_Calls: []
