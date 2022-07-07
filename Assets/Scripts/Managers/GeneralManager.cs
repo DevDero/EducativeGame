@@ -7,6 +7,7 @@ public class GeneralManager : MonoBehaviour
 {
 
     [SerializeField] GameObject CrossPanel;
+    [SerializeField] Scene VideoScene, Level1, Level2, MapScene, LoginScene;
     private string currentScene;
     public bool hasPaused { get; set; } = false;
     private float levelTime;
@@ -17,6 +18,14 @@ public class GeneralManager : MonoBehaviour
 
     //public int CurrentLevel { get => currentLevel;}
 
+    private void SetScenes()
+    {
+        VideoScene = SceneManager.GetSceneByName("VideoScene");
+        Level1 = SceneManager.GetSceneByName("level1");
+        Level2 = SceneManager.GetSceneByName("level2");
+        MapScene = SceneManager.GetSceneByName("MapScene");
+        LoginScene = SceneManager.GetSceneByName("LoginScene");
+    }
     private void Awake()
     {
         var cPanel = GameObject.Instantiate<GameObject>(CrossPanel);
@@ -29,11 +38,13 @@ public class GeneralManager : MonoBehaviour
         LevelTime += Time.fixedDeltaTime;
     }
 
-    public void Teleport()
+    public void LoadVideo(string url)
     {
-        SceneManager.UnloadSceneAsync("MapScene", UnloadSceneOptions.None);
-        SceneManager.LoadSceneAsync("level1", LoadSceneMode.Single);
-        
+        AsyncOperation level1LoadOp = SceneManager.LoadSceneAsync("level1", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("VideoScene", LoadSceneMode.Additive);
+        level1LoadOp.completed += delegate {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("level1"));
+        };
     }
     public void ReturnToCorridor()
     {
@@ -75,12 +86,20 @@ public class GeneralManager : MonoBehaviour
     {
         ActionButtonManager.Instance.DelayedObligatedBreathControl();
     }
-    public void DisableConversationButtona()
+    public void DisableConversationButton()
     {
         ConversationManager.Instance.DisableButtons();
     }
     public void SendAmbulance()
     {
         PopUpManager.AmbulanceItem.panel.ActivatePanelWitchAction();
+    }
+    public void OpenDoor1()
+    {
+        ProgressManager.Instance.OpenDoor(0);
+    }
+    public void OpenDoor2()
+    {
+        ProgressManager.Instance.OpenDoor(1);
     }
 }

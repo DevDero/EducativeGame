@@ -24,12 +24,13 @@ public class ConversationManager : MonoBehaviour
     public void StartConversation()
     {
         SetTexts();
+        conversationElement.SetActive(true);
     }
     public void StopConversation()
     {
         conversationElement.SetActive(false);
     }
-  
+
     public void SetTexts()
     {
         ClearText();
@@ -52,14 +53,12 @@ public class ConversationManager : MonoBehaviour
             answerButtons[i].interactable = isButtonInteractable(i);
         }
     }
-    
     public bool isButtonInteractable(int index)
     {
         if (answersTMP[index].text == "") return false;
         else return true;
         
     }
-
     public void DisableButtons()
     {
         foreach (var button in answerButtons)
@@ -75,7 +74,6 @@ public class ConversationManager : MonoBehaviour
     //        button.interactable = true;
     //    }
     //}
-
     public void ClearText()
     {
         foreach (var item in answersTMP)

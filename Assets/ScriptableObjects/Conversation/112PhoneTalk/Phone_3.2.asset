@@ -34,7 +34,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 7616335457716463735, guid: 624c3b317fe1c3248a8c8f5c1b7b2dad, type: 3}
           m_TargetAssemblyTypeName: GeneralManager, Assembly-CSharp
-          m_MethodName: DisableConversationButtona
+          m_MethodName: DisableConversationButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

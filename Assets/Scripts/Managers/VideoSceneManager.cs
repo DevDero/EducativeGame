@@ -5,12 +5,13 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using System.Runtime.InteropServices;
+using UnityEngine.SceneManagement;
 
 public class VideoSceneManager : MonoBehaviour
 {
     [SerializeField] VideoPlayer videoPlayer;
     [SerializeField] VideoContainer videocontainer;
-    [SerializeField] Button forwardButton, backwardButton, playstop;
+    [SerializeField] Button forwardButton, backwardButton, playstop, panicButton;
     [SerializeField] string[] videoUrls;
     [SerializeField] GameObject mockPlay, videoControllers;
     
@@ -34,21 +35,26 @@ public class VideoSceneManager : MonoBehaviour
     }
     public void InitVideo()
     {
-
         videoControllers.SetActive(true);    
         mockPlay.SetActive(false);
         videoPlayer.url = videoUrls[0];
+        videoPlayer.targetCamera = Camera.main;
         videoPlayer.Play();
+        Debug.Log(videoPlayer.url);
+
     }
     private void Start()
     {
         HTMLButtonCreate("Video Player");
-        videoPlayer.loopPointReached += GoToMain;
+        videoPlayer.loopPointReached += GoToLevelScene;
     }
-
-    public void GoToMain(VideoPlayer vp)
+    public void ActivatePanicButton()
     {
-        GeneralManager.Instance.LoadMainMenu();
+
+    }
+    public void GoToLevelScene(VideoPlayer vp)
+    {
+        SceneManager.UnloadSceneAsync("VideoScene");
     }
 
     public void StartStopVideo()

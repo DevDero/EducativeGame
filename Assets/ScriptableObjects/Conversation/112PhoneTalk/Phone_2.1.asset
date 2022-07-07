@@ -29,4 +29,16 @@ MonoBehaviour:
     nextQA: {fileID: 11400000, guid: 3110fe48e69279c4482640b3518c9d3f, type: 2}
     AnswerCallBack:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7616335457716463735, guid: 624c3b317fe1c3248a8c8f5c1b7b2dad, type: 3}
+          m_TargetAssemblyTypeName: GeneralManager, Assembly-CSharp
+          m_MethodName: ObligatedBreathControl
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

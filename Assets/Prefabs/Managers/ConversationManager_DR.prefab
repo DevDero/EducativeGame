@@ -897,6 +897,7 @@ GameObject:
   - component: {fileID: 180141903544497940}
   - component: {fileID: 6318902545940539058}
   - component: {fileID: 5167275550898119906}
+  - component: {fileID: 4863180057815353859}
   m_Layer: 5
   m_Name: ConversationManager_DR
   m_TagString: Untagged
@@ -958,6 +959,19 @@ MonoBehaviour:
   questionTMP: {fileID: 5770321556465535021}
   conversationSO: {fileID: 11400000, guid: 299984d17f6a0a84281bfe1330f26e94, type: 2}
   conversationElement: {fileID: 4145996951830650065}
+--- !u!114 &4863180057815353859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6695984744156251254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e4ba1129c5827459bbd53cbc1d3eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container: {fileID: 11400000, guid: a3b289564c3a7f24ea9688ef9fd38e7c, type: 2}
 --- !u!1 &6700382601247283610
 GameObject:
   m_ObjectHideFlags: 0

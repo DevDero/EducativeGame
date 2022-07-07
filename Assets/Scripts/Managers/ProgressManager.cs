@@ -5,8 +5,8 @@ using UnityEngine;
 public class ProgressManager : MonoBehaviour
 {
     public static ProgressManager Instance;
-    private Door[] Doors;
-    private LevelData[]levls ;
+    [SerializeField] private Door[] Doors;
+    LevelContainer container;
 
     private void Awake()
     {
@@ -17,15 +17,3 @@ public class ProgressManager : MonoBehaviour
         Doors[i].UnlockDoor();
     }
 }
-
-
-
-
-
-public class LevelData
-{
-    public float EndLevelPoint;
-    public int levelCode;
-    public enum PlayIntention { FirstPlay, RePlay, ReRun }
-}
-
