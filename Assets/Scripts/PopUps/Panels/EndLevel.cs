@@ -7,6 +7,10 @@ using UnityEngine;
 public class EndLevel : PopUps
 {
     public override Action OnActivation { get => scroller.SetLabelList;  }
-    [SerializeField] ActionLabelScroller scroller;  
+    [SerializeField] ActionLabelScroller scroller;
+    [SerializeField] TMPro.TextMeshProUGUI InfoBox;
+
+   
+
 
 }

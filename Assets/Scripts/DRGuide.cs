@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class DRGuide : MonoBehaviour
 {
-    [SerializeField]LevelContainer container;
     private void Awake()
     {
-        if (container.levelData[0].locked)
+        if (true)   //GET USER DATA INSTANCE 
             ConversationManager.Instance.StartConversation();
     }
 }

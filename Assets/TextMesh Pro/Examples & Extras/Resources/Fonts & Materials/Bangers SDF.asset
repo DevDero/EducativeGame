@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Bangers SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 5
@@ -17,6 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -117,14 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Bangers SDF
   m_EditorClassIdentifier: 
-  hashCode: 2134875903
-  material: {fileID: 2100000}
-  materialHashCode: -2079879681
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 5dd49b3eacc540408c98eee0de38e0f1
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
-  m_SourceFontFile: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
-  m_AtlasPopulationMode: 1
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: Bangers
@@ -146,6 +142,12 @@ MonoBehaviour:
     m_StrikethroughOffset: 42.4
     m_StrikethroughThickness: 0
     m_TabWidth: 28
+  m_Material: {fileID: 2100000}
+  m_SourceFontFileGUID: 5dd49b3eacc540408c98eee0de38e0f1
+  m_SourceFontFile: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+  m_SourceFontFilePath: 
+  m_AtlasPopulationMode: 1
+  InternalDynamicOS: 0
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
@@ -153,52 +155,32 @@ MonoBehaviour:
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 1
+  m_AtlasWidth: 1024
+  m_AtlasHeight: 1024
+  m_AtlasPadding: 10
+  m_AtlasRenderMode: 4165
   m_UsedGlyphRects: []
   m_FreeGlyphRects:
   - m_X: 0
     m_Y: 0
     m_Width: 1023
     m_Height: 1023
-  m_fontInfo:
-    Name: Bangers
-    PointSize: 137
-    Scale: 1
-    CharacterCount: 95
-    LineHeight: 145.6875
-    Baseline: 0
-    Ascender: 120.9375
-    CapHeight: 101.5625
-    Descender: -24.75
-    CenterLine: 0
-    SuperscriptOffset: 120.9375
-    SubscriptOffset: 0
-    SubSize: 0.5
-    Underline: -12.22
-    UnderlineThickness: 5
-    strikethrough: 40.625
-    strikethroughThickness: 0
-    TabWidth: 342.5
-    Padding: 10
-    AtlasWidth: 1024
-    AtlasHeight: 1024
-  atlas: {fileID: 0}
-  m_AtlasWidth: 1024
-  m_AtlasHeight: 1024
-  m_AtlasPadding: 10
-  m_AtlasRenderMode: 4165
-  m_glyphInfoList: []
-  m_KerningTable:
-    kerningPairs: []
   m_FontFeatureTable:
+    m_MultipleSubstitutionRecords: []
+    m_LigatureSubstitutionRecords: []
     m_GlyphPairAdjustmentRecords: []
-  fallbackFontAssets: []
+    m_MarkToBaseAdjustmentRecords: []
+    m_MarkToMarkAdjustmentRecords: []
+  m_ShouldReimportFontFeatures: 0
   m_FallbackFontAssetTable: []
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: 5dd49b3eacc540408c98eee0de38e0f1
+    faceIndex: 0
     pointSizeSamplingMode: 1
     pointSize: 144
     padding: 10
+    paddingMode: 0
     packingMode: 4
     atlasWidth: 1024
     atlasHeight: 1024
@@ -258,6 +240,33 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
+  m_fontInfo:
+    Name: Bangers
+    PointSize: 137
+    Scale: 1
+    CharacterCount: 95
+    LineHeight: 145.6875
+    Baseline: 0
+    Ascender: 120.9375
+    CapHeight: 101.5625
+    Descender: -24.75
+    CenterLine: 0
+    SuperscriptOffset: 120.9375
+    SubscriptOffset: 0
+    SubSize: 0.5
+    Underline: -12.22
+    UnderlineThickness: 5
+    strikethrough: 40.625
+    strikethroughThickness: 0
+    TabWidth: 342.5
+    Padding: 10
+    AtlasWidth: 1024
+    AtlasHeight: 1024
+  m_glyphInfoList: []
+  m_KerningTable:
+    kerningPairs: []
+  fallbackFontAssets: []
+  atlas: {fileID: 0}
 --- !u!28 &28584486757587946
 Texture2D:
   m_ObjectHideFlags: 0

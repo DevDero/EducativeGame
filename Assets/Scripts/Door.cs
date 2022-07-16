@@ -13,4 +13,9 @@ public class Door : MonoBehaviour
         doorClosed.SetActive(false);
         doorOpen.SetActive(true);
     }
+    public void LockDoor()
+    {
+        doorClosed.SetActive(true);
+        doorOpen.SetActive(false);
+    }
 }

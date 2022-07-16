@@ -47,13 +47,13 @@ mergeInto(LibraryManager.library, {
         try {
 
             firebase.auth().signInWithEmailAndPassword(parsedEmail, parsedPassword).then(function (unused) {
-                unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in for " + parsedEmail);
+                globalUnityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in for " + parsedEmail);
             }).catch(function (error) {
-                unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+                globalUnityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
             });
 
         } catch (error) {
-            unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+            globalUnityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
         }
     },
 
@@ -65,13 +65,13 @@ mergeInto(LibraryManager.library, {
         try {
             var provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithRedirect(provider).then(function (unused) {
-                unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
+                globalUnityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
             }).catch(function (error) {
-                unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+                globalUnityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
             });
 
         } catch (error) {
-            unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+            globalUnityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
         }
     },
 
@@ -83,13 +83,13 @@ mergeInto(LibraryManager.library, {
         try {
             var provider = new firebase.auth.FacebookAuthProvider();
             firebase.auth().signInWithRedirect(provider).then(function (unused) {
-                unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Facebook!");
+                globalUnityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Facebook!");
             }).catch(function (error) {
-                unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+                globalUnityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
             });
 
         } catch (error) {
-            unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+            globalUnityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
         }
     },
 
@@ -100,9 +100,9 @@ mergeInto(LibraryManager.library, {
 
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-                unityInstance.SendMessage(parsedObjectName, parsedOnUserSignedIn, JSON.stringify(user));
+                globalUnityInstance.SendMessage(parsedObjectName, parsedOnUserSignedIn, JSON.stringify(user));
             } else {
-                unityInstance.SendMessage(parsedObjectName, parsedOnUserSignedOut, "User signed out");
+                globalUnityInstance.SendMessage(parsedObjectName, parsedOnUserSignedOut, "User signed out");
             }
         });
 

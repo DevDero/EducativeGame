@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CrossPanel: {fileID: 2009408980694127006, guid: 33983d7f072d7e648a758843cc47b18d, type: 3}
+  localUserData: {fileID: 11400000, guid: cfb5b5aaeae814d4280aaa7092ef10df, type: 2}

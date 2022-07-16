@@ -5,29 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class GeneralManager : MonoBehaviour
 {
-
     [SerializeField] GameObject CrossPanel;
-    [SerializeField] Scene VideoScene, Level1, Level2, MapScene, LoginScene;
+    public static GeneralManager Instance;
+    [SerializeField] public LocalUserData localUserData;
+    /// <summary>
+    /// -1 for not a playable state.
+    /// </summary>
+    private int currentLevel;
+    public int CurrentLevel { get => currentLevel;}
+
+
     private string currentScene;
     public bool hasPaused { get; set; } = false;
     private float levelTime;
     public float LevelTime { get => levelTime; set => levelTime = value; }
 
-    public static GeneralManager Instance;
-    //private int currentLevel;
-
-    //public int CurrentLevel { get => currentLevel;}
-
-    private void SetScenes()
-    {
-        VideoScene = SceneManager.GetSceneByName("VideoScene");
-        Level1 = SceneManager.GetSceneByName("level1");
-        Level2 = SceneManager.GetSceneByName("level2");
-        MapScene = SceneManager.GetSceneByName("MapScene");
-        LoginScene = SceneManager.GetSceneByName("LoginScene");
-    }
+    string VideoScene = ("VideoScene");
+    string Level0 = ("level0");
+    string Level2 = ("level2");
+    string MapScene = ("MapScene");
+    string LoginScene = ("LoginScene");
+    
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         var cPanel = GameObject.Instantiate<GameObject>(CrossPanel);
         Object.Destroy(cPanel, 2);
         Instance = this;
@@ -40,24 +41,35 @@ public class GeneralManager : MonoBehaviour
 
     public void LoadVideo(string url)
     {
-        AsyncOperation level1LoadOp = SceneManager.LoadSceneAsync("level1", LoadSceneMode.Single);
+        AsyncOperation level0LoadOp = SceneManager.LoadSceneAsync(Level0, LoadSceneMode.Single);
         SceneManager.LoadSceneAsync("VideoScene", LoadSceneMode.Additive);
-        level1LoadOp.completed += delegate {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("level1"));
+        level0LoadOp.completed += delegate {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(Level0));
         };
     }
-    public void ReturnToCorridor()
+    public void LoadSingleSceneAsync(string scene)
     {
-        SceneManager.UnloadSceneAsync("level1", UnloadSceneOptions.None);
+        switch (scene)
+        {
+            case "level0":
+                currentLevel = 0;
+                break;
+            case "level1":
+                currentLevel = 1;
+                break;
+            default:
+                currentLevel = -1;
+                break;
+        }
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
     }
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene("MapScene", LoadSceneMode.Single);
-    }
+
     public void RestartLevel()
     {
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        SceneManager.LoadSceneAsync("level1", LoadSceneMode.Single);
+        Scene _activeScene = SceneManager.GetActiveScene();
+        SceneManager.UnloadSceneAsync(_activeScene);
+        SceneManager.LoadSceneAsync(_activeScene.name, LoadSceneMode.Single);
         ActionList.UserActionList.Clear();
     }
     public void RestartVideoLevel()
@@ -94,12 +106,9 @@ public class GeneralManager : MonoBehaviour
     {
         PopUpManager.AmbulanceItem.panel.ActivatePanelWitchAction();
     }
-    public void OpenDoor1()
+    public void OpenDoor(int levelNumber)
     {
-        ProgressManager.Instance.OpenDoor(0);
+        ProgressManager.Instance.OpenDoor(levelNumber);
     }
-    public void OpenDoor2()
-    {
-        ProgressManager.Instance.OpenDoor(1);
-    }
+ 
 }
