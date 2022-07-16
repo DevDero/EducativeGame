@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using Newtonsoft.Json;
 
 public class ActionLabelScroller : ScrollRect
-{
+{    int endLevelScore;
+
     protected override void OnEnable()
     {
         ResizeContentTab(CalculateHeight(300 + 30 ,
@@ -32,9 +34,9 @@ public class ActionLabelScroller : ScrollRect
 
         GameObject go = GameObject.Find("Canvas/PopUps/EndLevel/EndLevelElement/TotalScore/_TotalScore");
 
-        go.GetComponent<TextMeshProUGUI>().text = CalculateScore();
+        go.GetComponent<TextMeshProUGUI>().text = CalculateTotalScore();
     }
-    public string CalculateScore()
+    public string CalculateTotalScore()
     {
         float totalScore = 0;
 
@@ -44,7 +46,28 @@ public class ActionLabelScroller : ScrollRect
         }
         totalScore =
         (int)totalScore;
+
+        endLevelScore = (int)totalScore;
+    
         return totalScore.ToString();
+
+    }
+    public void SubmissonSucces()
+    {
+        Debug.Log("succes");
+
+    }
+    public void SubmissionError()
+    {
+        Debug.Log("Failed");
+    
+    }
+    public void SubmitTotalPoints()
+    {
+        if (GeneralManager.Instance.localUserData.CompareValeus(GeneralManager.Instance.CurrentLevel, endLevelScore))
+            FirebaseDatabase.SetJSON("users/" + GeneralManager.Instance.localUserData.uid, JsonConvert.SerializeObject(this), gameObject.name, "SubmissonSucces", "SubmissionError");
+
+
     }
 }
 
