@@ -36,7 +36,7 @@ public class CPR : MonoBehaviour
     public IEnumerator AutomatedCompression()
     {
 
-        for (int i = 0; i < 30;)
+        for (int i = 0; i < 60;)
         {
             if (i % 2 == 0)
             {
@@ -44,7 +44,7 @@ public class CPR : MonoBehaviour
                 do
                 {
                     yield return null;
-                    anim["CPR+"].speed = 0.7f;
+                    anim["CPR+"].speed = 0.9f;
                 }
                 while (anim.isPlaying);
                 i++;
@@ -55,7 +55,7 @@ public class CPR : MonoBehaviour
                 do
                 {
                     yield return null;
-                    anim["CPR-"].speed = 0.7f;
+                    anim["CPR-"].speed = 0.9f;
                 }
                 while (anim.isPlaying);
                 i++;

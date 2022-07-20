@@ -29,7 +29,7 @@ public class ProgressManager : MonoBehaviour
     //}
     public void OpenDoor(int i)
     {
-        GeneralManager.Instance.localUserData.levelData[i].playStatus = PlayStatus.Unlocked;
+        LocalUserData.levelDatas[i].playStatus = PlayStatus.Unlocked;
         Doors[i].UnlockDoor();
     }
 }

@@ -106,5 +106,9 @@ mergeInto(LibraryManager.library, {
             }
         });
 
-    }
+    },
+
+    SignOutUser: function(){
+    firebase.auth().signOut();
+    },
 });

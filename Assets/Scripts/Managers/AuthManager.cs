@@ -24,20 +24,22 @@ public class AuthManager : MonoBehaviour
     {
         FirebaseDatabase.GetJSON("users/" + uid, "AuthManager", "CreateNewUser", "DisplayErrorObject");
     }
-    private void AuthSuccesfull(string info)
+    private void AuthSuccesfull()
     {
         GeneralManager.Instance.LoadSingleSceneAsync("MapScene");
     }
-
     private void CreateNewUser(string currentData)
     {
         if(currentData == null || currentData == "null" || currentData == "" )
         {
-            var localUserData = GeneralManager.Instance.localUserData;
-            localUserData.username = name.text;
-            localUserData.uid = uid;
+            LocalUserData.InitLevelDatas();
+            LocalUserData.username = name.text;
+            LocalUserData.uid = uid;
 
-                var userDataTemplate = JsonConvert.SerializeObject(localUserData);
+            var EmptyUserData = new UserData();
+
+            var userDataTemplate = JsonConvert.SerializeObject(EmptyUserData);
+
             FirebaseDatabase.SetJSON("users/" + uid, userDataTemplate, gameObject.name, "AuthSuccesfull", "DisplayErrorObject");
         }
         else
@@ -45,11 +47,9 @@ public class AuthManager : MonoBehaviour
             Debug.Log("UserExists!");
             try
             {
-                var existingdata = JsonConvert.DeserializeObject<LocalUserData>(currentData);
-                GeneralManager.Instance.localUserData = existingdata;
-                Debug.Log(existingdata+"existingdata");
-                AuthSuccesfull(JsonConvert.SerializeObject(GeneralManager.Instance.localUserData));
-
+                var existingdata = JsonConvert.DeserializeObject<UserData>(currentData);
+                LocalUserData.UpdateLocalScoreData(existingdata);
+                AuthSuccesfull();
             }
             catch
             {

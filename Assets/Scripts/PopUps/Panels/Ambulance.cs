@@ -13,7 +13,7 @@ public class Ambulance : PopUps
     [SerializeField] ActionButtonManager actionButtonManager;   
     const long _1Sec = 10000000;
 
-    TimeSpan time = new TimeSpan(0, 2, 0), deltaTime = new TimeSpan(_1Sec);
+    TimeSpan time = new TimeSpan(0, 0, 15), deltaTime = new TimeSpan(_1Sec);
 
     public override Action OnActivation { get => StartCountDown; }
 

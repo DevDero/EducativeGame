@@ -3596,6 +3596,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2191964499498891723, guid: 77880d4812d27464fbac9d983721a730, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SubmitPointData
+      objectReference: {fileID: 0}
     - target: {fileID: 2920163331013870369, guid: 77880d4812d27464fbac9d983721a730, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

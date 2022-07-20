@@ -2,56 +2,77 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Level", menuName = "ScriptableObjects/LocalUserData", order = 3)]
-public class LocalUserData : ScriptableObject
+//[CreateAssetMenu(fileName = "Level", menuName = "ScriptableObjects/LocalUserData", order = 3)]
+public static class LocalUserData 
 {
-    public LevelData[] levelData;
-    public String username;
-    public int totalScore;
-    public string uid;
-    public bool Synced;
+    public static LevelData[] levelDatas = new LevelData[2];
+    public static String username;
+    public static int totalScore;
+    public static string uid;
+    public static bool Synced;
 
-    public void UpdateLocalUserData(UserData userData)
+    public static void InitLevelDatas()
     {
-        this.levelData = userData.levelDatas;
-        this.username = userData.username;
-        this.totalScore = (int)userData.totalPoint;
+        levelDatas[0] = new LevelData(0, 00, PlayStatus.Locked);
+        levelDatas[1] = new LevelData(0, 01, PlayStatus.Locked);
+        totalScore = 0;
     }
 
-    public bool CompareValeus(int level,float value)
+    public static void UpdateLocalScoreData(UserData userData)
     {
-        if (levelData[level].EndLevelPoint > value)
+        levelDatas = userData.scoreData.levelDatas;
+        totalScore = userData.scoreData.totalScore;
+    }
+    public static string LocalScoreDataToJson()
+    {
+        UserData tempData = new UserData(totalScore, levelDatas);
+
+        return JsonConvert.SerializeObject(tempData);
+    }
+
+    public static bool CompareValeus(int level,int value)
+    {
+        Debug.Log(levelDatas[level].EndLevelPoint+"levelpoint");
+        Debug.Log(value+"val");
+        Debug.Log(levelDatas[level].EndLevelPoint < value);
+        if (levelDatas[level].EndLevelPoint < value)
         {
-            levelData[level].EndLevelPoint = value;
+            Debug.Log(level + "level in compareval");
+
+            levelDatas[level].EndLevelPoint = value;
             CalculateTotalScore();
+            return true;
+
         }
         return false;
     }
-    public void CalculateTotalScore()
+    public static void CalculateTotalScore()
     {
         int localtotal = 0;
-        foreach (var data in levelData)
+        foreach (var data in levelDatas)
         {
-            data.EndLevelPoint += localtotal;
+            Debug.Log(data.EndLevelPoint + "point");
+
+            localtotal += data.EndLevelPoint;
         }
         totalScore = localtotal;
     }
-
+    
 }
 
 [Serializable]
 public class LevelData
 {
-    public float EndLevelPoint = -1;
-    public PlayStatus playStatus;
+    public int EndLevelPoint = 0;
+    public PlayStatus playStatus = PlayStatus.Locked;
 
-    public LevelData(float endLevelPoint, int levelCode, PlayStatus status)
+    public LevelData(int endLevelPoint, int levelCode, PlayStatus status)
     {
         EndLevelPoint = endLevelPoint;
         playStatus = status;
     }
 }
-[Serializable] public enum PlayStatus { FirstPlay, RePlay, ReRun, Locked ,Unlocked}
+[Serializable] public enum PlayStatus { Locked, Unlocked, FirstPlay, RePlay, ReRun, }
 
 
 public class CustomScriptableObject<T> : ScriptableObject where T : ScriptableObject

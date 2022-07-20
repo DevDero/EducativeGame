@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.5
+  m_fontSize: 48.75
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1888,8 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840de2364aaafef47a87b16f887c638a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LocalUserData: {fileID: 11400000, guid: cfb5b5aaeae814d4280aaa7092ef10df, type: 2}
-  name: {fileID: 0}
+  name: {fileID: 1653525003}
   emailInputField: {fileID: 1748530365}
   passwordInputField: {fileID: 1828773707}
   outputText: {fileID: 561925978}

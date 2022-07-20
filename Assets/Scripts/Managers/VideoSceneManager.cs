@@ -11,7 +11,7 @@ public class VideoSceneManager : MonoBehaviour
 {
     [SerializeField] VideoPlayer videoPlayer;
     [SerializeField] VideoContainer videocontainer;
-    [SerializeField] Button forwardButton, backwardButton, playstop, panicButton;
+    [SerializeField] Button forwardButton, backwardButton, playstop;
     [SerializeField] string[] videoUrls;
     [SerializeField] GameObject mockPlay, videoControllers;
     
@@ -38,14 +38,14 @@ public class VideoSceneManager : MonoBehaviour
         videoControllers.SetActive(true);    
         mockPlay.SetActive(false);
         videoPlayer.url = videoUrls[0];
-        videoPlayer.targetCamera = Camera.main;
+        //videoPlayer.targetCamera = Camera.current;
         videoPlayer.Play();
         Debug.Log(videoPlayer.url);
 
     }
     private void Start()
     {
-        HTMLButtonCreate("Video Player");
+        HTMLButtonCreate(gameObject.name);
         videoPlayer.loopPointReached += GoToLevelScene;
     }
     public void ActivatePanicButton()
@@ -67,10 +67,12 @@ public class VideoSceneManager : MonoBehaviour
 
     public void Forward()
     {
-        if (videosCurrentPart < videocontainer.videoSequences[0].skipPartition.Length)
+        if (videosCurrentPart < videocontainer.videoSequences[0].skipPartition.Length-1)
         {
             videoPlayer.time = videocontainer.videoSequences[0].skipPartition[videosCurrentPart].endPartition;
         }
+        else if(videosCurrentPart == videocontainer.videoSequences[0].skipPartition.Length-1)
+            videoPlayer.time = videoPlayer.length - 5;
     }
     public void Backward()
     {
