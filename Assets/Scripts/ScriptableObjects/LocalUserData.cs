@@ -9,7 +9,7 @@ public static class LocalUserData
     public static String username;
     public static int totalScore;
     public static string uid;
-    public static bool Synced;
+    public static bool synced;
 
     public static void InitLevelDatas()
     {

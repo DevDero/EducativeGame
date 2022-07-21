@@ -25,7 +25,7 @@ public class LeaderBoard : ScrollRect
         UserIntrinsicData template = new UserIntrinsicData();
         var userasJSON = JsonUtility.ToJson(template);
 
-        FirebaseDatabase.GetHighScore(userasJSON, gameObject.name, "Recived", "Failed");
+        FirebaseDatabase.GetHighScore(gameObject.name, "Recived", "Failed");
     }
     public void Recived(string snapShot)
     {
