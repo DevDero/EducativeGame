@@ -180,7 +180,7 @@
     /// <param name="callback"> Name of the method to call when the operation was successful. Method must have signature: void Method(string output) </param>
     /// <param name="fallback"> Name of the method to call when the operation was unsuccessful. Method must have signature: void Method(string output). Will return a serialized FirebaseError object </param>
     [DllImport("__Internal")]
-    public static extern void GetHighScore(string userDataJSON, string objectName, string callback,
+    public static extern void GetHighScore(string objectName, string callback,
      string fallback);
 
 }

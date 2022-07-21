@@ -258,25 +258,17 @@ mergeInto(LibraryManager.library, {
         }
     },
 
-    GetHighScore: function(userDataJSON, objectName, callback, fallback)
+    GetHighScore: function(objectName, callback, fallback)
     {
-        var userIntrinsic = UTF8ToString(userDataJSON);
         var parsedObjectName = UTF8ToString(objectName);
         var parsedCallback = UTF8ToString(callback);
-        var parsedFallback = UTF8ToString(fallback);
-        
-        
-        
-            firebase.database().ref('/users').orderByChild('totalScore').limitToLast(2)
-            .once('value').then(function(snapshot){
-            var snap = snapshot.val(); 
-                snap.forEach(function(child) {console.log(child.val())});
-                if (snap)
-                {
-             
-                globalUnityInstance.SendMessage(parsedObjectName,parsedCallback, JSON.stringify(snap));
-                }
-            })
-    }
+        var parsedFallback = UTF8ToString(fallback);  
+        firebase.database().ref('/users').orderByChild('totalScore').limitToLast(50)
+        .once('value').then(function(snapshot){var snap = snapshot.val();
+         if (snap){
+         globalUnityInstance.SendMessage(parsedObjectName,parsedCallback, JSON.stringify(snap));
+         }
+     })
+     }
 
 });
