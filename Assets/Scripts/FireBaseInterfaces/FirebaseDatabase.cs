@@ -171,4 +171,16 @@
         [DllImport("__Internal")]
         public static extern void ToggleBooleanWithTransaction(string path, string objectName, string callback,
             string fallback);
-    }
+    /// <summary>
+    /// Toggles a boolean flag in a specified path using race conditions safe transactions
+    /// If the value is not a boolean or doesn't exist it will be treated as false
+    /// </summary>
+    /// <param name="userDataJSON"> userdata as json in format like UserName_Totalscore </param>
+    /// <param name="objectName"> Name of the gameobject to call the callback/fallback of </param>
+    /// <param name="callback"> Name of the method to call when the operation was successful. Method must have signature: void Method(string output) </param>
+    /// <param name="fallback"> Name of the method to call when the operation was unsuccessful. Method must have signature: void Method(string output). Will return a serialized FirebaseError object </param>
+    [DllImport("__Internal")]
+    public static extern void GetHighScore(string userDataJSON, string objectName, string callback,
+     string fallback);
+
+}

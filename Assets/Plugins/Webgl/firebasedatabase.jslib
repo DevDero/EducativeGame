@@ -256,6 +256,27 @@ mergeInto(LibraryManager.library, {
         } catch (error) {
             globalUnityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
         }
+    },
+
+    GetHighScore: function(userDataJSON, objectName, callback, fallback)
+    {
+        var userIntrinsic = UTF8ToString(userDataJSON);
+        var parsedObjectName = UTF8ToString(objectName);
+        var parsedCallback = UTF8ToString(callback);
+        var parsedFallback = UTF8ToString(fallback);
+        
+        
+        
+            firebase.database().ref('/users').orderByChild('totalScore').limitToLast(2)
+            .once('value').then(function(snapshot){
+            var snap = snapshot.val(); 
+                snap.forEach(function(child) {console.log(child.val())});
+                if (snap)
+                {
+             
+                globalUnityInstance.SendMessage(parsedObjectName,parsedCallback, JSON.stringify(snap));
+                }
+            })
     }
 
 });
