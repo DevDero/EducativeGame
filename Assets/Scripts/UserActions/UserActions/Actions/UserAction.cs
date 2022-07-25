@@ -44,7 +44,7 @@ public class UserAction : MonoBehaviour
     {
         actionStatus = ActionStatus.Finished;
         this.order = ActionList.UserActionList.Count;
-         var actionImage = GameObject.Instantiate(this);
+        UserAction actionImage = (UserAction)this.MemberwiseClone();
         ActionList.UserActionList.Add(actionImage);
 
     }
