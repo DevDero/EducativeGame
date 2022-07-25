@@ -11,22 +11,24 @@ public class VideoSceneManager : MonoBehaviour
 {
     [SerializeField] VideoPlayer videoPlayer;
     [SerializeField] VideoContainer videocontainer;
-    [SerializeField] Button forwardButton, backwardButton, playstop;
+    [SerializeField] Button forwardButton, backwardButton, playstop ,escapeButton;
     [SerializeField] string[] videoUrls;
     [SerializeField] GameObject mockPlay, videoControllers;
-    
+
+    public static string CPR = "https://reaksiyonyazilim.com/1.mp4";
+    public static string video2 = "";
+
 #if UNITY_WEBGL && !UNITY_EDITOR
     [DllImport("__Internal")]
     private static extern void HTMLButtonCreate(string videoPlayerName);
 #else
-    #pragma warning disable IDE0060 
+#pragma warning disable IDE0060
     private void HTMLButtonCreate(string videoPlayerName) { }
     #pragma warning restore IDE0060 
 #endif
     private int videosCurrentPart;
 
     private UnityEvent onVideoFinished;
-
     private UnityAction unityAction;
 
     private void Update()
@@ -37,8 +39,7 @@ public class VideoSceneManager : MonoBehaviour
     {
         videoControllers.SetActive(true);    
         mockPlay.SetActive(false);
-        videoPlayer.url = videoUrls[0];
-        //videoPlayer.targetCamera = Camera.current;
+        videoPlayer.url = "";
         videoPlayer.Play();
         Debug.Log(videoPlayer.url);
 
@@ -47,10 +48,7 @@ public class VideoSceneManager : MonoBehaviour
     {
         HTMLButtonCreate(gameObject.name);
         videoPlayer.loopPointReached += GoToLevelScene;
-    }
-    public void ActivatePanicButton()
-    {
-
+        StartCoroutine(EscapeProcedure());
     }
     public void GoToLevelScene(VideoPlayer vp)
     {
@@ -81,6 +79,29 @@ public class VideoSceneManager : MonoBehaviour
             videoPlayer.time = videocontainer.videoSequences[0].skipPartition[videosCurrentPart - 1].startPartition;
         }
     }
+    public void RestrictButtons(int currentPartition,int totalPartition)
+    {
+        if (currentPartition == totalPartition)
+            forwardButton.interactable = false;
+        else if (currentPartition == 0)
+            backwardButton.interactable = false;
+        else
+        {
+            forwardButton.interactable = true;
+            backwardButton.interactable = true;
+        }
+
+    }
+    public IEnumerator EscapeProcedure()
+    {
+            yield return new WaitForSeconds(10);
+        if (videoPlayer.isPlaying)
+            Debug.Log("video is playing hide escape");
+        else
+            escapeButton.gameObject.SetActive(true);
+            
+
+    }
     public void GetCurrentPart()
     {
         var skippartition = videocontainer.videoSequences[0].skipPartition;
@@ -92,6 +113,6 @@ public class VideoSceneManager : MonoBehaviour
                 videosCurrentPart = i;
             }
         }
-
+        RestrictButtons(videosCurrentPart, videocontainer.videoSequences[0].skipPartition.Length);
     }
 }

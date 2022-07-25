@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CPR : MonoBehaviour
@@ -11,6 +12,8 @@ public class CPR : MonoBehaviour
     [SerializeField] CPRAction action;
     [SerializeField] GameObject automaticWarning;
 
+
+    [SerializeField]private UserCharacterController CharacterController;
     private Coroutine autoCompressionRoutine;
 
     private void OnEnable()
@@ -44,7 +47,7 @@ public class CPR : MonoBehaviour
                 do
                 {
                     yield return null;
-                    anim["CPR+"].speed = 0.9f;
+                    anim["CPR+"].speed = 1.1f;
                 }
                 while (anim.isPlaying);
                 i++;
@@ -55,12 +58,19 @@ public class CPR : MonoBehaviour
                 do
                 {
                     yield return null;
-                    anim["CPR-"].speed = 0.9f;
+                    anim["CPR-"].speed = 1.1f;
                 }
                 while (anim.isPlaying);
                 i++;
             }
+            action.AutoCPRCounter();
         }
+
+        action.AddAction();
+        slider.value = 0;
+        ActionButtonManager.Instance.ChangeMenu(ActionButtonManager.Instance.menus[1]);
+        CharacterController.SwitchPose("Standing");
+
     }
     public void AutoCompression()
     {

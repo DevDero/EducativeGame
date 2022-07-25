@@ -50,10 +50,6 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
     {
 
     }
-
-    public override void CheckConstraint(ResponseToConstraint response)
-    {
-    }
     public override bool CheckConstraint(out UserAction actionOfInterest)
     {
         typeOfInterest = typeof(ActionType);
@@ -154,5 +150,10 @@ public class OrderBoundConstraint<ActionType> : ActionConstraint where ActionTyp
 
         if (actionOfInterest != null) return true;
         else return false;
+    }
+
+    public override void CheckConstraint(bool outComePositive, ResponseToConstraint response)
+    {
+        throw new NotImplementedException();
     }
 }

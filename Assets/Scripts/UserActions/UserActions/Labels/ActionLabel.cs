@@ -2,7 +2,7 @@
 using UnityEngine;
 public abstract class ActionLabel : MonoBehaviour 
 {
-    public abstract UserAction Action { get ; set ; }
+    public abstract UserAction Action { get ; set ; } 
     public AnimationCurve curve;
     public float score;
 

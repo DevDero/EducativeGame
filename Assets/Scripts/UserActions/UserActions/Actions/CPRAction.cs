@@ -111,6 +111,10 @@ public class CPRAction : UserAction
         halfCompressesList.Clear();
     }
     #endregion
+    public void AutoCPRCounter()
+    {
+        _Repetition++;  
+    }
 
     public override void AddAction()
     {
@@ -125,17 +129,19 @@ public class CPRAction : UserAction
         OrderBoundConstraint<QuizAction> ShowQuizConstraint = new OrderBoundConstraint<QuizAction>(ActionConstraint.OrderType.ever, this);
 
         QuantitativeConstraint CPRFailConstraint = new QuantitativeConstraint(3, FailedPulse, QuantitativeConstraint.ConstraintSign.higherThan);
+
         QuantitativeConstraint CPRCountConstraint = new QuantitativeConstraint(35, 25, Repetition);
+
 
 
         if (!ShowQuizConstraint.CheckConstraint())
         {
-            CPRCountConstraint.CheckConstraint(delegate { PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"); });
+            CPRCountConstraint.CheckConstraint( false ,delegate { PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"); });
         }
 
-        CPRCountConstraint.CheckConstraint(() => automated = true);
+        CPRCountConstraint.CheckConstraint( true ,() => automated = true);
 
-        CPRFailConstraint.CheckConstraint(() => PopUpManager.TipPanel.ShowTip(massage, 6));
+        CPRFailConstraint.CheckConstraint( false, () => PopUpManager.TipPanel.ShowTip(massage, 6));
 
     }
 }

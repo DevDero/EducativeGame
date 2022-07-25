@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class ProgressManager : MonoBehaviour
@@ -29,7 +30,7 @@ public class ProgressManager : MonoBehaviour
     //}
     public void OpenDoor(int i)
     {
-        LocalUserData.levelDatas[i].playStatus = PlayStatus.Unlocked;
+        LocalUserData.localLevelData.levels.ElementAt(i).Value.playstatus = PlayStatus.Unlocked;
         Doors[i].UnlockDoor();
     }
 }

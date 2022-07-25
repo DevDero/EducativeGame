@@ -36,30 +36,61 @@
                 break;
         }
     }
-    public override void CheckConstraint(ResponseToConstraint response)
+    public override void CheckConstraint(bool outComePositive , ResponseToConstraint response)
     {
-        if (sign == ConstraintSign.between)
+        if (!outComePositive)
         {
-            if (_value < _lowerBound)
-                response.Invoke();
-            else if (_value > _upperBound)
-                response.Invoke();
-            else if (_value < _upperBound)
-                response = null;
+            if (sign == ConstraintSign.between)
+            {
+                if (_value < _lowerBound)
+                    response.Invoke();
+                else if (_value > _upperBound)
+                    response.Invoke();
+                else if (_value < _upperBound)
+                    response = null;
+            }
+            else if (sign == ConstraintSign.lowerThan)
+            {
+                if (_value > _upperBound)
+                    response.Invoke();
+                else
+                    response = null;
+            }
+            else if (sign == ConstraintSign.higherThan)
+            {
+                if (_value < _lowerBound)
+                    response.Invoke();
+                else
+                    response = null;
+            }
         }
-        else if (sign == ConstraintSign.lowerThan)
+        else
         {
-            if (_value > _upperBound)
-                response.Invoke();
-            else
-                response = null;
-        }
-        else if (sign == ConstraintSign.higherThan)
-        {
-            if (_value < _lowerBound)
-                response.Invoke();
-            else
-                response = null;
+            if (sign == ConstraintSign.between)
+            {
+                if (_value < _lowerBound)
+                    response = null;
+                else if (_value > _upperBound)
+                    response = null;
+                else if (_value < _upperBound)
+                    response.Invoke();
+
+            }
+            else if (sign == ConstraintSign.lowerThan)
+            {
+                if (_value > _upperBound)
+                    response = null;
+                else 
+                    response.Invoke();
+
+            }
+            else if (sign == ConstraintSign.higherThan)
+            {
+                if (_value < _lowerBound) 
+                    response = null;
+                else 
+                    response.Invoke();
+            }
         }
 
     }

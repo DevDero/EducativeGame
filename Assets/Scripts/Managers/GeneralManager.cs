@@ -10,17 +10,16 @@ public class GeneralManager : MonoBehaviour
     /// <summary>
     /// -1 for not a playable state.
     /// </summary>
-    private int currentLevel;
-    public int CurrentLevel { get => currentLevel;}
+    
+    private string currentLevel;
+    public string CurrentLevel { get => currentLevel;}
 
-
-    private string currentScene;
     public bool hasPaused { get; set; } = false;
     private float levelTime;
     public float LevelTime { get => levelTime; set => levelTime = value; }
 
     string VideoScene = ("VideoScene");
-    string Level0 = ("Level0");
+    string Level0 = ("CPR");
     string Level1 = ("Level1");
     string MapScene = ("MapScene");
     string LoginScene = ("LoginScene");
@@ -38,31 +37,19 @@ public class GeneralManager : MonoBehaviour
         LevelTime += Time.fixedDeltaTime;
     }
 
-    public void LoadVideo()
+    public void LoadVideo()                                                 // TODO: terminate level dependencies from this method
     {
-        SetCurrentLevel(Level0);
-
         AsyncOperation level0LoadOp = SceneManager.LoadSceneAsync(Level0, LoadSceneMode.Single);
         SceneManager.LoadSceneAsync(VideoScene, LoadSceneMode.Additive);
         level0LoadOp.completed += delegate {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(Level0));
+            SetCurrentLevel(Level0);
         };
     }
     private void SetCurrentLevel(string scene)               //TODO: get this part procedural embed video URL to video SO and get it with level
     {
-        switch (scene)
-        {
-            case "Level0":
-                currentLevel = 0;
-                break;
-            case "Level1":
-                currentLevel = 1;
-                break;
-            default:
-                currentLevel = -1;
-                break;
-        }
-
+        currentLevel = SceneManager.GetActiveScene().name;
+        Debug.Log("currentLevel set to" + currentLevel);
     }
     public void LoadSingleSceneAsync(string scene)
     {      
@@ -116,8 +103,8 @@ public class GeneralManager : MonoBehaviour
         ProgressManager.Instance.OpenDoor(levelNumber);
     }
 
-    private void OnApplicationQuit()
-    {
-        FirebaseAuth.SignOutUser();
-    }
+    //private void OnApplicationQuit()
+    //{
+    //    FirebaseAuth.SignOutUser();
+    //}
 }
