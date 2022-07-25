@@ -30,17 +30,14 @@ public class AuthManager : MonoBehaviour
     }
     private void CreateNewUser(string currentData)
     {
+
         if(currentData == null || currentData == "null" || currentData == "" )
         {
-            LocalUserData.InitLevelDatas();
-            LocalUserData.username = name.text;
-            LocalUserData.uid = uid;
-
-            var EmptyUserData = new UserData();
-
-            var userDataTemplate = JsonConvert.SerializeObject(EmptyUserData);
-
+            UserData FreshUserData = new UserData(name.text, uid);
+            string userDataTemplate = JsonConvert.SerializeObject(FreshUserData);
             FirebaseDatabase.SetJSON("users/" + uid, userDataTemplate, gameObject.name, "AuthSuccesfull", "DisplayErrorObject");
+            LocalUserData.InjectLocalUserData(FreshUserData);
+
         }
         else
         {
@@ -48,7 +45,7 @@ public class AuthManager : MonoBehaviour
             try
             {
                 var existingdata = JsonConvert.DeserializeObject<UserData>(currentData);
-                LocalUserData.UpdateLocalScoreData(existingdata);
+                LocalUserData.InjectLocalUserData(existingdata);
                 AuthSuccesfull();
             }
             catch

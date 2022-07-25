@@ -56,20 +56,18 @@ public class ActionLabelScroller : ScrollRect
     {
         Debug.Log("sumbit succes");
 
-        LocalUserData.Synced = false;
     }
     public void SubmissionError()
     {
         Debug.Log("submnit Failed");
 
-        LocalUserData.Synced = true;
     }
     public void SubmitPointData()
     {
-        //if (LocalUserData.CompareValeus(GeneralManager.Instance.CurrentLevel, endLevelScore))        
-        if(true)
+        
+        if (LocalUserData.CurrentLevel().CompareValeus(endLevelScore))
         {
-            FirebaseDatabase.SetJSON("users/" + LocalUserData.uid +"/ScoreData" , JsonConvert.SerializeObject(LocalUserData.LocalScoreDataToJson()), gameObject.name, "SubmissonSucces", "SubmissionError");
+            FirebaseDatabase.SetJSON("users/" + LocalUserData.localUserIntrinsicData.uid +"/leveldata" ,LocalUserData.LocalLevelDataToJson(), gameObject.name, "SubmissonSucces", "SubmissionError");
 
         }
     }

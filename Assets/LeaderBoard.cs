@@ -1,16 +1,25 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LeaderBoard : ScrollRect
 {
-    protected override void OnEnable()
-    {
-        ResizeContentTab(CalculateHeight(300 + 30,
-            ActionList.UserActionList.Count) + 30);//spacing height and offset
+    private LeaderBoardElement lbElement;
 
+    protected override void OnEnable()
+    {    
+        if(lbElement==null)
+        {
+            lbElement = GameObject.FindObjectOfType<LeaderBoardElement>();
+            lbElement.gameObject.SetActive(false);
+        }
+
+        GetHighScores();
     }
+    
     public float CalculateHeight(float itemSizePX, int itemAmount)
     {
         return itemSizePX * itemAmount;
@@ -22,14 +31,31 @@ public class LeaderBoard : ScrollRect
     }
     public void GetHighScores()
     {
-        UserIntrinsicData template = new UserIntrinsicData();
-        var userasJSON = JsonUtility.ToJson(template);
-
-        FirebaseDatabase.GetHighScore(userasJSON, gameObject.name, "Recived", "Failed");
+        FirebaseDatabase.GetHighScore(gameObject.name, "Recived", "Failed");
+    }
+    public void CreateLeaderBoardElement(string _username, int _score)
+    {
+        var element = GameObject.Instantiate(lbElement, content);
+        element.SetElement(_username, _score);
     }
     public void Recived(string snapShot)
     {
         Debug.Log(snapShot);
+        Dictionary<string, UserData> userData = JsonConvert.DeserializeObject<Dictionary<string, UserData>>(snapShot);
+        Debug.Log("hede");
+
+        ResizeContentTab(CalculateHeight(300 + 30,
+            userData.Count) + 30);//spacing height and offset
+
+
+        for (int i = 0; i < userData.Count; i++)
+        {
+            var value = userData.ElementAt(i).Value;
+            string name = value.intrinsicdata.username;
+            int score = value.leveldata.totalScore;
+
+            CreateLeaderBoardElement(name, score);
+        }
     }
     public void Failed()
     {

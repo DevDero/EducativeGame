@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class ActionButtonManager : MonoBehaviour
 {
     [SerializeField] GameObject ActionButtonElement;
-    [SerializeField] ActionButtonMenu[] menus;
+    [SerializeField] public ActionButtonMenu[] menus;
     public bool actionButtonVisible;
     public static ActionButtonManager Instance;
-
-    private void Awake()
+   
+        
+        private void Awake()
     {
         Instance = this;
     }
@@ -41,9 +42,8 @@ public class ActionButtonManager : MonoBehaviour
     }
     private void ObligatedBreathControl()
     {
-
         GeneralManager.Instance.StopConversation();
-        ShowActionMenu();
+        menus[1].actionButtons[3].onClick.Invoke();
     }
     public void DelayedObligatedBreathControl()
     {

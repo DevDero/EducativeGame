@@ -24,7 +24,7 @@ public class UserAction : MonoBehaviour
     public float Duration { get => _Duration; }
     public ActionStatus ActionStatus { get => actionStatus; set => actionStatus = value; }
     public virtual ActionConstraint[] Constraints { get => constraints; set => constraints = value; }
-
+    
     public int Order { get => order;}
 
     #region Unity Methods
@@ -44,7 +44,9 @@ public class UserAction : MonoBehaviour
     {
         actionStatus = ActionStatus.Finished;
         this.order = ActionList.UserActionList.Count;
-        ActionList.UserActionList.Add(this);
+         var actionImage = GameObject.Instantiate(this);
+        ActionList.UserActionList.Add(actionImage);
+
     }
 
     public virtual void AddAction(AddingMod mod=AddingMod.Increment)

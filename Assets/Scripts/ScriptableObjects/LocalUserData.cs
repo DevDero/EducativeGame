@@ -1,75 +1,92 @@
 ﻿using Newtonsoft.Json;
 using System;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 //[CreateAssetMenu(fileName = "Level", menuName = "ScriptableObjects/LocalUserData", order = 3)]
 public static class LocalUserData 
 {
-    public static LevelData[] levelDatas = new LevelData[2];
-    public static String username;
-    public static int totalScore;
-    public static string uid;
-    public static bool Synced;
+    public static UserIntrinsicData localUserIntrinsicData;
+    public static LevelDatas localLevelData;
 
-    public static void InitLevelDatas()
-    {
-        levelDatas[0] = new LevelData(0, 00, PlayStatus.Locked);
-        levelDatas[1] = new LevelData(0, 01, PlayStatus.Locked);
-        totalScore = 0;
-    }
+    private static float updateTime;
+    private static bool serverUpdateTick;
 
-    public static void UpdateLocalScoreData(UserData userData)
+    public static bool ServerUpdateTick 
     {
-        levelDatas = userData.scoreData.levelDatas;
-        totalScore = userData.scoreData.totalScore;
-    }
-    public static string LocalScoreDataToJson()
-    {
-        UserData tempData = new UserData(totalScore, levelDatas);
-
-        return JsonConvert.SerializeObject(tempData);
-    }
-
-    public static bool CompareValeus(int level,int value)
-    {
-        Debug.Log(levelDatas[level].EndLevelPoint+"levelpoint");
-        Debug.Log(value+"val");
-        Debug.Log(levelDatas[level].EndLevelPoint < value);
-        if (levelDatas[level].EndLevelPoint < value)
+        get 
         {
-            Debug.Log(level + "level in compareval");
+            if (updateTime <= Time.unscaledTime)
+                return true;
+            else return false;
+        } 
+        set { serverUpdateTick = false; updateTime = Time.unscaledTime + 60 * 5; }  } //5min refresh cooldown
 
-            levelDatas[level].EndLevelPoint = value;
-            CalculateTotalScore();
-            return true;
-
-        }
-        return false;
+    public static void InjectLocalUserData(UserData userData)
+    {
+        localLevelData = userData.leveldata;
+        localUserIntrinsicData = userData.intrinsicdata;
     }
+    public static string LocalUserDataToJson()
+    {
+        UserData tempUserData = new UserData(localUserIntrinsicData, localLevelData);
+        return JsonConvert.SerializeObject(tempUserData);
+    }
+    public static string LocalLevelDataToJson()
+    {
+        LevelDatas tempLevelData = localLevelData;
+        return JsonConvert.SerializeObject(tempLevelData);
+    }
+
+   
     public static void CalculateTotalScore()
     {
         int localtotal = 0;
-        foreach (var data in levelDatas)
-        {
-            Debug.Log(data.EndLevelPoint + "point");
 
-            localtotal += data.EndLevelPoint;
+        for (int i = 0; i < localLevelData.levels.Count; i++)
+        {
+            LevelData levelData = localLevelData.levels.ElementAt(i).Value;
+            localtotal += levelData.endlevelpoint;
         }
-        totalScore = localtotal;
+
+        localLevelData.totalScore = localtotal;
+
     }
-    
+    public static LevelData CurrentLevel()
+    {
+        if (localLevelData.levels.TryGetValue("CPR", out LevelData currentLevelData))                   //TODO: get it from currentLevel Data of general manager
+        return currentLevelData;
+        else
+            Debug.LogWarning("Current scene is not a level and you're trying to reach it!");
+        return null;
+
+
+    }
 }
 
 [Serializable]
 public class LevelData
 {
-    public int EndLevelPoint = 0;
-    public PlayStatus playStatus = PlayStatus.Locked;
-
+    public int endlevelpoint = 0;
+    public PlayStatus playstatus = PlayStatus.Locked;
+    public int levelcode;
     public LevelData(int endLevelPoint, int levelCode, PlayStatus status)
     {
-        EndLevelPoint = endLevelPoint;
-        playStatus = status;
+        endlevelpoint = endLevelPoint;
+        playstatus = status;
+    }
+    public bool CompareValeus(int value)
+    {
+
+        if (endlevelpoint < value)
+        {
+            endlevelpoint = value;
+            LocalUserData.CalculateTotalScore();
+            return true;
+
+        }
+        return false;
     }
 }
 [Serializable] public enum PlayStatus { Locked, Unlocked, FirstPlay, RePlay, ReRun, }

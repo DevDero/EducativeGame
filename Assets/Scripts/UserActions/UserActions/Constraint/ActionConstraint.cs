@@ -11,6 +11,6 @@ public abstract class ActionConstraint
 
     public abstract bool CheckConstraint(out UserAction actionOfInterest);
 
-    public abstract void CheckConstraint(ResponseToConstraint response);
+    public abstract void CheckConstraint(bool outComePositive, ResponseToConstraint response);
 
 }

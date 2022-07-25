@@ -1,30 +1,27 @@
-﻿[System.Serializable]
+﻿using System.Collections.Generic;
+
+[System.Serializable]
 public class UserData
 {
-    public UserIntrinsicData intrinsicData = new UserIntrinsicData();
-    public ScoreData scoreData = new ScoreData();
-
-    public bool Synced = true;
-
-    public UserData()
+    public UserIntrinsicData intrinsicdata = new UserIntrinsicData();
+    public LevelDatas leveldata = new LevelDatas();
+    
+    public UserData(){}
+    
+    public UserData(string name, string uid)
     {
-        scoreData.levelDatas[0] = new LevelData(0, 00, PlayStatus.Locked);
-        scoreData.levelDatas[1] = new LevelData(0, 01, PlayStatus.Locked);
-        scoreData.totalScore = 0;
-    }
-    public UserData(int totalPoint, LevelData[] levelDatas)
-    {
-        scoreData.totalScore = totalPoint;
-        scoreData.levelDatas = levelDatas;
-    }
-    public UserData(int totalPoint, LevelData[] levelDatas, string name,string uid)
-    {
-        scoreData.totalScore = totalPoint;
-        scoreData.levelDatas = levelDatas;
-        intrinsicData.username = name;
-        intrinsicData.uid = uid;
-    }
+        this.leveldata.levels.Add("CPR", new LevelData(0, 01, 0));
+        this.leveldata.levels.Add("FutureLevel", new LevelData(0, 02, 0));
+        this.leveldata.totalScore = 0;
 
+        this.intrinsicdata.username = name;
+        this.intrinsicdata.uid = uid;
+    }
+    public UserData(UserIntrinsicData intrinsicData, LevelDatas levelData)
+    {
+        this.intrinsicdata = intrinsicData;
+        this.leveldata = levelData;
+    }   
 }
 [System.Serializable]   
 public class UserIntrinsicData
@@ -33,8 +30,8 @@ public class UserIntrinsicData
     public string uid;
 }
 [System.Serializable]
-public class ScoreData
+public class LevelDatas
 {
-    public LevelData[] levelDatas = new LevelData[2];
+    public Dictionary<string, LevelData> levels = new Dictionary<string, LevelData>();
     public int totalScore;
 }
