@@ -39,7 +39,7 @@ public class VideoSceneManager : MonoBehaviour
     {
         videoControllers.SetActive(true);    
         mockPlay.SetActive(false);
-        videoPlayer.url = "";
+        videoPlayer.url = videoUrls[1];
         videoPlayer.Play();
         Debug.Log(videoPlayer.url);
 
@@ -53,6 +53,7 @@ public class VideoSceneManager : MonoBehaviour
     public void GoToLevelScene(VideoPlayer vp)
     {
         SceneManager.UnloadSceneAsync("VideoScene");
+        GeneralManager.Instance.currentSceneType = GeneralManager.SceneType.Level;
     }
 
     public void StartStopVideo()

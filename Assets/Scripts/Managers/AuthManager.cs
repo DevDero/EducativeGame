@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Text;
 using TMPro;
 using UnityEngine;
 
@@ -16,9 +17,11 @@ public class AuthManager : MonoBehaviour
         FirebaseAuth.OnAuthStateChanged(gameObject.name, "DisplayUserInfo", "DisplayAuthChange");
     }
     public void CreateUserWithEmailAndPassword() =>
-           FirebaseAuth.CreateUserWithEmailAndPassword(emailInputField.text, passwordInputField.text, "AuthManager", "DisplayInfo", "DisplayErrorObject");
+           FirebaseAuth.CreateUserWithEmailAndPassword(emailInputField.text, Encoding.ASCII.GetString(PasswordFormat(passwordInputField.text)),
+               "AuthManager", "DisplayInfo", "DisplayErrorObject");
     public void SignInWithEmailAndPassword() =>
-        FirebaseAuth.SignInWithEmailAndPassword(emailInputField.text, passwordInputField.text, "AuthManager", "DisplayInfo", "DisplayErrorObject");
+        FirebaseAuth.SignInWithEmailAndPassword(emailInputField.text, Encoding.ASCII.GetString(PasswordFormat(passwordInputField.text)),
+            "AuthManager", "DisplayInfo", "DisplayErrorObject");
 
     private void CheckUser(string uid)
     {
@@ -87,5 +90,15 @@ public class AuthManager : MonoBehaviour
         outputText.text = error;
         Debug.LogError(error);
     }
+
+    private byte[] PasswordFormat(string name)
+    {
+        ASCIIEncoding encoding = new ASCIIEncoding();
+        byte[] bytes = encoding.GetBytes(name);
+        var sha = new System.Security.Cryptography.SHA1CryptoServiceProvider();
+        return sha.ComputeHash(bytes);
+
+    }
+
 
 }

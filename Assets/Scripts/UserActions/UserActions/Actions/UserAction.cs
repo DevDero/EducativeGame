@@ -38,6 +38,12 @@ public class UserAction : MonoBehaviour
         Timer();
     }
     #endregion
+    internal virtual void CleanUserAction()
+    {
+        _Repetition = 0;
+        _Duration = 0;
+
+    }
 
     #region List Methods
     public virtual void AddAction()
@@ -46,7 +52,7 @@ public class UserAction : MonoBehaviour
         this.order = ActionList.UserActionList.Count;
         UserAction actionImage = (UserAction)this.MemberwiseClone();
         ActionList.UserActionList.Add(actionImage);
-
+        CleanUserAction();
     }
 
     public virtual void AddAction(AddingMod mod=AddingMod.Increment)

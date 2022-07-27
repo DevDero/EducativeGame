@@ -10,9 +10,10 @@ public class ConversationManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] answersTMP;
     [SerializeField] Button[] answerButtons;
     [SerializeField] TextMeshProUGUI questionTMP;
-    [SerializeField] ConversationSO conversationSO;
+    [SerializeField] public ConversationSO conversationSO;
 
     [SerializeField] GameObject conversationElement;
+    [SerializeField] GameObject LeaderBoardTutorial;
 
 
     UnityAction onButtonClick;
@@ -30,7 +31,16 @@ public class ConversationManager : MonoBehaviour
     {
         conversationElement.SetActive(false);
     }
-
+    public void ShowLeaderBoard()                       //TODO implement an event system to catch localdata changes!
+    {
+        LeaderBoardTutorial.SetActive(true);
+        LocalUserData.localLevelData.levels["FutureLevel"].playstatus = PlayStatus.Unlocked;
+        FirebaseDatabase.SetJSON("users/" + LocalUserData.localUserIntrinsicData.uid + "/leveldata/levels", LocalUserData.LocalLevelDataToJson(), gameObject.name, "SubmissonSucces", "SubmissionError");
+    }
+    public void SubmissonSucces()
+    {
+        Debug.Log("Succes ");
+    }
     public void SetTexts()
     {
         ClearText();
@@ -66,14 +76,6 @@ public class ConversationManager : MonoBehaviour
              button.interactable = false;
         }
     }
-    //public void AddSingleClickCheck()
-    //{
-    //    foreach (var button in buttons)
-    //    {
-    //        button.onClick.AddListener(() => DisableButtons());
-    //        button.interactable = true;
-    //    }
-    //}
     public void ClearText()
     {
         foreach (var item in answersTMP)

@@ -10,18 +10,14 @@ public static class LocalUserData
     public static UserIntrinsicData localUserIntrinsicData;
     public static LevelDatas localLevelData;
 
-    private static float updateTime;
-    private static bool serverUpdateTick;
 
-    public static bool ServerUpdateTick 
-    {
-        get 
-        {
-            if (updateTime <= Time.unscaledTime)
-                return true;
-            else return false;
-        } 
-        set { serverUpdateTick = false; updateTime = Time.unscaledTime + 60 * 5; }  } //5min refresh cooldown
+
+    private static Dictionary<string, UserData>  scoreData;
+    private static float refreshHighScoreTime;
+
+    public static Dictionary<string, UserData> HighScoreData { get => scoreData; set { scoreData = value; refreshHighScoreTime = Time.unscaledTime + 60; } }
+
+    public static float RefreshHighScoreTime { get => refreshHighScoreTime;}
 
     public static void InjectLocalUserData(UserData userData)
     {
@@ -89,7 +85,7 @@ public class LevelData
         return false;
     }
 }
-[Serializable] public enum PlayStatus { Locked, Unlocked, FirstPlay, RePlay, ReRun, }
+[Serializable] public enum PlayStatus { Locked, Unlocked, FirstPlay, ReRun }
 
 
 public class CustomScriptableObject<T> : ScriptableObject where T : ScriptableObject

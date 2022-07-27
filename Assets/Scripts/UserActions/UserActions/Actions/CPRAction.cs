@@ -8,15 +8,18 @@ public class CPRAction : UserAction
     public float sliderValue { get; set; }
 
     private bool automated = false;
-    public bool Automated { get => automated;}
-    public int FailedPulse { get => failedPulse;}
+    public bool Automated { get => automated; }
 
-    private CompressSens sens;
+    private int failedPulse;
+    public int FailedPulse { get => failedPulse; }
+
+    private bool phoneConstraint = false;
+    public bool PhoneConstraint { get => phoneConstraint; }
+
 
     private delegate void EmptyHandler();
     private event EmptyHandler onCompression;
-    
-    private int failedPulse;
+    private CompressSens sens;
     private float lastValue;
     private float posStart = 0.2f, posFin = 0.4f;
 
@@ -46,12 +49,10 @@ public class CPRAction : UserAction
                 if (sliderValue < posStart)
                 {
                     compress.isCompletePulse = true;
-                    Debug.Log("complete");
                 }
                 else
                 {
                     compress.isCompletePulse = false;
-                    Debug.Log("uncomplete");
                 }
             }
             if (sens == CompressSens.down)
@@ -60,14 +61,10 @@ public class CPRAction : UserAction
                 if (sliderValue > posFin)
                 {
                     compress.isCompletePulse = true;
-                    Debug.Log("complete");
-
                 }
                 else
                 {
                     compress.isCompletePulse = false;
-                    Debug.Log("uncomplete");
-
                 }
             }
             yield return null;
@@ -86,14 +83,12 @@ public class CPRAction : UserAction
 
         if (sliderValue > lastValue)        //SET DOWN
         {
-            Debug.Log("GOİNG DOWN");
             if (sens == CompressSens.up) if (onCompression != null) onCompression.Invoke();
             sens = CompressSens.down;
             lastValue = sliderValue;
         }
         if (sliderValue < lastValue)   //SET UP
         {
-            Debug.Log("GOİNG UP");
             if (sens == CompressSens.down) if (onCompression != null) onCompression.Invoke();
             sens = CompressSens.up;
             lastValue = sliderValue;
@@ -119,14 +114,18 @@ public class CPRAction : UserAction
     public override void AddAction()
     {
         onCompression = null;
-        TransferCompressionData();
+        if (!automated) TransferCompressionData();
+        else _Repetition = _Repetition / 2;
         CheckGoal();
         base.AddAction();
     }
 
     public override void CheckGoal()
     {
+
         OrderBoundConstraint<QuizAction> ShowQuizConstraint = new OrderBoundConstraint<QuizAction>(ActionConstraint.OrderType.ever, this);
+
+        OrderBoundConstraint<PhoneAction> PhoneConstraint  = new OrderBoundConstraint<PhoneAction>(ActionConstraint.OrderType.ever, this);
 
         QuantitativeConstraint CPRFailConstraint = new QuantitativeConstraint(3, FailedPulse, QuantitativeConstraint.ConstraintSign.higherThan);
 
@@ -134,10 +133,13 @@ public class CPRAction : UserAction
 
 
 
+
         if (!ShowQuizConstraint.CheckConstraint())
         {
             CPRCountConstraint.CheckConstraint( false ,delegate { PopUpManager.PopQuizPanel.LaunchPopQuiz("Count"); });
         }
+
+        phoneConstraint = PhoneConstraint.CheckConstraint();
 
         CPRCountConstraint.CheckConstraint( true ,() => automated = true);
 

@@ -2,7 +2,14 @@
 
 public class PhoneAction : UserAction
 {
-    private bool has112Called { get { if (PopUpManager.PopUpManagerInitialized) return PopUpManager.AmbulanceItem.isPanelActive; else return false; } }
+    private bool has112Called 
+    {
+        get 
+        { if (PopUpManager.PopUpManagerInitialized) 
+                return PopUpManager.AmbulanceItem.isPanelActive;
+            else return false; 
+        } 
+    }
     public bool HasBreathChecked { get; set; }
     public bool UnnecessaryCPR { get; set; }
 
@@ -10,6 +17,7 @@ public class PhoneAction : UserAction
     {
         if (has112Called) button.gameObject.SetActive(false);   
     }
+
     public override void CheckGoal()
     {
         OrderBoundConstraint<BreathControlAction> BreathCheck = new OrderBoundConstraint<BreathControlAction>(ActionConstraint.OrderType.before, this);

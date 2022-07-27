@@ -12,9 +12,12 @@ public class CprLabel : ActionLabel
     public override float CalculateScore()
     {
         float localPoint = 0;
-        int fail = CPRaction.FailedPulse;
-        if (fail < 8) localPoint++;
-        localPoint += curve.Evaluate(CPRaction.Repetition);
+        if (CPRaction.PhoneConstraint)
+        {
+            int fail = CPRaction.FailedPulse;
+            if (fail < 8) localPoint++;
+            localPoint += curve.Evaluate(CPRaction.Repetition);
+        }
         return localPoint;
     }
 

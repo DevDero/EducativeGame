@@ -1731,7 +1731,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.35
+  m_fontSize: 47.55
   m_fontSizeBase: 36.38
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2077,69 +2077,214 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Disclaimer\r\nLast updated: July 24, 2022\r\nInterpretation and Definitions\r\nInterpretation\r\nThe
-    words of which the initial letter is capitalized have meanings defined under
-    the following conditions. The following definitions shall have the same meaning
-    regardless of whether they appear in singular or in plural.\r\nDefinitions\r\nFor
-    the purposes of this Disclaimer:\r\n    \u2022 Company (referred to as either
-    \"the Company\", \"We\", \"Us\" or \"Our\" in this Disclaimer) refers to MedicAct.\r\n   
-    \u2022 Service refers to the Website.\r\n    \u2022 You means the individual
-    accessing the Service, or the company, or other legal entity on behalf of which
-    such individual is accessing or using the Service, as applicable.\r\n    \u2022
-    Website refers to MedicAct, accessible from https://reaksiyonyazilim.com/medicact/\r\nDisclaimer\r\nThe
-    information contained on the Service is for general information purposes only.\r\nThe
-    Company assumes no responsibility for errors or omissions in the contents of
-    the Service.\r\nIn no event shall the Company be liable for any special, direct,
-    indirect, consequential, or incidental damages or any damages whatsoever, whether
-    in an action of contract, negligence or other tort, arising out of or in connection
-    with the use of the Service or the contents of the Service. The Company reserves
-    the right to make additions, deletions, or modifications to the contents on the
-    Service at any time without prior notice. This Disclaimer has been created with
-    the help of the Disclaimer Generator.\r\nThe Company does not warrant that the
-    Service is free of viruses or other harmful components.\r\nExternal Links Disclaimer\r\nThe
-    Service may contain links to external websites that are not provided or maintained
-    by or in any way affiliated with the Company.\r\nPlease note that the Company
-    does not guarantee the accuracy, relevance, timeliness, or completeness of any
-    information on these external websites.\r\nErrors and Omissions Disclaimer\r\nThe
-    information given by the Service is for general guidance on matters of interest
-    only. Even if the Company takes every precaution to insure that the content of
-    the Service is both current and accurate, errors can occur. Plus, given the changing
-    nature of laws, rules and regulations, there may be delays, omissions or inaccuracies
-    in the information contained on the Service.\r\nThe Company is not responsible
-    for any errors or omissions, or for the results obtained from the use of this
-    information.\r\nFair Use Disclaimer\r\nThe Company may use copyrighted material
-    which has not always been specifically authorized by the copyright owner. The
-    Company is making such material available for criticism, comment, news reporting,
-    teaching, scholarship, or research.\r\nThe Company believes this constitutes
-    a \"fair use\" of any such copyrighted material as provided for in section 107
-    of the United States Copyright law.\r\nIf You wish to use copyrighted material
-    from the Service for your own purposes that go beyond fair use, You must obtain
-    permission from the copyright owner.\r\nViews Expressed Disclaimer\r\nThe Service
-    may contain views and opinions which are those of the authors and do not necessarily
-    reflect the official policy or position of any other author, agency, organization,
-    employer or company, including the Company.\r\nComments published by users are
-    their sole responsibility and the users will take full responsibility, liability
-    and blame for any libel or litigation that results from something written in
-    or as a direct result of something written in a comment. The Company is not liable
-    for any comment published by users and reserves the right to delete any comment
-    for any reason whatsoever.\r\nNo Responsibility Disclaimer\r\nThe information
-    on the Service is provided with the understanding that the Company is not herein
-    engaged in rendering legal, accounting, tax, or other professional advice and
-    services. As such, it should not be used as a substitute for consultation with
-    professional accounting, tax, legal or other competent advisers.\r\nIn no event
-    shall the Company or its suppliers be liable for any special, incidental, indirect,
-    or consequential damages whatsoever arising out of or in connection with your
-    access or use or inability to access or use the Service.\r\n\"Use at Your Own
-    Risk\" Disclaimer\r\nAll information in the Service is provided \"as is\", with
-    no guarantee of completeness, accuracy, timeliness or of the results obtained
-    from the use of this information, and without warranty of any kind, express or
-    implied, including, but not limited to warranties of performance, merchantability
-    and fitness for a particular purpose.\r\nThe Company will not be liable to You
-    or anyone else for any decision made or action taken in reliance on the information
-    given by the Service or for any consequential, special or similar damages, even
-    if advised of the possibility of such damages.\r\nContact Us\r\nIf you have any
-    questions about this Disclaimer, You can contact Us:\r\n    \u2022 By email:
-    derinsapmaz@gmail.com"
+  m_text: "Terms and Conditions\r\n\r\nTerms and Conditions (\"Terms\")\r\n\r\nOur
+    Terms and Conditions were last updated on July 24, 2022.\r\n\r\nPlease read these
+    terms and conditions carefully before using Our Service.\r\nInterpretation and
+    Definitions\r\nInterpretation\r\n\r\nThe words of which the initial letter is
+    capitalized have meanings defined under the following conditions. The following
+    definitions shall have the same meaning regardless of whether they appear in
+    singular or in plural.\r\nDefinitions\r\n\r\nFor the purposes of these Terms
+    and Conditions:\r\n\r\n    \u2022 \u201CAffiliate\u201D means an entity that
+    controls, is controlled by or is under common control with a party, where \"control\"
+    means ownership of 50% or more of the shares, equity interest or other securities
+    entitled to vote for election of directors or other managing authority.\r\n   
+    \u2022 \u201CAccount\u201D means a unique account created for You to access our
+    Service or parts of our Service.\r\n    \u2022 \u201CCompany\u201D (referred
+    to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers
+    to MedicAct.\r\n    \u2022 \u201CContent\u201D refers to content such as text,
+    images, or other information that can be posted, uploaded, linked to or otherwise
+    made available by You, regardless of the form of that content.\r\n    \u2022
+    \u201CDevice\u201D means any device that can access the Service such as a computer,
+    a cellphone or a digital tablet.\r\n    \u2022 \u201CFeedback\u201D means feedback,
+    innovations or suggestions sent by You regarding the attributes, performance
+    or features of our Service.\r\n    \u2022 \u201CProducts\u201D refer to the products
+    or items offered for sale on the Service.\r\n    \u2022 \u201COrders\u201D mean
+    a request by You to purchase Products from Us.\r\n    \u2022 \u201CPromotions\u201D
+    refer to contests, sweepstakes or other promotions offered through the Service.\r\n   
+    \u2022 \u201CService\u201D refers to the Website.\r\n    \u2022 \u201CTerms and
+    Conditions\u201D (also referred as \"Terms\") mean these Terms and Conditions
+    that form the entire agreement between You and the Company regarding the use
+    of the Service. This Terms and Conditions Agreement was generated by TermsFeed
+    Terms and Conditions Generator.\r\n    \u2022 \u201CThird-party Social Media
+    Service\u201D means any services or content (including data, information, products
+    or services) provided by a third-party that may be displayed, included or made
+    available by the Service.\r\n    \u2022 \u201CWebsite\u201D refers to [MedicAct],
+    accessible from [https://reaksiyonyazilim.com/MedicAct/]\r\n    \u2022 \u201CYou\u201D
+    means the individual accessing or using the Service, or the company, or other
+    legal entity on behalf of which such individual is accessing or using the Service,
+    as applicable.\r\nAcknowledgment\r\n\r\nThese are the Terms and Conditions governing
+    the use of this Service and the agreement that operates between You and the Company.
+    These Terms and Conditions set out the rights and obligations of all users regarding
+    the use of the Service.\r\n\r\nYour access to and use of the Service is conditioned
+    on Your acceptance of and compliance with these Terms and Conditions. These Terms
+    and Conditions apply to all visitors, users and others who access or use the
+    Service.\r\n\r\nBy accessing or using the Service You agree to be bound by these
+    Terms and Conditions. If You disagree with any part of these Terms and Conditions
+    then You may not access the Service.\r\n\r\nYou represent that you are over the
+    age of 18. The Company does not permit those under 18 to use the Service.\r\n\r\nYour
+    access to and use of the Service is also conditioned on Your acceptance of and
+    compliance with the Privacy Policy of the Company. Our Privacy Policy describes
+    Our policies and procedures on the collection, use and disclosure of Your personal
+    information when You use the Application or the Website and tells You about Your
+    privacy rights and how the law protects You. Please read Our Privacy Policy carefully
+    before using Our Service.\r\nUser Accounts\r\n\r\nWhen You create an account
+    with Us, You must provide Us information that is accurate, complete, and current
+    at all times. Failure to do so constitutes a breach of the Terms, which may result
+    in immediate termination of Your account on Our Service.\r\n\r\nYou are responsible
+    for safeguarding the password that You use to access the Service and for any
+    activities or actions under Your password, whether Your password is with Our
+    Service or a Third-Party Social Media Service.\r\n\r\nYou agree not to disclose
+    Your password to any third party. You must notify Us immediately upon becoming
+    aware of any breach of security or unauthorized use of Your account.\r\n\r\nYou
+    may not use as a username the name of another person or entity or that is not
+    lawfully available for use, a name or trademark that is subject to any rights
+    of another person or entity other than You without appropriate authorization,
+    or a name that is otherwise offensive, vulgar or obscene.\r\n\r\nMedic Act use
+    Google FireBase Services including ; Firebase Authentication and Firebase realtime
+    database. Further addition on services is possible by our part . You there by
+    acknowledge and agree the use of these services detailed by Google Firebase.\r\n\r\nUser
+    Accounts will be kept 2 years after cease of account activity , user name and
+    email information kept for account retrieval and identification purposes , MedicAct
+    may or may not ask for additional information in the future. \r\nContent\r\nYour
+    Right to Post Content\r\n\r\nOur Service allows You to post Content. You are
+    responsible for the Content that You post to the Service, including its legality,
+    reliability, and appropriateness.\r\n\r\nBy posting Content to the Service, You
+    grant Us the right and license to use, modify, publicly perform, publicly display,
+    reproduce, and distribute such Content on and through the Service. You retain
+    any and all of Your rights to any Content You submit, post or display on or through
+    the Service and You are responsible for protecting those rights. You agree that
+    this license includes the right for Us to make Your Content available to other
+    users of the Service, who may also use Your Content subject to these Terms.\r\n\r\nYou
+    represent and warrant that: (i) the Content is Yours (You own it) or You have
+    the right to use it and grant Us the rights and license as provided in these
+    Terms, and (ii) the posting of Your Content on or through the Service does not
+    violate the privacy rights, publicity rights, copyrights, contract rights or
+    any other rights of any person.\r\nContent Restrictions\r\n\r\nThe Company is
+    not responsible for the content of the Service's users. You expressly understand
+    and agree that You are solely responsible for the Content and for all activity
+    that occurs under your account, whether done so by You or any third person using
+    Your account.\r\n\r\nYou may not transmit any Content that is unlawful, offensive,
+    upsetting, intended to disgust, threatening, libelous, defamatory, obscene or
+    otherwise objectionable. Examples of such objectionable Content include, but
+    are not limited to, the following:\r\n\r\n    \u2022 Unlawful or promoting unlawful
+    activity.\r\n    \u2022 Defamatory, discriminatory, or mean-spirited content,
+    including references or commentary about religion, race, sexual orientation,
+    gender, national/ethnic origin, or other targeted groups.\r\n    \u2022 Spam,
+    machine \u2013 or randomly \u2013 generated, constituting unauthorized or unsolicited
+    advertising, chain letters, any other form of unauthorized solicitation, or any
+    form of lottery or gambling.\r\n    \u2022 Containing or installing any viruses,
+    worms, malware, trojan horses, or other content that is designed or intended
+    to disrupt, damage, or limit the functioning of any software, hardware or telecommunications
+    equipment or to damage or obtain unauthorized access to any data or other information
+    of a third person.\r\n    \u2022 Infringing on any proprietary rights of any
+    party, including patent, trademark, trade secret, copyright, right of publicity
+    or other rights.\r\n    \u2022 Impersonating any person or entity including the
+    Company and its employees or representatives.\r\n    \u2022 Violating the privacy
+    of any third person.\r\n    \u2022 False information and features.\r\n\r\nThe
+    Company reserves the right, but not the obligation, to, in its sole discretion,
+    determine whether or not any Content is appropriate and complies with this Terms,
+    refuse or remove this Content. The Company further reserves the right to make
+    formatting and edits and change the manner of any Content. The Company can also
+    limit or revoke the use of the Service if You post such objectionable Content.
+    As the Company cannot control all content posted by users and/or third parties
+    on the Service, you agree to use the Service at your own risk. You understand
+    that by using the Service You may be exposed to content that You may find offensive,
+    indecent, incorrect or objectionable, and You agree that under no circumstances
+    will the Company be liable in any way for any content, including any errors or
+    omissions in any content, or any loss or damage of any kind incurred as a result
+    of your use of any content.\r\nContent Backups\r\n\r\nAlthough regular backups
+    of Content are performed, the Company does not guarantee there will be no loss
+    or corruption of data.\r\n\r\nCorrupt or invalid backup points may be caused
+    by, without limitation, Content that is corrupted prior to being backed up or
+    that changes during the time a backup is performed.\r\n\r\nThe Company will provide
+    support and attempt to troubleshoot any known or discovered issues that may affect
+    the backups of Content. But You acknowledge that the Company has no liability
+    related to the integrity of Content or the failure to successfully restore Content
+    to a usable state.\r\n\r\nYou agree to maintain a complete and accurate copy
+    of any Content in a location independent of the Service.\r\nCopyright Policy\r\nIntellectual
+    Property Infringement\r\n\r\nWe respect the intellectual property rights of others.
+    It is Our policy to respond to any claim that Content posted on the Service infringes
+    a copyright or other intellectual property infringement of any person.\r\n\r\nIf
+    You are a copyright owner, or authorized on behalf of one, and You believe that
+    the copyrighted work has been copied in a way that constitutes copyright infringement
+    that is taking place through the Service, You must submit Your notice in writing
+    to the attention of our copyright agent via email (derinsapmaz@gmail.com ,  berkyildiiz@gmail.com
+    ) and include in Your notice a detailed description of the alleged infringement.\r\n\r\nYou
+    may be held accountable for damages (including costs and attorneys' fees) for
+    misrepresenting that any Content is infringing Your copyright.\r\nAvailability,
+    Errors and Inaccuracies\r\n\r\nWe are constantly updating Our offerings of Products
+    on the Service. The Products available on Our Service may be mispriced, described
+    inaccurately, or unavailable, and We may experience delays in updating information
+    regarding our Products on the Service and in Our advertising on other websites.\r\n\r\nWe
+    cannot and do not guarantee the accuracy or completeness of any information,
+    including prices, product images, specifications, availability, and services.
+    We reserve the right to change or update information and to correct errors, inaccuracies,
+    or omissions at any time without prior notice.\r\nPrices Policy\r\n\r\nThe Company
+    reserves the right to revise its prices at any time prior to accepting an Order.\r\n\r\nThe
+    prices quoted may be revised by the Company subsequent to accepting an Order
+    in the event of any occurrence affecting delivery caused by government action,
+    variation in customs duties, increased shipping charges, higher foreign exchange
+    costs and any other matter beyond the control of the Company. In that event,
+    You will have the right to cancel Your Order.\r\nIntellectual Property\r\n\r\nThe
+    Service and its original content (excluding Content provided by You or other
+    users), features and functionality are and will remain the exclusive property
+    of the Company and its licensors.\r\n\r\nThe Service is protected by copyright,
+    trademark, and other laws of both the Country and foreign countries.\r\n\r\nOur
+    trademarks and trade dress may not be used in connection with any product or
+    service without the prior written consent of the Company.\r\nYour Feedback to
+    Us\r\n\r\nYou assign all rights, title and interest in any Feedback You provide
+    the Company. If for any reason such assignment is ineffective, You agree to grant
+    the Company a non-exclusive, perpetual, irrevocable, royalty free, worldwide
+    right and license to use, reproduce, disclose, sub-license, distribute, modify
+    and exploit such Feedback without restriction.\r\nLinks to Other Websites\r\n\r\nOur
+    Service may contain links to third-party web sites or services that are not owned
+    or controlled by the Company.\r\n\r\nThe Company has no control over, and assumes
+    no responsibility for, the content, privacy policies, or practices of any third
+    party web sites or services. You further acknowledge and agree that the Company
+    shall not be responsible or liable, directly or indirectly, for any damage or
+    loss caused or alleged to be caused by or in connection with the use of or reliance
+    on any such content, goods or services available on or through any such web sites
+    or services.\r\n\r\nWe strongly advise You to read the terms and conditions and
+    privacy policies of any third-party web sites or services that You visit.\r\nTermination\r\n\r\nWe
+    may terminate or suspend Your Account immediately, without prior notice or liability,
+    for any reason whatsoever, including without limitation if You breach these Terms
+    and Conditions.\r\n\r\nUpon termination, Your right to use the Service will cease
+    immediately. If You wish to terminate Your Account, You may simply discontinue
+    using the Service.\r\n\"AS IS\" and \"AS AVAILABLE\" Disclaimer\r\n\r\nThe Service
+    is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects
+    without warranty of any kind. To the maximum extent permitted under applicable
+    law, the Company, on its own behalf and on behalf of its Affiliates and its and
+    their respective licensors and service providers, expressly disclaims all warranties,
+    whether express, implied, statutory or otherwise, with respect to the Service,
+    including all implied warranties of merchantability, fitness for a particular
+    purpose, title and non-infringement, and warranties that may arise out of course
+    of dealing, course of performance, usage or trade practice. Without limitation
+    to the foregoing, the Company provides no warranty or undertaking, and makes
+    no representation of any kind that the Service will meet Your requirements, achieve
+    any intended results, be compatible or work with any other software, applications,
+    systems or services, operate without interruption, meet any performance or reliability
+    standards or be error free or that any errors or defects can or will be corrected.\r\n\r\nWithout
+    limiting the foregoing, neither the Company nor any of the company's provider
+    makes any representation or warranty of any kind, express or implied: (i) as
+    to the operation or availability of the Service, or the information, content,
+    and materials or products included thereon; (ii) that the Service will be uninterrupted
+    or error-free; (iii) as to the accuracy, reliability, or currency of any information
+    or content provided through the Service; or (iv) that the Service, its servers,
+    the content, or e-mails sent from or on behalf of the Company are free of viruses,
+    scripts, trojan horses, worms, malware, timebombs or other harmful components.\r\n\r\nSome
+    jurisdictions do not allow the exclusion of certain types of warranties or limitations
+    on applicable statutory rights of a consumer, so some or all of the above exclusions
+    and limitations may not apply to You. But in such a case the exclusions and limitations
+    set forth in this section shall be applied to the greatest extent enforceable
+    under applicable law.\r\nGoverning Law\r\n\r\nThe laws of the Country, excluding
+    its conflicts of law rules, shall govern this Terms and Your use of the Service.
+    Your use of the Application may also be subject to other local, state, national,
+    or international laws.\r\nDisputes Resolution\r\n\r\nIf You have any concern
+    or dispute about the Service, You agree to first try to resolve the dispute informally
+    by contacting the Company.\r\nContact Us\r\n\r\nIf you have any questions about
+    these Terms and Conditions, You can contact us:\r\n\r\n    \u2022 By visiting
+    this page on our website: [https://reaksiyonyazilim.com/MedicAct/]\r\n    \u2022
+    By sending us an email: (derinsapmaz@gmail.com , berkyildiiz@gmail.com ) \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2166,11 +2311,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
+  m_fontSize: 12.3
   m_fontSizeBase: 8
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 8
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 12
   m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -2378,7 +2523,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.85
+  m_fontSize: 45.1
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2553,7 +2698,7 @@ RectTransform:
   m_Father: {fileID: 1967518344}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8738}
+  m_AnchorMin: {x: 0, y: 0.6378385}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -2682,7 +2827,7 @@ RectTransform:
   m_Father: {fileID: 1017258942}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.44714284}
+  m_AnchorMin: {x: 0, y: 0.8415}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -3396,292 +3541,48 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sample Terms and Conditions Template\r\n\r\nTerms and Conditions (\"Terms\")\r\n\r\nOur
-    Terms and Conditions were last updated on [DATE].\r\n\r\nPlease read these terms
-    and conditions carefully before using Our Service.\r\nInterpretation and Definitions\r\nInterpretation\r\n\r\nThe
+  m_text: "Disclaimer\r\nLast updated: July 24, 2022\r\nInterpretation and Definitions\r\nInterpretation\r\nThe
     words of which the initial letter is capitalized have meanings defined under
     the following conditions. The following definitions shall have the same meaning
-    regardless of whether they appear in singular or in plural.\r\nDefinitions\r\n\r\nFor
-    the purposes of these Terms and Conditions:\r\n\r\n    \u2022 \u201CAffiliate\u201D
-    means an entity that controls, is controlled by or is under common control with
-    a party, where \"control\" means ownership of 50% or more of the shares, equity
-    interest or other securities entitled to vote for election of directors or other
-    managing authority.\r\n    \u2022 \u201CAccount\u201D means a unique account
-    created for You to access our Service or parts of our Service.\r\n    \u2022
-    \u201CCompany\u201D (referred to as either \"the Company\", \"We\", \"Us\" or
-    \"Our\" in this Agreement) refers to [COMPANY_INFORMATION].\r\n    \u2022 \u201CCountry\u201D
-    refers to [COMPANY_COUNTRY].\r\n    \u2022 \u201CContent\u201D refers to content
-    such as text, images, or other information that can be posted, uploaded, linked
-    to or otherwise made available by You, regardless of the form of that content.\r\n   
-    \u2022 \u201CDevice\u201D means any device that can access the Service such as
-    a computer, a cellphone or a digital tablet.\r\n    \u2022 \u201CFeedback\u201D
-    means feedback, innovations or suggestions sent by You regarding the attributes,
-    performance or features of our Service.\r\n    \u2022 \u201CProducts\u201D refer
-    to the products or items offered for sale on the Service.\r\n    \u2022 \u201COrders\u201D
-    mean a request by You to purchase Products from Us.\r\n    \u2022 \u201CPromotions\u201D
-    refer to contests, sweepstakes or other promotions offered through the Service.\r\n   
-    \u2022 \u201CService\u201D refers to the Website.\r\n    \u2022 \u201CTerms and
-    Conditions\u201D (also referred as \"Terms\") mean these Terms and Conditions
-    that form the entire agreement between You and the Company regarding the use
-    of the Service. This Terms and Conditions Agreement was generated by TermsFeed
-    Terms and Conditions Generator.\r\n    \u2022 \u201CThird-party Social Media
-    Service\u201D means any services or content (including data, information, products
-    or services) provided by a third-party that may be displayed, included or made
-    available by the Service.\r\n    \u2022 \u201CWebsite\u201D refers to [WEBSITE_NAME],
-    accessible from [WEBSITE_URL]\r\n    \u2022 \u201CYou\u201D means the individual
-    accessing or using the Service, or the company, or other legal entity on behalf
-    of which such individual is accessing or using the Service, as applicable.\r\nAcknowledgment\r\n\r\nThese
-    are the Terms and Conditions governing the use of this Service and the agreement
-    that operates between You and the Company. These Terms and Conditions set out
-    the rights and obligations of all users regarding the use of the Service.\r\n\r\nYour
-    access to and use of the Service is conditioned on Your acceptance of and compliance
-    with these Terms and Conditions. These Terms and Conditions apply to all visitors,
-    users and others who access or use the Service.\r\n\r\nBy accessing or using
-    the Service You agree to be bound by these Terms and Conditions. If You disagree
-    with any part of these Terms and Conditions then You may not access the Service.\r\n\r\nYou
-    represent that you are over the age of 18. The Company does not permit those
-    under 18 to use the Service.\r\n\r\nYour access to and use of the Service is
-    also conditioned on Your acceptance of and compliance with the Privacy Policy
-    of the Company. Our Privacy Policy describes Our policies and procedures on the
-    collection, use and disclosure of Your personal information when You use the
-    Application or the Website and tells You about Your privacy rights and how the
-    law protects You. Please read Our Privacy Policy carefully before using Our Service.\r\nUser
-    Accounts\r\n\r\nWhen You create an account with Us, You must provide Us information
-    that is accurate, complete, and current at all times. Failure to do so constitutes
-    a breach of the Terms, which may result in immediate termination of Your account
-    on Our Service.\r\n\r\nYou are responsible for safeguarding the password that
-    You use to access the Service and for any activities or actions under Your password,
-    whether Your password is with Our Service or a Third-Party Social Media Service.\r\n\r\nYou
-    agree not to disclose Your password to any third party. You must notify Us immediately
-    upon becoming aware of any breach of security or unauthorized use of Your account.\r\n\r\nYou
-    may not use as a username the name of another person or entity or that is not
-    lawfully available for use, a name or trademark that is subject to any rights
-    of another person or entity other than You without appropriate authorization,
-    or a name that is otherwise offensive, vulgar or obscene.\r\nContent\r\nYour
-    Right to Post Content\r\n\r\nOur Service allows You to post Content. You are
-    responsible for the Content that You post to the Service, including its legality,
-    reliability, and appropriateness.\r\n\r\nBy posting Content to the Service, You
-    grant Us the right and license to use, modify, publicly perform, publicly display,
-    reproduce, and distribute such Content on and through the Service. You retain
-    any and all of Your rights to any Content You submit, post or display on or through
-    the Service and You are responsible for protecting those rights. You agree that
-    this license includes the right for Us to make Your Content available to other
-    users of the Service, who may also use Your Content subject to these Terms.\r\n\r\nYou
-    represent and warrant that: (i) the Content is Yours (You own it) or You have
-    the right to use it and grant Us the rights and license as provided in these
-    Terms, and (ii) the posting of Your Content on or through the Service does not
-    violate the privacy rights, publicity rights, copyrights, contract rights or
-    any other rights of any person.\r\nContent Restrictions\r\n\r\nThe Company is
-    not responsible for the content of the Service's users. You expressly understand
-    and agree that You are solely responsible for the Content and for all activity
-    that occurs under your account, whether done so by You or any third person using
-    Your account.\r\n\r\nYou may not transmit any Content that is unlawful, offensive,
-    upsetting, intended to disgust, threatening, libelous, defamatory, obscene or
-    otherwise objectionable. Examples of such objectionable Content include, but
-    are not limited to, the following:\r\n\r\n    \u2022 Unlawful or promoting unlawful
-    activity.\r\n    \u2022 Defamatory, discriminatory, or mean-spirited content,
-    including references or commentary about religion, race, sexual orientation,
-    gender, national/ethnic origin, or other targeted groups.\r\n    \u2022 Spam,
-    machine \u2013 or randomly \u2013 generated, constituting unauthorized or unsolicited
-    advertising, chain letters, any other form of unauthorized solicitation, or any
-    form of lottery or gambling.\r\n    \u2022 Containing or installing any viruses,
-    worms, malware, trojan horses, or other content that is designed or intended
-    to disrupt, damage, or limit the functioning of any software, hardware or telecommunications
-    equipment or to damage or obtain unauthorized access to any data or other information
-    of a third person.\r\n    \u2022 Infringing on any proprietary rights of any
-    party, including patent, trademark, trade secret, copyright, right of publicity
-    or other rights.\r\n    \u2022 Impersonating any person or entity including the
-    Company and its employees or representatives.\r\n    \u2022 Violating the privacy
-    of any third person.\r\n    \u2022 False information and features.\r\n\r\nThe
-    Company reserves the right, but not the obligation, to, in its sole discretion,
-    determine whether or not any Content is appropriate and complies with this Terms,
-    refuse or remove this Content. The Company further reserves the right to make
-    formatting and edits and change the manner of any Content. The Company can also
-    limit or revoke the use of the Service if You post such objectionable Content.
-    As the Company cannot control all content posted by users and/or third parties
-    on the Service, you agree to use the Service at your own risk. You understand
-    that by using the Service You may be exposed to content that You may find offensive,
-    indecent, incorrect or objectionable, and You agree that under no circumstances
-    will the Company be liable in any way for any content, including any errors or
-    omissions in any content, or any loss or damage of any kind incurred as a result
-    of your use of any content.\r\nContent Backups\r\n\r\nAlthough regular backups
-    of Content are performed, the Company does not guarantee there will be no loss
-    or corruption of data.\r\n\r\nCorrupt or invalid backup points may be caused
-    by, without limitation, Content that is corrupted prior to being backed up or
-    that changes during the time a backup is performed.\r\n\r\nThe Company will provide
-    support and attempt to troubleshoot any known or discovered issues that may affect
-    the backups of Content. But You acknowledge that the Company has no liability
-    related to the integrity of Content or the failure to successfully restore Content
-    to a usable state.\r\n\r\nYou agree to maintain a complete and accurate copy
-    of any Content in a location independent of the Service.\r\nCopyright Policy\r\nIntellectual
-    Property Infringement\r\n\r\nWe respect the intellectual property rights of others.
-    It is Our policy to respond to any claim that Content posted on the Service infringes
-    a copyright or other intellectual property infringement of any person.\r\n\r\nIf
-    You are a copyright owner, or authorized on behalf of one, and You believe that
-    the copyrighted work has been copied in a way that constitutes copyright infringement
-    that is taking place through the Service, You must submit Your notice in writing
-    to the attention of our copyright agent via email ([COPYRIGHT_AGENT_CONTACT_EMAIL])
-    and include in Your notice a detailed description of the alleged infringement.\r\n\r\nYou
-    may be held accountable for damages (including costs and attorneys' fees) for
-    misrepresenting that any Content is infringing Your copyright.\r\nDMCA Notice
-    and DMCA Procedure for Copyright Infringement Claims\r\n\r\nYou may submit a
-    notification pursuant to the Digital Millennium Copyright Act (DMCA) by providing
-    our Copyright Agent with the following information in writing (see 17 U.S.C 512(c)(3)
-    for further detail):\r\n\r\n    \u2022 An electronic or physical signature of
-    the person authorized to act on behalf of the owner of the copyright's interest.\r\n   
-    \u2022 A description of the copyrighted work that You claim has been infringed,
-    including the URL (i.e., web page address) of the location where the copyrighted
-    work exists or a copy of the copyrighted work.\r\n    \u2022 Identification of
-    the URL or other specific location on the Service where the material that You
-    claim is infringing is located.\r\n    \u2022 Your address, telephone number,
-    and email address.\r\n    \u2022 A statement by You that You have a good faith
-    belief that the disputed use is not authorized by the copyright owner, its agent,
-    or the law.\r\n    \u2022 A statement by You, made under penalty of perjury,
-    that the above information in Your notice is accurate and that You are the copyright
-    owner or authorized to act on the copyright owner's behalf.\r\n\r\nYou can contact
-    our copyright agent via email ([COPYRIGHT_AGENT_CONTACT_EMAIL]). Upon receipt
-    of a notification, the Company will take whatever action, in its sole discretion,
-    it deems appropriate, including removal of the challenged content from the Service.\r\nPlacing
-    Orders for Products\r\n\r\nBy placing an Order for Products through the Service,
-    You warrant that You are legally capable of entering into binding contracts.\r\nYour
-    Information\r\n\r\nIf You wish to place an Order for Products available on the
-    Service, You may be asked to supply certain information relevant to Your Order
-    including, without limitation, Your name, Your email, Your phone number, Your
-    credit card number, the expiration date of Your credit card, Your billing address,
-    and Your shipping information.\r\n\r\nYou represent and warrant that: (i) You
-    have the legal right to use any credit or debit card(s) or other payment method(s)
-    in connection with any Order; and that (ii) the information You supply to us
-    is true, correct and complete.\r\n\r\nBy submitting such information, You grant
-    us the right to provide the information to payment processing third parties for
-    purposes of facilitating the completion of Your Order.\r\n\r\nOrder Cancellation\r\n\r\nWe
-    reserve the right to refuse or cancel Your Order at any time for certain reasons
-    including but not limited to:\r\n\r\n    \u2022 Products availability\r\n   
-    \u2022 Errors in the description or prices for Products\r\n    \u2022 Errors
-    in Your Order\r\n\r\nWe reserve the right to refuse or cancel Your Order if fraud
-    or an unauthorized or illegal transaction is suspected.\r\nYour Order Cancellation
-    Rights\r\n\r\nAny Products you purchase can only be returned or refunded in accordance
-    with these Terms and Conditions.\r\nAvailability, Errors and Inaccuracies\r\n\r\nWe
-    are constantly updating Our offerings of Products on the Service. The Products
-    available on Our Service may be mispriced, described inaccurately, or unavailable,
-    and We may experience delays in updating information regarding our Products on
-    the Service and in Our advertising on other websites.\r\n\r\nWe cannot and do
-    not guarantee the accuracy or completeness of any information, including prices,
-    product images, specifications, availability, and services. We reserve the right
-    to change or update information and to correct errors, inaccuracies, or omissions
-    at any time without prior notice.\r\nPrices Policy\r\n\r\nThe Company reserves
-    the right to revise its prices at any time prior to accepting an Order.\r\n\r\nThe
-    prices quoted may be revised by the Company subsequent to accepting an Order
-    in the event of any occurrence affecting delivery caused by government action,
-    variation in customs duties, increased shipping charges, higher foreign exchange
-    costs and any other matter beyond the control of the Company. In that event,
-    You will have the right to cancel Your Order.\r\nPayments\r\n\r\nPayment can
-    be made through various payment methods we have available, such as Visa, MasterCard,
-    Affinity Card, American Express cards or online payment methods (PayPal, for
-    example).\r\n\r\nPayment cards (credit cards or debit cards) are subject to validation
-    checks and authorization by Your card issuer. If we do not receive the required
-    authorization, We will not be liable for any delay or non-delivery of Your Order.\r\nPromotions\r\n\r\nAny
-    Promotions made available through the Service may be governed by rules that are
-    separate from these Terms.\r\n\r\nIf You participate in any Promotions, please
-    review the applicable rules as well as our Privacy policy. If the rules for a
-    Promotion conflict with these Terms, the Promotion rules will apply.\r\nIntellectual
-    Property\r\n\r\nThe Service and its original content (excluding Content provided
-    by You or other users), features and functionality are and will remain the exclusive
-    property of the Company and its licensors.\r\n\r\nThe Service is protected by
-    copyright, trademark, and other laws of both the Country and foreign countries.\r\n\r\nOur
-    trademarks and trade dress may not be used in connection with any product or
-    service without the prior written consent of the Company.\r\nYour Feedback to
-    Us\r\n\r\nYou assign all rights, title and interest in any Feedback You provide
-    the Company. If for any reason such assignment is ineffective, You agree to grant
-    the Company a non-exclusive, perpetual, irrevocable, royalty free, worldwide
-    right and license to use, reproduce, disclose, sub-license, distribute, modify
-    and exploit such Feedback without restriction.\r\nLinks to Other Websites\r\n\r\nOur
-    Service may contain links to third-party web sites or services that are not owned
-    or controlled by the Company.\r\n\r\nThe Company has no control over, and assumes
-    no responsibility for, the content, privacy policies, or practices of any third
-    party web sites or services. You further acknowledge and agree that the Company
-    shall not be responsible or liable, directly or indirectly, for any damage or
-    loss caused or alleged to be caused by or in connection with the use of or reliance
-    on any such content, goods or services available on or through any such web sites
-    or services.\r\n\r\nWe strongly advise You to read the terms and conditions and
-    privacy policies of any third-party web sites or services that You visit.\r\nTermination\r\n\r\nWe
-    may terminate or suspend Your Account immediately, without prior notice or liability,
-    for any reason whatsoever, including without limitation if You breach these Terms
-    and Conditions.\r\n\r\nUpon termination, Your right to use the Service will cease
-    immediately. If You wish to terminate Your Account, You may simply discontinue
-    using the Service.\r\nLimitation of Liability\r\n\r\nNotwithstanding any damages
-    that You might incur, the entire liability of the Company and any of its suppliers
-    under any provision of this Terms and Your exclusive remedy for all of the foregoing
-    shall be limited to the amount actually paid by You through the Service or 100
-    USD if You haven't purchased anything through the Service.\r\n\r\nTo the maximum
-    extent permitted by applicable law, in no event shall the Company or its suppliers
+    regardless of whether they appear in singular or in plural.\r\nDefinitions\r\nFor
+    the purposes of this Disclaimer:\r\n    \u2022 Company (referred to as either
+    \"the Company\", \"We\", \"Us\" or \"Our\" in this Disclaimer) refers to MedicAct.\r\n   
+    \u2022 Service refers to the Website.\r\n    \u2022 You means the individual
+    accessing the Service, or the company, or other legal entity on behalf of which
+    such individual is accessing or using the Service, as applicable.\r\n    \u2022
+    Website refers to MedicAct, accessible from https://reaksiyonyazilim.com/medicact/\r\nFair
+    Use Disclaimer\r\nThe Company may use copyrighted material which has not always
+    been specifically authorized by the copyright owner. The Company is making such
+    material available for criticism, comment, news reporting, teaching, scholarship,
+    or research.\r\nThe Company believes this constitutes a \"fair use\" of any such
+    copyrighted material as provided for in section 107 of the United States Copyright
+    law.\r\nIf You wish to use copyrighted material from the Service for your own
+    purposes that go beyond fair use, You must obtain permission from the copyright
+    owner.\r\nViews Expressed Disclaimer\r\nThe Service may contain views and opinions
+    which are those of the authors and do not necessarily reflect the official policy
+    or position of any other author, agency, organization, employer or company, including
+    the Company.\r\nComments published by users are their sole responsibility and
+    the users will take full responsibility, liability and blame for any libel or
+    litigation that results from something written in or as a direct result of something
+    written in a comment. The Company is not liable for any comment published by
+    users and reserves the right to delete any comment for any reason whatsoever.\r\nNo
+    Responsibility Disclaimer\r\nThe information on the Service is provided with
+    the understanding that the Company is not herein engaged in rendering legal,
+    accounting, tax, or other professional advice and services. As such, it should
+    not be used as a substitute for consultation with professional accounting, tax,
+    legal or other competent advisers.\r\nIn no event shall the Company or its suppliers
     be liable for any special, incidental, indirect, or consequential damages whatsoever
-    (including, but not limited to, damages for loss of profits, loss of data or
-    other information, for business interruption, for personal injury, loss of privacy
-    arising out of or in any way related to the use of or inability to use the Service,
-    third-party software and/or third-party hardware used with the Service, or otherwise
-    in connection with any provision of this Terms), even if the Company or any supplier
-    has been advised of the possibility of such damages and even if the remedy fails
-    of its essential purpose.\r\n\r\nSome states do not allow the exclusion of implied
-    warranties or limitation of liability for incidental or consequential damages,
-    which means that some of the above limitations may not apply. In these states,
-    each party's liability will be limited to the greatest extent permitted by law.\r\n\"AS
-    IS\" and \"AS AVAILABLE\" Disclaimer\r\n\r\nThe Service is provided to You \"AS
-    IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of
-    any kind. To the maximum extent permitted under applicable law, the Company,
-    on its own behalf and on behalf of its Affiliates and its and their respective
-    licensors and service providers, expressly disclaims all warranties, whether
-    express, implied, statutory or otherwise, with respect to the Service, including
-    all implied warranties of merchantability, fitness for a particular purpose,
-    title and non-infringement, and warranties that may arise out of course of dealing,
-    course of performance, usage or trade practice. Without limitation to the foregoing,
-    the Company provides no warranty or undertaking, and makes no representation
-    of any kind that the Service will meet Your requirements, achieve any intended
-    results, be compatible or work with any other software, applications, systems
-    or services, operate without interruption, meet any performance or reliability
-    standards or be error free or that any errors or defects can or will be corrected.\r\n\r\nWithout
-    limiting the foregoing, neither the Company nor any of the company's provider
-    makes any representation or warranty of any kind, express or implied: (i) as
-    to the operation or availability of the Service, or the information, content,
-    and materials or products included thereon; (ii) that the Service will be uninterrupted
-    or error-free; (iii) as to the accuracy, reliability, or currency of any information
-    or content provided through the Service; or (iv) that the Service, its servers,
-    the content, or e-mails sent from or on behalf of the Company are free of viruses,
-    scripts, trojan horses, worms, malware, timebombs or other harmful components.\r\n\r\nSome
-    jurisdictions do not allow the exclusion of certain types of warranties or limitations
-    on applicable statutory rights of a consumer, so some or all of the above exclusions
-    and limitations may not apply to You. But in such a case the exclusions and limitations
-    set forth in this section shall be applied to the greatest extent enforceable
-    under applicable law.\r\nGoverning Law\r\n\r\nThe laws of the Country, excluding
-    its conflicts of law rules, shall govern this Terms and Your use of the Service.
-    Your use of the Application may also be subject to other local, state, national,
-    or international laws.\r\nDisputes Resolution\r\n\r\nIf You have any concern
-    or dispute about the Service, You agree to first try to resolve the dispute informally
-    by contacting the Company.\r\nFor European Union (EU) Users\r\n\r\nIf You are
-    a European Union consumer, you will benefit from any mandatory provisions of
-    the law of the country in which you are resident in.\r\nUnited States Legal Compliance\r\n\r\nYou
-    represent and warrant that (i) You are not located in a country that is subject
-    to the United States government embargo, or that has been designated by the United
-    States government as a \"terrorist supporting\" country, and (ii) You are not
-    listed on any United States government list of prohibited or restricted parties.\r\nSeverability
-    and Waiver\r\nSeverability\r\n\r\nIf any provision of these Terms is held to
-    be unenforceable or invalid, such provision will be changed and interpreted to
-    accomplish the objectives of such provision to the greatest extent possible under
-    applicable law and the remaining provisions will continue in full force and effect.\r\n\r\nWaiver\r\n\r\nExcept
-    as provided herein, the failure to exercise a right or to require performance
-    of an obligation under this Terms shall not effect a party's ability to exercise
-    such right or require such performance at any time thereafter nor shall be the
-    waiver of a breach constitute a waiver of any subsequent breach.\r\n\r\nChanges
-    to These Terms and Conditions\r\nWe reserve the right, at Our sole discretion,
-    to modify or replace these Terms at any time. If a revision is material We will
-    make reasonable efforts to provide at least 30 days' notice prior to any new
-    terms taking effect. What constitutes a material change will be determined at
-    Our sole discretion.\r\n\r\nBy continuing to access or use Our Service after
-    those revisions become effective, You agree to be bound by the revised terms.
-    If You do not agree to the new terms, in whole or in part, please stop using
-    the website and the Service.\r\nContact Us\r\n\r\nIf you have any questions about
-    these Terms and Conditions, You can contact us:\r\n\r\n    \u2022 By visiting
-    this page on our website: [WEBSITE_CONTACT_PAGE_URL]\r\n    \u2022 By sending
-    us an email: [WEBSITE_CONTACT_EMAIL]\r\n"
+    arising out of or in connection with your access or use or inability to access
+    or use the Service.\r\n\"Use at Your Own Risk\" Disclaimer\r\nAll information
+    in the Service is provided \"as is\", with no guarantee of completeness, accuracy,
+    timeliness or of the results obtained from the use of this information, and without
+    warranty of any kind, express or implied, including, but not limited to warranties
+    of performance, merchantability and fitness for a particular purpose.\r\nThe
+    Company will not be liable to You or anyone else for any decision made or action
+    taken in reliance on the information given by the Service or for any consequential,
+    special or similar damages, even if advised of the possibility of such damages.\r\nContact
+    Us\r\nIf you have any questions about this Disclaimer, You can contact Us:\r\n   
+    \u2022 By email: derinsapmaz@gmail.com ,  berkyildiiz@gmail.com"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3708,7 +3609,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.35
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4161,7 +4062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1209853065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4483,7 +4384,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.65
+  m_fontSize: 52.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5530,7 +5431,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.6
+  m_fontSize: 14.65
   m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5998,6 +5899,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1653525001}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 29528870}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -6593,7 +6506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.10327633, y: 0}
   m_AnchorMax: {x: 0.8974898, y: 0.142}
-  m_AnchoredPosition: {x: 0, y: 2.4994812}
+  m_AnchoredPosition: {x: 0, y: 2.4994507}
   m_SizeDelta: {x: 0, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952960372
@@ -6898,7 +6811,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 700}
+  m_SizeDelta: {x: 0, y: 4000}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1977106694
 GameObject:
@@ -6984,7 +6897,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 788504185}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.1262
+  m_Size: 0.36216155
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7202,7 +7115,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 921267927}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.55285716
+  m_Size: 0.1585
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7409,6 +7322,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 29528870}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &2029708646
 GameObject:
@@ -7445,7 +7370,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 5000}
+  m_SizeDelta: {x: 0, y: 1750.6}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &2045312893
 GameObject:

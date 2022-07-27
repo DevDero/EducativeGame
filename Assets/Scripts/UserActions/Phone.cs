@@ -33,6 +33,7 @@ public class Phone : MonoBehaviour
     public void OpenPhone()
     {
         animator.SetBool("IsPhoneOpen", true);
+        phoneAction.ActionStatus = ActionStatus.Started;
     }
     public void CallNumber()
     {

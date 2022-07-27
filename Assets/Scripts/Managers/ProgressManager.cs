@@ -12,22 +12,21 @@ public class ProgressManager : MonoBehaviour
     {     
         Instance = this;
     }
-    //public void OnEnable()
-    //{
-    //    SetDoors();
-    //}
-    //public void SetDoors()
-    //{
-    //    for (int i = 0; i < GeneralManager.Instance.localUserData.levelData.Length; i++)
-    //    {
-    //        LevelData level = GeneralManager.Instance.localUserData.levelData[i];
+    public void OnEnable()
+    {
+        SetDoors();
+    }
+    public void SetDoors()
+    {
+        for (int i = 0; i < LocalUserData.localLevelData.levels.Count; i++)
+        {          
+            LevelData level = LocalUserData.localLevelData.levels.ElementAt(i).Value;
 
-    //        if (level.playStatus == PlayStatus.Locked)
-    //            Doors[i].LockDoor();
-    //        else
-    //            Doors[i].UnlockDoor();
-    //    }
-    //}
+            if (level.playstatus != PlayStatus.Locked) 
+            Doors[i].UnlockDoor();
+        }
+    }
+
     public void OpenDoor(int i)
     {
         LocalUserData.localLevelData.levels.ElementAt(i).Value.playstatus = PlayStatus.Unlocked;

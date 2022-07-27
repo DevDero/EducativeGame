@@ -12,6 +12,7 @@ public class GeneralManager : MonoBehaviour
     /// </summary>
     
     private string currentLevel;
+    public SceneType currentSceneType;
     public string CurrentLevel { get => currentLevel;}
 
     public bool hasPaused { get; set; } = false;
@@ -24,6 +25,7 @@ public class GeneralManager : MonoBehaviour
     string MapScene = ("MapScene");
     string LoginScene = ("LoginScene");
     
+    public enum SceneType { NA ,Level ,Menu }
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -33,8 +35,10 @@ public class GeneralManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(!hasPaused)
+        if(!hasPaused && currentSceneType == SceneType.Level)
         LevelTime += Time.fixedDeltaTime;
+        if (levelTime > 5 * 60)
+            OpenRestartPopUp("5 dakkika geçti, videodaki talimatlara uyun. Acil durumlarda mutlaka 112'ye ulas?n! !"); 
     }
 
     public void LoadVideo()                                                 // TODO: terminate level dependencies from this method
@@ -53,15 +57,27 @@ public class GeneralManager : MonoBehaviour
     }
     public void LoadSingleSceneAsync(string scene)
     {      
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
+    }
+    public void LoadSceneAsync(string scene)
+    {
+        AsyncOperation loadingScene = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
+        loadingScene.completed += delegate {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(Level0));
+            SetCurrentLevel(scene);
+        };
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 
     public void RestartLevel()
     {
         Scene _activeScene = SceneManager.GetActiveScene();
+        
         SceneManager.UnloadSceneAsync(_activeScene);
         SceneManager.LoadSceneAsync(_activeScene.name, LoadSceneMode.Single);
+
+        levelTime = 0;
+
         ActionList.UserActionList.Clear();
     }
     public void RestartVideoLevel()
@@ -102,9 +118,9 @@ public class GeneralManager : MonoBehaviour
     {
         ProgressManager.Instance.OpenDoor(levelNumber);
     }
-
-    //private void OnApplicationQuit()
-    //{
-    //    FirebaseAuth.SignOutUser();
-    //}
+    public void ShowLeaderBoard()
+    {
+        ConversationManager.Instance.StopConversation();
+        ConversationManager.Instance.ShowLeaderBoard();
+    }
 }

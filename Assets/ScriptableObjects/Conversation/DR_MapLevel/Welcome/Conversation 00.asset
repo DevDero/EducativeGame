@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e796051f6e964e34bb60b3b75a250bf3, type: 3}
   m_Name: Conversation 00
   m_EditorClassIdentifier: 
-  question: "Merhaba, e\u011Fitime ho\u015Fgeldin! G\xF6rd\xFC\u011F\xFCn her kap\u0131
-    bilgini, \xE7evikli\u011Fini ve azmini s\u0131nayacak birer vaka bulunduruyor."
+  question: "Merhaba, MediAct'a ho\u015Fgeldin! G\xF6rd\xFC\u011F\xFCn her kap\u0131
+    bilgini, \xE7evikli\u011Fini ve azmini s\u0131nayacak bir vaka bulunduruyor."
   answer:
   - answer: "Pekala, S\u0131rada ne var?"
     nextQA: {fileID: 11400000, guid: 61c9570aa6eb67547b78763ed23987ca, type: 2}

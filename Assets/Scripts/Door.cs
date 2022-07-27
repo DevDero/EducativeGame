@@ -5,17 +5,19 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] GameObject doorOpen ,doorClosed;
-    private bool hasUnlocked;
-    private bool hadPlayed;
 
     public void UnlockDoor()
     {
-        doorClosed.SetActive(false);
-        doorOpen.SetActive(true);
+        if (doorClosed)
+            doorClosed.SetActive(false);
+        if (doorOpen)
+            doorOpen.SetActive(true);
     }
     public void LockDoor()
     {
+        if (doorClosed)
         doorClosed.SetActive(true);
+        if (doorOpen)
         doorOpen.SetActive(false);
     }
 }

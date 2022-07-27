@@ -64,12 +64,20 @@ public class ActionLabelScroller : ScrollRect
     }
     public void SubmitPointData()
     {
-        
+        var levels = LocalUserData.localLevelData.levels;
+        if (levels["CPR"].playstatus == PlayStatus.FirstPlay)
+            levels["CPR"].playstatus = PlayStatus.ReRun;
+        else if(levels["CPR"].playstatus == PlayStatus.Unlocked)
+        {
+            levels["CPR"].playstatus = PlayStatus.FirstPlay;
+        }
         if (LocalUserData.CurrentLevel().CompareValeus(endLevelScore))
         {
             FirebaseDatabase.SetJSON("users/" + LocalUserData.localUserIntrinsicData.uid +"/leveldata" ,LocalUserData.LocalLevelDataToJson(), gameObject.name, "SubmissonSucces", "SubmissionError");
 
         }
+        GeneralManager.Instance.LoadSingleSceneAsync("MapScene");
+
     }
 }
 

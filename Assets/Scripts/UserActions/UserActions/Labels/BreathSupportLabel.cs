@@ -8,13 +8,17 @@ public class BreathSupportLabel : ActionLabel
     public override float CalculateScore()
     {
         int localPoints = 0;
-        breathSupportAction.CheckGoal();
- 
-        if (breathSupportAction.Repetition == 2)
+
+        if (breathSupportAction.phoneConstraint)
         {
-            localPoints += 2;
+            breathSupportAction.CheckGoal();
+
+            if (breathSupportAction.Repetition == 2)
+            {
+                localPoints += 2;
+            }
+            if (breathSupportAction.hasCPRValidated) localPoints++;
         }
-        if (breathSupportAction.hasCPRValidated) localPoints++;
 
         return localPoints;
     }

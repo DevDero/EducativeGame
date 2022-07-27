@@ -10,14 +10,22 @@ public class LeaderBoard : ScrollRect
     private LeaderBoardElement lbElement;
 
     protected override void OnEnable()
-    {    
+    {
         if(lbElement==null)
         {
             lbElement = GameObject.FindObjectOfType<LeaderBoardElement>();
-            lbElement.gameObject.SetActive(false);
         }
 
         GetHighScores();
+        SetOwnPoint();
+    }
+
+    public void SetOwnPoint()
+    {
+        Debug.Log(lbElement);
+        Debug.Log(LocalUserData.localUserIntrinsicData.username);
+        Debug.Log(LocalUserData.localLevelData.totalScore);
+        lbElement.SetElement(LocalUserData.localUserIntrinsicData.username, LocalUserData.localLevelData.totalScore);
     }
     
     public float CalculateHeight(float itemSizePX, int itemAmount)
@@ -31,22 +39,24 @@ public class LeaderBoard : ScrollRect
     }
     public void GetHighScores()
     {
-        FirebaseDatabase.GetHighScore(gameObject.name, "Recived", "Failed");
+        if (Time.unscaledTime > LocalUserData.RefreshHighScoreTime) 
+            FirebaseDatabase.GetHighScore(gameObject.name, "Recived", "Failed");
     }
-    public void CreateLeaderBoardElement(string _username, int _score)
+    public void CreateLeaderBoardElement(string _username, int _score,int _rank)
     {
         var element = GameObject.Instantiate(lbElement, content);
-        element.SetElement(_username, _score);
+        element.SetElement(_username, _score );
     }
     public void Recived(string snapShot)
     {
-        Debug.Log(snapShot);
         Dictionary<string, UserData> userData = JsonConvert.DeserializeObject<Dictionary<string, UserData>>(snapShot);
-        Debug.Log("hede");
+
+        LocalUserData.HighScoreData = userData;
 
         ResizeContentTab(CalculateHeight(300 + 30,
             userData.Count) + 30);//spacing height and offset
 
+        Debug.Log(userData);
 
         for (int i = 0; i < userData.Count; i++)
         {
@@ -54,12 +64,12 @@ public class LeaderBoard : ScrollRect
             string name = value.intrinsicdata.username;
             int score = value.leveldata.totalScore;
 
-            CreateLeaderBoardElement(name, score);
+            CreateLeaderBoardElement(name, score, i);
         }
     }
     public void Failed()
     {
-
+        Debug.LogError("Failed to retrieve scoreboard data");
     }
     public void SetLabelList()
     {
