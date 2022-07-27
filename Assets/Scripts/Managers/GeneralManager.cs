@@ -29,9 +29,19 @@ public class GeneralManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this);
+        FadeIn();
+        Instance = this;
+        SceneManager.activeSceneChanged += FadeIn;
+    }
+    private void FadeIn()
+    {
         var cPanel = GameObject.Instantiate<GameObject>(CrossPanel);
         Object.Destroy(cPanel, 2);
-        Instance = this;
+    }
+    private void FadeIn(Scene current, Scene next)
+    {
+        var cPanel = GameObject.Instantiate<GameObject>(CrossPanel);
+        Object.Destroy(cPanel, 2);
     }
     private void FixedUpdate()
     {

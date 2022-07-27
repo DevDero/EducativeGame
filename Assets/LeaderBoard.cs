@@ -45,7 +45,7 @@ public class LeaderBoard : ScrollRect
     public void CreateLeaderBoardElement(string _username, int _score,int _rank)
     {
         var element = GameObject.Instantiate(lbElement, content);
-        element.SetElement(_username, _score );
+        element.SetElement(_username, _score , _rank);
     }
     public void Recived(string snapShot)
     {
@@ -53,18 +53,19 @@ public class LeaderBoard : ScrollRect
 
         LocalUserData.HighScoreData = userData;
 
-        ResizeContentTab(CalculateHeight(300 + 30,
-            userData.Count) + 30);//spacing height and offset
+        ResizeContentTab(CalculateHeight(180 + 30,
+            userData.Count));//spacing height and offset
 
         Debug.Log(userData);
-
-        for (int i = 0; i < userData.Count; i++)
+        int current = 1;
+        for (int i = userData.Count - 1; i > 0; i--) 
         {
             var value = userData.ElementAt(i).Value;
+
             string name = value.intrinsicdata.username;
             int score = value.leveldata.totalScore;
-
-            CreateLeaderBoardElement(name, score, i);
+            CreateLeaderBoardElement(name, score, current);
+            current++;
         }
     }
     public void Failed()

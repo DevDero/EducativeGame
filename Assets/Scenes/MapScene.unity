@@ -3859,11 +3859,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 749865155478230978, guid: ed61e5483b8b71b44ab00226a9860f56, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 749865155478230978, guid: ed61e5483b8b71b44ab00226a9860f56, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165286477770127361, guid: ed61e5483b8b71b44ab00226a9860f56, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165286477770127361, guid: ed61e5483b8b71b44ab00226a9860f56, type: 3}
+      propertyPath: m_fontSize
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4151136570113529273, guid: ed61e5483b8b71b44ab00226a9860f56, type: 3}
       propertyPath: m_Name
@@ -3873,7 +3881,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5613964836701062811, guid: ed61e5483b8b71b44ab00226a9860f56, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ed61e5483b8b71b44ab00226a9860f56, type: 3}
 --- !u!224 &2079607163 stripped
