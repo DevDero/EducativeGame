@@ -35,7 +35,7 @@ public class ConversationManager : MonoBehaviour
     {
         LeaderBoardTutorial.SetActive(true);
         LocalUserData.localLevelData.levels["FutureLevel"].playstatus = PlayStatus.Unlocked;
-        FirebaseDatabase.SetJSON("users/" + LocalUserData.localUserIntrinsicData.uid + "/leveldata/levels", LocalUserData.LocalLevelDataToJson(), gameObject.name, "SubmissonSucces", "SubmissionError");
+        FirebaseDatabase.SetJSON("users/" + LocalUserData.localUserIntrinsicData.uid + "/leveldata/levels/FutureLevel", LocalUserData.LocalLevelDataToJson("FutureLevel"), gameObject.name, "SubmissonSucces", "SubmissionError");
     }
     public void SubmissonSucces()
     {

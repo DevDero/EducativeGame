@@ -34,8 +34,12 @@ public static class LocalUserData
         LevelDatas tempLevelData = localLevelData;
         return JsonConvert.SerializeObject(tempLevelData);
     }
+    public static string LocalLevelDataToJson(string levelName)
+    {
+        LevelData tempLevelData = localLevelData.levels[levelName];
+        return JsonConvert.SerializeObject(tempLevelData);
+    }
 
-   
     public static void CalculateTotalScore()
     {
         int localtotal = 0;

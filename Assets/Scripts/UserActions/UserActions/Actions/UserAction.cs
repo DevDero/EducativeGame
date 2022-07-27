@@ -63,7 +63,8 @@ public class UserAction : MonoBehaviour
         if (ActionList.UserActionList.Count == 0)
         {
             this._Repetition++;
-            ActionList.UserActionList.Add(this);
+            UserAction actionImage = (UserAction)this.MemberwiseClone();
+            ActionList.UserActionList.Add(actionImage);
         }
         else
         {
@@ -71,11 +72,14 @@ public class UserAction : MonoBehaviour
 
             if (userAction.GetType() == this.GetType())
             {
+                this._Repetition++;
                 userAction._Repetition++;
             }
             else
             {
-                ActionList.UserActionList.Add(this);
+                UserAction actionImage = (UserAction)this.MemberwiseClone();
+                ActionList.UserActionList.Add(actionImage);
+                this._Repetition++;
             }
         }
     }
