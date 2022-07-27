@@ -22,14 +22,14 @@ public class StarScoreElement : MonoBehaviour
         for (int i = 0; i < Stars.Length;)
         {
             if (valueRest < 0) break;
+            Stars[i].GetComponentInParent<Animation>().Play();
             while (Stars[i].fillAmount < 1 && valueRest > 0) 
             {
-                Stars[i].fillAmount += 0.1f;
-                valueRest -= 0.1f;
+                Stars[i].fillAmount += 0.01f;
+                valueRest -= 0.01f;
                 yield return null;
             }
             i++;
-
         }
     }
     private void OnEnable()
