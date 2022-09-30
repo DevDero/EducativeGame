@@ -1,0 +1,3 @@
+-Implemented FireBase Auth and Database
+-Developed UserAction system
+-Implemented UserData system
